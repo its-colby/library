@@ -1,0 +1,13 @@
+# Allow TeX source files
+!*.tex
+
+# Allow directories
+!*/
+
+# Ignore auxiliary and output files
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.pdf 
+*.synctex.gz
