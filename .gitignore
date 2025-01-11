@@ -1,13 +1,51 @@
-# Allow TeX source files
-!*.tex
+# Ignore node_modules directory
+node_modules/
 
-# Allow directories
-!*/
-
-# Ignore auxiliary and output files
-*.aux
+# Ignore log files
 *.log
-*.fls
-*.fdb_latexmk
-*.pdf 
-*.synctex.gz
+
+# Ignore build directories
+dist/
+build/
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore environment variable files
+.env
+.env.local
+
+# Ignore IDE specific files
+.idea/
+.vscode/
+
+# Ignore compiled files
+*.class
+*.o
+*.so
+
+# Ignore package lock files
+package-lock.json
+yarn.lock
+
+# Ignore coverage reports
+coverage/
+
+# Ignore temporary files
+*.tmp
+*.swp
+
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+
+# Ignore JavaScript map files
+*.map
+
+# Ignore macOS specific files
+.AppleDouble
+.LSOverride
+
+# Ignore Windows specific files
+Desktop.ini
