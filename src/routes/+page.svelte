@@ -5,7 +5,7 @@
     let recommendations = [
         {
             title: "Classical Music",
-            url: "music_recommendations",
+            url: "recommendations/music",
         },
     ];
 
