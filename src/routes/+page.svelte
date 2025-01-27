@@ -1,5 +1,4 @@
 <script lang="ts">
-    import Header from "$lib/header/Header.svelte";
     import Section from "$lib/Section.svelte";
 
     let recommendations = [
@@ -23,13 +22,6 @@
 </main>
 
 <style>
-    :global(body, html) {
-        margin: 0;
-        padding: 0;
-        font-family: 'Roboto', sans-serif;
-        background-color: var(--content-background-color);
-    }
-
     main {
         display: flex;
         flex-direction: column;

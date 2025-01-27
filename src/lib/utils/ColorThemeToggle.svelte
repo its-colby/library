@@ -5,7 +5,7 @@
 
     let { size = 40, color_themes } : { size?: number, color_themes: ColorThemes } = $props();
 
-    let current_color_theme: 'light' | 'dark' = $state('light');
+    let current_color_theme: 'light' | 'dark' = $state('dark');
 
     function toggle_theme(): void {
         current_color_theme = current_color_theme === 'light' ? 'dark' : 'light';

@@ -1,9 +1,9 @@
-<script lang="ts">
+<script lang="ts" generics="T">
     import { fade } from 'svelte/transition';
     import type { Snippet } from 'svelte';
 
 
-    let { on_click, header, row }: { on_click: () => void, header: Snippet, row: Snippet } = $props();
+    let { on_click, header, row, items }: { on_click: (item: T) => void, header: Snippet, row: Snippet<[T]>, items: T[] } = $props();
     let show_dropdown: boolean = $state(false);
     let timeout_ID: NodeJS.Timeout;
 
@@ -29,9 +29,11 @@
     </button>
     {#if show_dropdown}
         <menu transition:fade={{ duration: 100 }}>
-            <menuitem onclick={on_click}>
-                {@render row()}
-            </menuitem>
+            {#each items as item}
+                <menuitem onclick={() => on_click(item)}>
+                    {@render row(item)}
+                </menuitem>
+            {/each}
         </menu>
     {/if}
 </nav>
@@ -59,6 +61,10 @@
         margin-top: 8px;
         min-width: 200px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
     }
 
     menuitem {
