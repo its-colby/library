@@ -206,17 +206,15 @@
     <ul class="secondary-section-details-container">
         {#each items as item}
             <li class="piece-details">
-                {#if item.tier !== Tier.DEFICIENT && (item.performer || item.conductor)}
+                {#if item.tier !== Tier.DEFICIENT}
                     <span class="piece-title-container">
                         <Tooltip
-                            text={`Click to see performance ${item.performer ? `by ${item.performer}` : `conducted by ${item.conductor}`}`}
+                            text={`Click to see performance${item.performer ? ` by ${item.performer}` : item.conductor ? ` conducted by ${item.conductor}` : ''}`}
                             data={{link: item.link, title: item.title}}
                             content={piece_title}
                             position="above"
                         />
                     </span>
-                {:else if item.tier !== Tier.DEFICIENT}
-                    <span class="piece-title-container">{@render piece_title({link: item.link, title: item.title})}</span>
                 {:else}
                     <span class="deficient-piece-title">{item.title}</span>
                 {/if}
@@ -335,13 +333,18 @@
         width: 150px;
     }
 
-    span.piece-title-container, span.deficient-piece-title {
+    span.piece-title-container {
         width: 200px;
     }
 
-    a.piece-title, span.deficient-piece-title {
+    a.piece-title {
         text-decoration: none;
         color: var(--text-brand-color1);
+    }
+
+    li.piece-details > span.deficient-piece-title {
+        color: var(--text-neutral-color);
+        width: 200px;
     }
 
     a.piece-title:hover {
