@@ -1,8 +1,8 @@
-<script lang="ts">
+<script lang="ts" generics="T, Q">
     import type { Snippet } from "svelte";
     import { ChevronDown, ChevronUp } from 'lucide-svelte';
 
-    let { header, details }: { header: Snippet<[boolean]>; details: Snippet; } = $props();
+    let { header, header_data, details, details_data }: { header: Snippet<[boolean, T]>; header_data: T; details: Snippet<[Q]>; details_data: Q; } = $props();
     let open: boolean = $state(false);
     let hovered: boolean = $state(false);
     let detailsElement: HTMLDetailsElement;
@@ -22,7 +22,7 @@
         onmouseenter={() => hovered = true}
         onmouseleave={() => hovered = false}
     >
-        {@render header(hovered)}
+        {@render header(hovered, header_data)}
         {#if open}
             <ChevronUp size={24} />
         {:else}
@@ -30,7 +30,7 @@
         {/if}
     </summary>
     
-    <div>{@render details()}</div>
+    <div>{@render details(details_data)}</div>
 
 </details>
 
@@ -55,10 +55,5 @@
 
     summary::-webkit-details-marker {
         display: none;
-    }
-
-    div {
-        margin-top: 15px;
-        margin-bottom: 10px;
     }
 </style>

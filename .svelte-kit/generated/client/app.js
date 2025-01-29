@@ -11,7 +11,7 @@ export const server_loads = [];
 
 export const dictionary = {
 		"/": [2],
-		"/recommendations/music": [3]
+		"/music/curated_romantic_music": [3]
 	};
 
 export const hooks = {

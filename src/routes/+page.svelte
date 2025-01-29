@@ -1,10 +1,10 @@
 <script lang="ts">
     import Section from "$lib/Section.svelte";
 
-    let recommendations = [
+    let music = [
         {
-            title: "Classical Music",
-            url: "recommendations/music",
+            title: "Curated Romantic Music",
+            url: "music/curated_romantic_music",
         },
     ];
 
@@ -18,7 +18,7 @@
 
 <main>
     <Section title="Computer Science" items={computer_science} />
-    <Section title="Recommendations" items={recommendations} />
+    <Section title="Romantic Music" items={music} />
 </main>
 
 <style>

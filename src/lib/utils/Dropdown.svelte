@@ -1,9 +1,9 @@
-<script lang="ts" generics="T">
+<script lang="ts" generics="Q, T">
     import { fade } from 'svelte/transition';
     import type { Snippet } from 'svelte';
 
 
-    let { on_click, header, row, items }: { on_click: (item: T) => void, header: Snippet, row: Snippet<[T]>, items: T[] } = $props();
+    let { on_click, header, header_data, row, items }: { on_click: (item: T) => void, header: Snippet<[Q]>, header_data: Q, row: Snippet<[T]>, items: T[] } = $props();
     let show_dropdown: boolean = $state(false);
     let timeout_ID: NodeJS.Timeout;
 
@@ -25,7 +25,7 @@
     onmouseleave={handle_mouse_leave}
 >
     <button>
-        {@render header()}
+        {@render header(header_data)}
     </button>
     {#if show_dropdown}
         <menu transition:fade={{ duration: 100 }}>
