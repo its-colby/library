@@ -84,6 +84,10 @@ pieces.push(...augment_map({
             title: "Liebeslied",
             link: "https://youtu.be/U6MjjfIHA1M"
         },
+        {
+            title: "Italian Polka",
+            link: "https://youtu.be/YmSDDslA__M"
+        },
     ],
     deficient: [
         { title: "3 Nocturnes: III. Nocturne in C Minor" }
@@ -148,6 +152,10 @@ pieces.push(...augment_map({
             title: "Serenade for Strings",
             performer: performers.frankfurt_orchestra,
             link: "https://youtu.be/CSu86-1BruE"
+        },
+        {
+            title: "Sentimental Waltz",
+            link: "https://youtu.be/rUuusqy50yk"
         },
     ]
 }));
@@ -366,6 +374,13 @@ pieces.push(...augment_map({
             title: "Polonaise de concert",
             performer: performers.bomsori_kim,
             link: "https://youtu.be/0UPrGttumdw"
+        },
+    ],
+    notable: [
+        {
+            title: "Scherzo tarantelle",
+            performer: performers.itzhak_perlman,
+            link: "https://youtu.be/7K_DrXcHhLc"
         },
     ]
 }));
@@ -873,6 +888,11 @@ pieces.push(...augment_map({
             performer: performers.khatia_buniatishvili,
             link: "https://youtu.be/FZ651tNXp0Y",
         },
+        {
+            title: "Hungarian Rhapsody No. 2",
+            performer: performers.valentina_lisitsa,
+            link: "https://youtu.be/LdH1hSWGFGU",
+        },
     ]
 }));
 
@@ -979,6 +999,23 @@ pieces.push(...augment_map({
             title: "Concerto for 2 Cellos in Gm RV 531",
             link: "https://youtu.be/7BbpNukE8yY",
         },
+        {
+            title: "La Follia",
+            link: "https://youtu.be/7v8zxoEoA_Q",
+        },
+        {
+            title: "Winter",
+            link: "https://youtu.be/ZPdk5GaIDjo",
+        },
+        {
+            title: "Spring",
+            link: "https://youtu.be/3LiztfE1X7E",
+        },
+        {
+            title: "Summer",
+            link: "https://youtu.be/RvDt_KtOzbc",
+        },
+            
     ],
     deficient: [
         { title: "Concerto for Violin, Cello in BfM RV 547" },
@@ -1002,6 +1039,22 @@ pieces.push(...augment_map({
     ],
     deficient: [
         { title: "Violin Concerto in Am BWV 1041" },
+    ]
+}));
+
+pieces.push(...augment_map({
+    genre: genres.miniature, 
+    composer: composers.bach, 
+    partially_amazing: [
+        {
+            title: "Cello Suite No. 1 in G Major, Prélude ",
+            link: "https://youtu.be/1prweT95Mo0"
+        },
+        {
+            title: "Prelude in C Major",
+            performer: performers.lang_lang,
+            link: "https://youtu.be/gVah1cr3pU0"
+        },
     ]
 }));
 
@@ -1102,6 +1155,12 @@ pieces.push(...augment_map({
             title: "Adagio",
             performer: performers.stjepan_hauser,
             link: "https://youtu.be/kn1gcjuhlhg",
+        },
+    ],
+    notable: [
+        {
+            title: "Concerto Saint Marc",
+            link: "https://youtu.be/btlK4cdBMZw",
         },
     ]
 }));
@@ -1208,4 +1267,190 @@ pieces.push(...augment_map({
     deficient: [
         { title: make_title(styles.concerto, 0, instruments.violin) },
     ]
+}));
+
+// ------------------------------------------------
+// ------------------- WALDTEUFEL -----------------
+// ------------------------------------------------
+
+pieces.push(...augment_map({
+    genre: genres.misc, 
+    composer: composers.waldteufel, 
+    notable: [
+        { 
+            title: "Dolores Waltz", 
+            link: "https://youtu.be/XFC5LFvErt8" 
+        },
+        { 
+            title: "Skaters Waltz", 
+            link: "https://youtu.be/wWuccFOyayU" 
+        },
+    ]
+}));
+
+// ------------------------------------------------
+// ------------------- Marquez --------------------
+// ------------------------------------------------
+
+pieces.push(...augment_map({
+    genre: genres.misc, 
+    composer: composers.marquez, 
+    notable: [
+        { 
+            title: "Danzón No. 2", 
+            conductor: conductors.gustavo_dudamel,
+            link: "https://youtu.be/_1ynC1RB3kY" 
+        },
+    ]
+}));
+
+// ------------------------------------------------
+// ------------------- Piazzolla --------------------
+// ------------------------------------------------
+
+pieces.push(...augment_map({
+    genre: genres.misc, 
+    composer: composers.piazzolla, 
+    notable: [
+        { 
+            title: "Libertango", 
+            link: "https://youtu.be/H_-cfWEMDrU" 
+        },
+    ]
+}));
+
+// ------------------------------------------------
+// ------------------- Abreu --------------------
+// ------------------------------------------------
+
+pieces.push(...augment_map({
+    genre: genres.misc, 
+    composer: composers.abreu, 
+    notable: [
+        { 
+            title: "Tico-Tico no Fubá", 
+            link: "https://youtu.be/v_ZnJCMQqwo" 
+        },
+    ]
+}));
+
+// ------------------------------------------------
+// -------------------- Holst ---------------------
+// ------------------------------------------------
+
+pieces.push(...augment_map({
+    genre: genres.misc, 
+    composer: composers.holst, 
+    notable: [
+        { 
+            title: "Jupiter", 
+            link: "https://youtu.be/Gu77Vtja30c" 
+        },
+    ],
+    deficient: [
+        { title: "Mars" },
+    ]
+}));
+
+// ------------------------------------------------
+// ------------------- Shatrov --------------------
+// ------------------------------------------------
+
+pieces.push(...augment_map({
+    genre: genres.misc, 
+    composer: composers.shatrov, 
+    notable: [
+        { 
+            title: "On the Hills of Manchuria", 
+            link: "https://youtu.be/E-JHVnehtWw" 
+        },
+    ],
+}));
+
+// ------------------------------------------------
+// ------------------- Torelli --------------------
+// ------------------------------------------------
+
+pieces.push(...augment_map({
+    genre: genres.misc, 
+    composer: composers.torelli, 
+    deficient: [
+        { title: "Concerto in G minor" },
+    ],
+}));
+
+// ------------------------------------------------
+// ------------------- Monti --------------------
+// ------------------------------------------------
+
+pieces.push(...augment_map({
+    genre: genres.misc, 
+    composer: composers.monti, 
+    partially_amazing: [
+        { 
+            title: "Csardas",
+            link: "https://youtu.be/JY4YiZB0mmk" 
+        },
+    ],
+}));
+
+// ------------------------------------------------
+// ------------------- Massenet --------------------
+// ------------------------------------------------
+
+pieces.push(...augment_map({
+    genre: genres.misc, 
+    composer: composers.massenet, 
+    notable: [
+        { 
+            title: "Meditation from Thais",
+            link: "https://youtu.be/7QtGOWemQhY" 
+        },
+    ],
+}));
+
+// ------------------------------------------------
+// ------------------- Faure --------------------
+// ------------------------------------------------
+
+pieces.push(...augment_map({
+    genre: genres.misc, 
+    composer: composers.faure, 
+    notable: [
+        { 
+            title: "Elegie",
+            link: "https://youtu.be/5kpPq0ITOs0" 
+        },
+    ],
+}));
+
+// ------------------------------------------------
+// ------------------- Halvorsen --------------------
+// ------------------------------------------------
+
+pieces.push(...augment_map({
+    genre: genres.misc, 
+    composer: composers.halvorsen, 
+    partially_amazing: [
+        { 
+            title: "Passacaglia",
+            performer: performers.itzhak_perlman,
+            link: "https://youtu.be/JSghX91xdPc" 
+        },
+    ],
+}));
+
+// ------------------------------------------------
+// ------------------- Chan --------------------
+// ------------------------------------------------
+
+pieces.push(...augment_map({
+    genre: genres.miniature, 
+    composer: composers.chan, 
+    amazing: [
+        { 
+            title: "Secret Garden",
+            link: "https://youtu.be/M_FZWAzcumw" 
+        },
+    ],
 }));

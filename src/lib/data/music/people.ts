@@ -37,6 +37,18 @@ export const composers = {
     wieniawski: "Wieniawski",
     shostakovich: "Shostakovich",
     korngold: "Korngold",
+    waldteufel: "Waldteufel",
+    marquez: "Márquez",
+    piazzolla: "Piazzolla",
+    abreu: "Abreu",
+    holst: "Holst",
+    shatrov: "Shatrov",
+    torelli: "Torelli",
+    monti: "Monti",
+    massenet: "Massenet",
+    faure: "Faure",
+    halvorsen: "Halvorsen",
+    chan: "Chan",
 } as const;
 
 export const conductors = {
