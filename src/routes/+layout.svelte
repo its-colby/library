@@ -1,9 +1,9 @@
 <script lang="ts">
-    import { apply_color_theme, UNI_THEMES } from '$lib/theme/color_theme';
+    import { theme } from '$lib/common/theme';
     import { onMount } from 'svelte';
     import Header from '$lib/header/Header.svelte';
     onMount(() => {
-        apply_color_theme(document.documentElement, UNI_THEMES.dark);
+        theme.apply(document.documentElement);
     });
 
     let { children } = $props();
@@ -18,6 +18,6 @@
         margin: 0;
         padding: 0;
         font-family: 'Roboto', sans-serif;
-        background-color: var(--content-background-color);
+        background-color: var(--main-background);
     }
 </style>

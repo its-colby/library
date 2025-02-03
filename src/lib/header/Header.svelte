@@ -1,18 +1,18 @@
 <script lang="ts">
     import ColorThemeToggle from '$lib/utils/ColorThemeToggle.svelte';
-    import { active_color_themes } from '$lib/theme/active.svelte';
+    import { theme } from '$lib/common/theme';
 </script>
 
 <header>
     <h2>Colby Anderson</h2>
     <nav><a href="/">Writings</a></nav>
-    <ColorThemeToggle size={25} color_themes={active_color_themes}/>
+    <ColorThemeToggle size={25}/>
 </header>
 
 
 <style>
     header {
-        background-color: var(--header-background-color);
+        background-color: var(--header-background);
         padding: 10px 30px;
         display: flex;
         justify-content: space-between;
@@ -26,14 +26,14 @@
     header h2 {
         font-size: 18px;
         font-weight: 500;
-        color: var(--text-neutral-color);
+        color: var(--text-neutral);
     }
 
     a {
         font-size: 18px;
         font-weight: 500;
         text-decoration: none;
-        color: var(--text-neutral-color);
+        color: var(--text-neutral);
     }
 
     nav {

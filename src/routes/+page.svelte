@@ -14,10 +14,30 @@
             url: "https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming",
         },
     ];
+
+    let mathematics = [
+        {
+            title: "Algebraic Number Theory",
+            url: "mathematics/algebraic_number_theory",
+        },
+        {
+            title: "Abstract Algebra",
+            url: "mathematics/abstract_algebra",
+        },
+        {
+            title: "Diophantine Equations",
+            url: "mathematics/diophantine_equations",
+        },
+        {
+            title: "Elementary Number Theory",
+            url: "mathematics/elementary_number_theory",
+        },
+    ];
 </script>
 
 <main>
     <Section title="Computer Science" items={computer_science} />
+    <Section title="Mathematics" items={mathematics} />
     <Section title="Romantic Music" items={music} />
 </main>
 

@@ -3,13 +3,18 @@
 
     interface Props {
         text: string;
-        data: T;
-        content: Snippet<[T]>;
+        data?: T | undefined;
+        content: Snippet<[T | undefined]>;
         position?: "above" | "below";
     }
 
-    let { text = "", data, content, position = "above" } : Props = $props();
+    let { text = "", data = undefined, content, position = "above" } : Props = $props();
 </script>
+
+<div class="tooltip">
+    {@render content(data)}
+    <div class="tooltip-text {position}">{text}</div>
+</div>
 
 <style>
     .tooltip {
@@ -19,23 +24,20 @@
     }
 
     .tooltip-text {
-        visibility: hidden;
-        width: 300px;
-        background-color: black;
-        color: #fff;
-        text-align: center;
-        border-radius: 5px;
-        padding: 5px;
         position: absolute;
-        z-index: 100;
+        /* bottom: calc(100% + 8px); */
         left: 50%;
-        /* margin-left: -60px; */
         transform: translateX(-50%);
+        background: var(--card-contrast-background);
+        color: var(--text-anti-contrast);
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+        white-space: nowrap;
+        pointer-events: none;
         opacity: 0;
-        transition: opacity 0.3s;
-        box-sizing: border-box;
-        /* white-space: nowrap; */
-        padding: 20px;
+        transition: opacity 0.1s ease;
+        z-index: 1001;
     }
 
     .tooltip-text.above {
@@ -47,12 +49,6 @@
     }
 
     .tooltip:hover .tooltip-text {
-        visibility: visible;
         opacity: 1;
     }
 </style>
-
-<div class="tooltip">
-    {@render content(data)}
-    <div class="tooltip-text {position}">{text}</div>
-</div>

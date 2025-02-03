@@ -281,7 +281,7 @@
         align-items: center;
         gap: 10px;
         margin-bottom: 30px;
-        color: var(--text-neutral-color);
+        color: var(--text-neutral);
         justify-content: flex-end;
     }
 
@@ -307,14 +307,14 @@
 
         font-size: 18px;
         font-weight: 400;
-        color: var(--text-neutral-color);
+        color: var(--text-neutral);
         margin: 0px;
     }
 
     span.group-by-label, span.chosen-group-by, span.group-by-option, aside#preface-container {
         font-size: 18px;
         font-weight: 400;
-        color: var(--text-neutral-color);
+        color: var(--text-neutral);
     }
 
     span.chosen-group-by, span.group-by-option {
@@ -326,7 +326,7 @@
     }
 
     span.chosen-group-by:hover, span.group-by-option:hover {
-        color: var(--text-contrast-color);
+        color: var(--text-contrast);
     }
 
     span.composer {
@@ -339,11 +339,11 @@
 
     a.piece-title {
         text-decoration: none;
-        color: var(--text-brand-color1);
+        color: var(--text-brand);
     }
 
     li.piece-details > span.deficient-piece-title {
-        color: var(--text-neutral-color);
+        color: var(--text-neutral);
         width: 200px;
     }
 
@@ -352,12 +352,12 @@
     }
 
     h1#title, h2.primary-section-header, h3.secondary-section-header {
-        color: var(--text-neutral-color);
+        color: var(--text-neutral);
         margin: 0px;
     }
 
     h3.secondary-section-header.open {
-        color: var(--text-contrast-color);
+        color: var(--text-contrast);
     }
 
     h1#title {
@@ -390,7 +390,7 @@
     }
 
     span.tier-label {
-        color: var(--text-brand-color1);
+        color: var(--text-brand);
     }
 
     span.tier-label-separator {

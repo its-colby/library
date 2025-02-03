@@ -55,7 +55,7 @@
         left: 50%;
         z-index: 101;
         transform: translateX(-50%);
-        background-color: var(--header-background-color);
+        background-color: var(--header-background);
         border-radius: 4px;
         padding: 8px;
         margin-top: 8px;

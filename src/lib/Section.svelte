@@ -24,7 +24,7 @@
         font-size: 24px;
         font-weight: 500;
         margin: 0;
-        color: var(--text-neutral-color);
+        color: var(--text-neutral);
     }
 
     ul {
@@ -42,7 +42,7 @@
 
     h3 a {
         text-decoration: none;
-        color: var(--text-brand-color1);
+        color: var(--text-brand);
     }
 
     h3 a:hover {

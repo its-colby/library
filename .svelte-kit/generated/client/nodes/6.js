@@ -1,0 +1,1 @@
+export { default as component } from "../../../../src/routes/mathematics/elementary_number_theory/+page.svelte";
