@@ -3,19 +3,13 @@
 		"src/routes/+layout.ts",
 		"src/routes/+layout.ts"
 	],
-	"/mathematics/abstract_algebra": [
+	"/algorithms/general-number-field-sieve": [
 		"src/routes/+layout.ts"
 	],
-	"/mathematics/algebraic_number_theory": [
+	"/mathematics/algebraic-number-theory": [
 		"src/routes/+layout.ts"
 	],
-	"/mathematics/diophantine_equations": [
-		"src/routes/+layout.ts"
-	],
-	"/mathematics/elementary_number_theory": [
-		"src/routes/+layout.ts"
-	],
-	"/music/curated_romantic_music": [
+	"/music/curated-romantic-music": [
 		"src/routes/+layout.ts"
 	]
 }

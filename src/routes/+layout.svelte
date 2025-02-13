@@ -1,7 +1,7 @@
 <script lang="ts">
     import { theme } from '$lib/common/theme';
     import { onMount } from 'svelte';
-    import Header from '$lib/header/Header.svelte';
+    import Header from '$lib/ui/header/Header.svelte';
     onMount(() => {
         theme.apply(document.documentElement);
     });

@@ -12,7 +12,7 @@ type EnsureDefined<T> = T extends null | undefined ? {} : T;
 type OptionalUnion<U extends Record<string, any>, A extends keyof U = U extends U ? keyof U : never> = U extends unknown ? { [P in Exclude<A, keyof U>]?: never } & U : never;
 export type Snapshot<T = any> = Kit.Snapshot<T>;
 type PageParentData = EnsureDefined<LayoutData>;
-type LayoutRouteId = RouteId | "/" | "/mathematics/abstract_algebra" | "/mathematics/algebraic_number_theory" | "/mathematics/diophantine_equations" | "/mathematics/elementary_number_theory" | "/music/curated_romantic_music" | null
+type LayoutRouteId = RouteId | "/" | "/algorithms/general-number-field-sieve" | "/mathematics/algebraic-number-theory" | "/music/curated-romantic-music" | null
 type LayoutParams = RouteParams & {  }
 type LayoutParentData = EnsureDefined<{}>;
 

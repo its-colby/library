@@ -1,45 +1,31 @@
 <script lang="ts">
-    import Section from "$lib/Section.svelte";
-
-    let music = [
-        {
-            title: "Curated Romantic Music",
-            url: "music/curated_romantic_music",
-        },
-    ];
-
-    let computer_science = [
-        {
-            title: "The Principles of Software Engineering",
-            url: "https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming",
-        },
-    ];
-
-    let mathematics = [
-        {
-            title: "Algebraic Number Theory",
-            url: "mathematics/algebraic_number_theory",
-        },
-        {
-            title: "Abstract Algebra",
-            url: "mathematics/abstract_algebra",
-        },
-        {
-            title: "Diophantine Equations",
-            url: "mathematics/diophantine_equations",
-        },
-        {
-            title: "Elementary Number Theory",
-            url: "mathematics/elementary_number_theory",
-        },
-    ];
+    import { folders } from "$lib/articles/data.articles";
+    import type { Folder } from "$lib/articles/utils/folder";
+    import type { Page } from "$lib/articles/utils/page";
 </script>
 
 <main>
-    <Section title="Computer Science" items={computer_science} />
-    <Section title="Mathematics" items={mathematics} />
-    <Section title="Romantic Music" items={music} />
+    {#each folders as folder}
+        {@render Section(folder)}
+    {/each}
 </main>
+
+{#snippet Section(folder: Folder)}
+    <section>
+        <h1>{folder.title}</h1>
+        <ul>
+            {#each folder.pages as page}
+                {@render Page(page)}
+            {/each}
+        </ul>
+    </section>
+{/snippet}
+
+{#snippet Page(page: Page)}
+    <li>
+        <h3><a href={page.url}>{page.title}</a></h3>
+    </li>
+{/snippet}
 
 <style>
     main {
@@ -49,5 +35,40 @@
         gap: 50px;
         width: 100%;
         padding-top: 30px;
+    }
+
+    section {
+        width: 500px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 24px;
+        font-weight: 500;
+        margin: 0;
+        color: var(--text-neutral);
+    }
+
+    ul {
+        padding-top: 10px;
+        text-align: left;
+        list-style: none;
+        padding-left: 0;
+    }
+
+    h3 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    h3 a {
+        text-decoration: none;
+        color: var(--text-brand);
+    }
+
+    h3 a:hover {
+        text-decoration: underline;
     }
 </style>
