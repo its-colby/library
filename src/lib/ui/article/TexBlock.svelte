@@ -118,7 +118,7 @@
         margin: 0 auto;
     }
 
-    span.statement-header-number {
+    span.statement-header-number, span.statement-child-number {
         font-size: 16px;
     }
 
