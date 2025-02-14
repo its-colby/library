@@ -1,24 +1,36 @@
-import { type TEX } from "$lib/math/tex";
-import { AlgebraicStructure } from "../utils/Structure";
-import { MonoidOperation } from "$lib/math/operations/index";
+import { type TEX, Block, Notation as N } from "$lib/math/tex";
+import { MonoidOperation, operations } from "$lib/math/operations";
+
+import { AlgebraicStructure } from "../utils";
+
+
+
+export const MONOID_DEFAULT_BB = N.BB.M as TEX;
+
 
 export class Monoid extends AlgebraicStructure {
+
+    public readonly operation: MonoidOperation;
+    
     constructor({
         declaration,
         definitions,
         operation,
-        name
     }: {
-        declaration: TEX,
-        definitions: TEX[],
-        operation: MonoidOperation,
-        name?: string
+        declaration?: TEX,
+        definitions?: Block,
+        operation?: MonoidOperation,
     }) {
+        
+        const op = operation ?? operations.addition;
+        
         super({
-            declaration, 
+            declaration: declaration ?? MONOID_DEFAULT_BB, 
             definitions, 
-            operations: [operation], 
-            name
+            operations: [op], 
         });
+
+        this.operation = op;
     }
+
 }

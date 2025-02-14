@@ -1,7 +1,6 @@
 <script lang="ts">
     import * as x from "$lib/articles/mathematics/algebraic_number_theory";
     import { title, section_title } from "$lib/ui/article/Typographies.svelte";
-    import * as m from "$lib/math/index";
     import Container from "$lib/ui/article/Container.svelte";
     import SectionContainer from "$lib/ui/article/SectionContainer.svelte";
     import TexInformative from "$lib/ui/article/TexInformative.svelte";

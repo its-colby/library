@@ -6,9 +6,9 @@
     let { informative }: { informative: Informative } = $props();
 </script>
 
-{#each informative.add_type() as { item, type }}
-    {#if type === "block"}
-        <TexBlock block={item as Block} />
+{#each informative.content as item}
+    {#if item instanceof Block}
+        <TexBlock block={item} />
     {:else}
         <TexParagraph paragraph={item as Paragraph} />
     {/if}

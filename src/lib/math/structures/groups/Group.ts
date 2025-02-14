@@ -1,19 +1,29 @@
-import type { GroupOperation } from "$lib/math/operations/index";
-import type { TEX } from "$lib/math/tex";
+import { GroupOperation, operations } from "$lib/math/operations";
+import { type TEX, Block, Notation as N } from "$lib/math/tex";
+
 import { Monoid } from "./Monoid";
 
+
+
+export const GROUP_DEFAULT_BB = N.BB.G as TEX;
+
+
 export class Group extends Monoid {
+
     constructor({
         declaration,
         definitions,
         operation,
-        name
     }: {
-        declaration: TEX,
-        definitions: TEX[],
-        operation: GroupOperation,
-        name?: string
+        declaration?: TEX,
+        definitions?: Block,
+        operation?: GroupOperation,
     }) {
-        super({declaration, definitions, operation, name});
+
+        super({
+            declaration: declaration ?? GROUP_DEFAULT_BB, 
+            definitions, 
+            operation: operation ?? operations.addition,
+        });
     }
 }
