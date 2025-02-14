@@ -1,5 +1,5 @@
 import { Block, Notation as N, Statement } from "$lib/math/tex";
-import { Field, FIELD_BB, COMMUTATIVE_RING_BB } from "$lib/math/structures/";
+import { Field, FIELD_BB, COMMUTATIVE_RING_BB } from "$lib/math/structures";
 
 
 
