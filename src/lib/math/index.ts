@@ -1,6 +1,7 @@
-export * from './operations/index';
-export * from './structures/index';
-export * from './tex/index';
+export * from './operation';
+export * from './entities';
+export * from './structures';
+export * from './tex';
 
 export * from './galois_group';
 export * from './polynomial';
