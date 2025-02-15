@@ -74,12 +74,12 @@ export class Label {
         switch (this._label_type) {
             case LabelType.DEFINITION:
                 label = this._label_config.shorten_label_type ? 
-                    Tex.from_text("def") :
+                    Tex.from_text("def.") :
                     Tex.from_text("Definition");
                 break;
             case LabelType.EXAMPLE:
                 label = this._label_config.shorten_label_type ? 
-                    Tex.from_text("ex") :
+                    Tex.from_text("ex.") :
                     Tex.from_text("Example");
                 break;
         }

@@ -25,6 +25,7 @@ export const section2 = new m.Content(
         m.ALGEBRAIC_INTEGERS_OF_K,
         m.TWO_SIDED_IDEAL,
         m.IDEALS_OF_THE_INTEGERS,
+        m.IDEAL_OF_CONTINUOUS_FUNCTION,
     ]
 )
 

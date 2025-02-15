@@ -2,7 +2,11 @@ import { Block, Statement, Tex } from "$lib/math/tex";
 
 const DEFINITION = 
 `
-    K = \\{ a \\in \\mathbb{Q}(a_1, a_2, \\ldots, a_n) \\mid [K : \\mathbb{Q}] < \\infty \\}
+    \\mathbb{K} = \\{ \\enspace 
+        a \\in \\mathbb{Q}(a_1, \\ \\ldots, \\ a_\\text{n}) 
+        \\enspace \\mid \\enspace
+        [\\mathbb{K} : \\mathbb{Q}] < \\infty 
+    \\enspace \\}
 `
 
 export const AN_ALGEBRAIC_NUMBER_FIELD = Block.from_definition({

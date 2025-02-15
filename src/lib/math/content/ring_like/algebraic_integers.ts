@@ -2,7 +2,15 @@ import { Block, Statement, Tex } from "$lib/math/tex";
 
 const DEFINITION = 
 `
-    \\mathcal{O} = \\{ a \\in \\mathbb{C} \\mid \\exists f \\in \\mathbb{Z}[x], \\text{f is monic and } f(a) = 0 \\}
+    \\mathcal{O} = \\{ \\enspace 
+        a \\in \\mathbb{C} 
+        \\enspace \\mid \\enspace 
+        \\exists f \\in \\mathbb{Z}[x]
+        \\enspace , \\enspace 
+        f \\text{ is monic}
+        \\enspace \\land \\enspace 
+        f(a) = 0 
+    \\enspace \\}
 `
 
 

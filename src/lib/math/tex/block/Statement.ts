@@ -62,6 +62,43 @@ export class Statement {
         });
     }
 
+    public static from_example(value: Tex) {
+        return new Statement({
+            primary: new Expression({
+                value,
+                label_type: LabelType.EXAMPLE
+            })
+        });
+    }
+
+    public static example_with_conditions({
+        example,
+        conditions
+    }: {
+        example: Tex,
+        conditions: Tex[]
+    }) {
+        return new Statement({
+            primary: new Expression({
+                value: example,
+                label_type: LabelType.EXAMPLE
+            }),
+            secondaries: conditions.map(condition => new Expression({
+                value: condition,
+                label_type: LabelType.CONDITION
+            }))
+        });
+    }
+
+    public static from_definition(value: Tex) {
+        return new Statement({
+            primary: new Expression({
+                value,
+                label_type: LabelType.DEFINITION
+            })
+        });
+    }
+    
     public static with_conditions({
         primary,
         conditions

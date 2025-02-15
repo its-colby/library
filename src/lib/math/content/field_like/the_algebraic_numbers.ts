@@ -3,7 +3,13 @@ import { Block, Statement, Tex } from "$lib/math/tex";
 
 const DEFINITION = 
 `
-    \\mathbb{A} = \\{ a \\in \\mathbb{C} \\mid \\exists f \\in \\mathbb{Q}[x], f(a) = 0 \\}
+    \\mathbb{A} = \\{ \\enspace 
+        a \\in \\mathbb{C} 
+        \\enspace \\mid \\enspace  
+        \\exists f \\in \\mathbb{Q}[x]
+        \\enspace , \\enspace 
+        f(a) = 0
+    \\enspace \\}
 `
 
 export const THE_ALGEBRAIC_NUMBERS = Block.from_definition({

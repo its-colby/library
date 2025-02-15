@@ -69,8 +69,8 @@
         flex-direction: column;
         gap: 10px;
 
-        margin-top: 20px;
-        margin-bottom: 20px;
+        margin-top: 40px;
+        margin-bottom: 40px;
 
         color: var(--text-brand);
         font-size: 20px;

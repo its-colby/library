@@ -12,7 +12,13 @@ const CONDITION_A =
 
 const CONDITION_B =
 `
-    \\forall a \\in \\mathcal{I}, \\forall b \\in \\mathcal{R}, a \\cdot b \\in \\mathcal{I}
+    \\forall a \\in \\mathcal{I}
+    \\enspace , \\enspace 
+    \\forall b \\in \\mathcal{R}
+    \\enspace , \\enspace 
+    a \\cdot b \\in \\mathcal{I}
+    \\enspace \\land \\enspace 
+    b \\cdot a \\in \\mathcal{I}
 `;
 
 export const TWO_SIDED_IDEAL = Block.from_definition({
