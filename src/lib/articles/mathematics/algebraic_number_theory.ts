@@ -6,27 +6,26 @@ export const algebraic_number_theory = new Page({
     url: "/mathematics/algebraic-number-theory",
 });
 
-export const preface_title = m.SectionTitle.preface({ number: "1" });
+export const preface_title = { text: "Preface", number: "1" };
 
-export const section_2_title = new m.SectionTitle({ text: "Section", number: "2" });
+export const section_2_title = { text: "Section", number: "2" };
 
-export const section2 = new m.Informative({
-    content: [
-        new m.Paragraph({ 
-            content: [
+export const section2 = new m.Content(
+    [
+        new m.Inline({ 
+            value: [
                 "Hello here is the ",
-                {t: "\\land" as m.TEX},
+                new m.Tex("\\land"),
                 " symbol"
             ]
         }),
-        m.FIELDS.ALGEBRAIC_NUMBERS.definitions.value,
-        m.FIELD_EXTENSIONS.ALGEBRAIC_NUMBER_FIELD.definitions.value,
-        m.COMMUTATIVE_RINGS.ALGEBRAIC_INTEGERS.definitions.value,
-        m.COMMUTATIVE_RINGS.ALGEBRAIC_INTEGERS_OF_K.definitions.value,
-        m.TWO_SIDED_IDEAL_DEFINITION,
+        m.THE_ALGEBRAIC_NUMBERS,
+        m.AN_ALGEBRAIC_NUMBER_FIELD,
+        m.THE_ALGEBRAIC_INTEGERS,
+        m.ALGEBRAIC_INTEGERS_OF_K,
+        m.TWO_SIDED_IDEAL,
+        m.IDEALS_OF_THE_INTEGERS,
     ]
-});
+)
 
-section2.add_numbers({
-    parent_number: "2" as m.TEX,
-});
+section2.assign_block_indices({ prefixed_index: new m.Tex("2") });

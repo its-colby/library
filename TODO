@@ -1,7 +1,8 @@
-remove some index.ts to fix circular dependencies
-like-term-multiplication/addition
+better naming like notation instead of declaration
+switch some entities to structures like a number field for example
 ideal mult/addition
-quotient ring
 R to R/I surjective homomorphism
 tex refactor
 ui block  and statementfix up
+make TEX class with . syntax chaining
+example as children of statement or conditions, more fine-grained labels

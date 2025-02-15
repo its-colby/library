@@ -1,20 +1,21 @@
 <script lang="ts">
-    import { Block, Statement, type TEX } from '$lib/math/tex';
+    import { Block, Statement, Expression } from '$lib/math/tex';
     import katex from 'katex';
     import 'katex/dist/katex.min.css';
+    import BlockHeader from '$lib/ui/article/block/BlockHeader.svelte';
 
     let { block } : {block: Block} = $props();
 </script>
 
-{#snippet statement_children(items: TEX[])}
+{#snippet statement_children(items: Expression[])}
     <div class="statement-children-container">
         {#each items as item, index}
             <div class="statement-child-container">
                 <span class="statement-child-number">
-                    {@html katex.renderToString(`(\\text{${String.fromCharCode(97 + index)}})`, { throwOnError: false })}
+                    {@html katex.renderToString(item.label.value, { throwOnError: false })}
                 </span>
                 <span class="statement-child">
-                    {@html katex.renderToString(item, { throwOnError: false })}
+                    {@html katex.renderToString(item.value.value, { throwOnError: false })}
                 </span>
             </div>
         {/each}
@@ -26,13 +27,13 @@
         <span 
             class="statement-header-text" 
             class:multiple-statements={multiple_statements}
-            class:has-children={data.has_children}
+            class:has-children={data.has_secondaries}
         >
-            {@html katex.renderToString(data.header, { throwOnError: false })}
+            {@html katex.renderToString(data.primary.value.value, { throwOnError: false })}
         </span>
-        {#if data.has_label && multiple_statements}
+        {#if multiple_statements}
             <span class="statement-header-number">
-                {@html katex.renderToString(data.label.value, { throwOnError: false })}
+                {@html katex.renderToString(data.primary.label.value, { throwOnError: false })}
             </span>
         {/if}
     </div>
@@ -41,8 +42,8 @@
 {#snippet statement(data: Statement, multiple_statements: boolean)}
     <div class="statement-container">
         {@render statement_header(data, multiple_statements)}
-        {#if data.has_children}
-            {@render statement_children(data.children.value)}
+        {#if data.has_secondaries}
+            {@render statement_children(data.secondaries.value)}
         {/if}
     </div>
 {/snippet}
@@ -55,22 +56,9 @@
     </div>
 {/snippet}
 
-{#snippet block_header(data: Block)}
-    <div class="block-header-container">
-        <span class="block-title">
-            {@html katex.renderToString(data.title, { throwOnError: false })}
-        </span>
-        {#if data.has_number}
-            <span class="block-number">
-                {@html katex.renderToString(data.number, { throwOnError: false })}
-            </span>
-        {/if}
-    </div>
-{/snippet}
-
 <div class="block-container">
     {#if block.has_header}
-        {@render block_header(block)}
+        <BlockHeader header={block.header.value} />
     {/if}
     {@render statements(block.statements)}
 </div>
@@ -86,13 +74,6 @@
 
         color: var(--text-brand);
         font-size: 20px;
-    }
-
-    div.block-header-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
     }
 
     div.statements-container {

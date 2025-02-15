@@ -3,7 +3,7 @@
     import { title, section_title } from "$lib/ui/article/Typographies.svelte";
     import Container from "$lib/ui/article/Container.svelte";
     import SectionContainer from "$lib/ui/article/SectionContainer.svelte";
-    import TexInformative from "$lib/ui/article/TexInformative.svelte";
+    import TexContent from "$lib/ui/article/TexContent.svelte";
     // () used for fields, [] used for rings
     // gothic used for ideals
     // calligraphic
@@ -32,7 +32,7 @@
     {@render section_title(x.preface_title)}
     {@render section_title(x.section_2_title)}
     <SectionContainer>
-        <TexInformative informative={x.section2} />
+        <TexContent content={x.section2} />
     </SectionContainer>
 
 </Container>
