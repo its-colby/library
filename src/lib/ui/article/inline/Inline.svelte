@@ -8,7 +8,7 @@
 
 {#each inline.value as item}
     {#if typeof item === 'string'}
-        <span>
+        <span class="text">
             {item}
         </span>
     {:else}
@@ -20,10 +20,11 @@
 
 <style>
     span {
-        font-size: 18px;
+        font-size: var(--font-size, 20px);
+        line-height: 1.5;
     }
 
     span.tex {
-        color: var(--text-brand);
+        color: var(--tex-color, var(--text-brand));
     }
 </style>

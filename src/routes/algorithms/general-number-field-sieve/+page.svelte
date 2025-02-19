@@ -1,5 +1,5 @@
 <script lang="ts">
-    import TexBlock from "$lib/ui/article/TexBlock.svelte";
+    import TexBlock from "$lib/ui/article/block/core/Block.svelte";
     import * as m from "$lib/math/index";
 
     // Notes:

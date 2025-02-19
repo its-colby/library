@@ -14,7 +14,7 @@ seated kata gatame (close to guillotine, arm-in on carotid) - guillotines not ar
 
 
 
-
+position before submission, HOWEVER you sometimes use the threat of submission (b4 a good position) to force a reaction and then advance to better position
 
 
 # Top Arm Triangle Strangle

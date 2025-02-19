@@ -77,6 +77,11 @@ export class Label {
                     Tex.from_text("def.") :
                     Tex.from_text("Definition");
                 break;
+            case LabelType.PROOF:
+                label = this._label_config.shorten_label_type ? 
+                    Tex.from_text("prf.") :
+                    Tex.from_text("Proof");
+                break;
             case LabelType.EXAMPLE:
                 label = this._label_config.shorten_label_type ? 
                     Tex.from_text("ex.") :

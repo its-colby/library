@@ -9,6 +9,9 @@
 	"/mathematics/algebraic-number-theory": [
 		"src/routes/+layout.ts"
 	],
+	"/mathematics/topology": [
+		"src/routes/+layout.ts"
+	],
 	"/music/curated-romantic-music": [
 		"src/routes/+layout.ts"
 	]

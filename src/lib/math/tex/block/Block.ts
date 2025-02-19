@@ -60,6 +60,20 @@ export class Block {
         });
     }
 
+    public static from_proof({
+        title,
+        statements
+    }: {
+        title: Tex,
+        statements: Statement[]
+    }) {
+        return new Block({
+            title,
+            label: LabelType.PROOF,
+            statements
+        });
+    }
+
     public static from_example({
         title,
         statements

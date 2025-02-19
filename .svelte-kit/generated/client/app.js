@@ -6,7 +6,8 @@ export const nodes = [
 	() => import('./nodes/2'),
 	() => import('./nodes/3'),
 	() => import('./nodes/4'),
-	() => import('./nodes/5')
+	() => import('./nodes/5'),
+	() => import('./nodes/6')
 ];
 
 export const server_loads = [];
@@ -15,7 +16,8 @@ export const dictionary = {
 		"/": [2],
 		"/algorithms/general-number-field-sieve": [3],
 		"/mathematics/algebraic-number-theory": [4],
-		"/music/curated-romantic-music": [5]
+		"/mathematics/topology": [5],
+		"/music/curated-romantic-music": [6]
 	};
 
 export const hooks = {

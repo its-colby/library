@@ -1,7 +1,5 @@
 <script lang="ts">
-    import { folders } from "$lib/articles/data.articles";
-    import type { Folder } from "$lib/articles/utils/folder";
-    import type { Page } from "$lib/articles/utils/page";
+    import { Folder, Page, folders } from "$lib/articles";
 </script>
 
 <main>
@@ -15,13 +13,13 @@
         <h1>{folder.title}</h1>
         <ul>
             {#each folder.pages as page}
-                {@render Page(page)}
+                {@render page_link(page)}
             {/each}
         </ul>
     </section>
 {/snippet}
 
-{#snippet Page(page: Page)}
+{#snippet page_link(page: Page)}
     <li>
         <h3><a href={page.url}>{page.title}</a></h3>
     </li>
@@ -51,6 +49,9 @@
     }
 
     ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
         padding-top: 10px;
         text-align: left;
         list-style: none;
@@ -59,7 +60,7 @@
 
     h3 {
         margin: 0;
-        font-size: 18px;
+        font-size: 20px;
         font-weight: 400;
     }
 

@@ -5,7 +5,7 @@ type TextOrTex = string | Tex;
 export class Inline {
     public readonly value: TextOrTex[];
 
-    constructor({ value }: { value: TextOrTex[] }) {
+    constructor(value: TextOrTex[]) {
         this.value = value;
     }
 }

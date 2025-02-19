@@ -1,6 +1,6 @@
-import { Page } from "$lib/articles/utils/page";
+import { Page } from "$lib/articles/utils";
 
-export const general_number_field_sieve = new Page({
+export const metadata = new Page({
     title: "General Number Field Sieve",
     url: "/algorithms/general-number-field-sieve"
 })

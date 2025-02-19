@@ -1,4 +1,4 @@
-import type { Page } from "$lib/articles/utils/page";
+import type { Page } from "./page";
 
 export class Folder {
     public title: string;
