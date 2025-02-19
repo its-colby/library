@@ -1,0 +1,116 @@
+import { Block } from "$lib/tex/block";
+import { Tex } from "$lib/tex/notation";
+import { Inline, Title } from "$lib/tex/inline";
+import { Optional } from "$lib/common/optional.type";
+
+
+// prefix = prev.section
+
+// section (prefix = undefined, depth = 0, index = undefined)
+
+// title (section.prefix, section.index)
+
+// ----section 1 (prefix = undefined, depth = 1, index = 0)
+
+// --------title 1 (prefix = undefined, index = depth)
+
+// --------subsection (prefix = 1, depth = 2, index = 0)
+// --------------title  1.1
+// --------------block  1.1.1
+// --------------inline
+
+// --------subsection (prefix = 1, depth = 2, index = 1)
+// --------------title 1.2
+// --------------block 1.2.1
+// --------------inline
+
+// -----section 2 (prefix = undefined, depth = 1, index = 1)
+
+// --------title 2 (prefix = undefined, index = 1)
+
+// --------subsection (prefix = section.index + 1, depth = section.depth + 1, index = 1)
+// --------------title  2.1
+// --------------block  2.1.1
+// --------------inline
+
+// --------subsection 
+// --------------title 2.2
+// --------------block 2.2.1
+// --------------inline
+
+export class Section {
+    public readonly title: Title;
+    public section_depth: Optional<number> = Optional.none();
+    private _show_content: boolean;
+    public sections: Optional<Section[]>;
+    public content: Optional<(Inline | Block)[]>;
+
+    constructor({
+        title,
+        sections,
+        content
+    }: {
+        title: Title,
+        sections?: Section[],
+        content?: (Inline | Block)[]
+    }) {
+        this.title = title;
+        this.sections = sections ? Optional.set(sections) : Optional.none();
+        this.content = content ? Optional.set(content) : Optional.none();
+        this._show_content = content !== undefined;
+    }
+
+    public get show_content(): boolean {
+        return this._show_content && this.content.is_set();
+    }
+
+    public get show_sections(): boolean {
+        return !this._show_content && this.sections.is_set();
+    }
+
+    public get depth(): number {
+        return this.section_depth.is_set() ? this.section_depth.value : 0;
+    }
+
+    public assign_indices({
+        prefixed_index,
+        index,
+        depth = 0
+    }: {
+        prefixed_index?: Tex,
+        index?: number,
+        depth?: number
+    }) {
+
+        this.section_depth = Optional.set(depth);
+
+        this.title.set_index({
+            index: depth === 0 ?
+                undefined :
+                index,
+            prefixed_index
+        });
+
+        const new_prefixed_index = this.title.label.entire_index();
+
+        if (this.show_sections) {
+            this.sections.value.forEach((section, index) => {
+                section.assign_indices({
+                    prefixed_index: new_prefixed_index,
+                    depth: depth + 1,
+                    index: index
+                });
+            });
+        } else if (this.show_content) {
+            let block_index = 0;
+            this.content.value.forEach((item) => {
+                if (item instanceof Block) {
+                    item.set_index({
+                        prefixed_index: new_prefixed_index,
+                        index: block_index++
+                    });
+                }
+            });
+        }
+    }
+}

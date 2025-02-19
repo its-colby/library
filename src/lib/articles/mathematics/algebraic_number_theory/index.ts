@@ -1,19 +1,23 @@
 import { Page } from "$lib/articles/utils";
-import { Tex } from "$lib/math";
+import { Title, Inline, Section, IndexType } from "$lib/tex";
 
 export const metadata = new Page({
     title: "Algebraic Number Theory",
     url: "/mathematics/algebraic-number-theory",
 });
 
-import { PREFACE } from "./preface";
-PREFACE.title.set_label(new Tex("1"));
-PREFACE.content.assign_block_indices({ prefixed_index: new Tex("1") });
+import { PREFACE_SECTION } from "./preface";
+import { THE_SET_OF_ALGEBRAIC_NUMBERS_SECTION } from "./the_set_of_algebraic_numbers";
 
-export * from "./preface";
+export const CONTENT = new Section({
+    title: new Title({
+        inline: new Inline([metadata.title]),
+        index_type: IndexType.NONE
+    }),
+    sections: [
+        PREFACE_SECTION,
+        THE_SET_OF_ALGEBRAIC_NUMBERS_SECTION
+    ]
+});
 
-import { THE_SET_OF_ALGEBRAIC_NUMBERS } from "./the_set_of_algebraic_numbers";
-THE_SET_OF_ALGEBRAIC_NUMBERS.title.set_label(new Tex("2"));
-THE_SET_OF_ALGEBRAIC_NUMBERS.content.assign_block_indices({ prefixed_index: new Tex("2") });
-
-export * from "./the_set_of_algebraic_numbers";
+CONTENT.assign_indices({});

@@ -1,4 +1,4 @@
-import { Inline, Content, Title } from "$lib/math/tex";
+import { Inline, Section, Title } from "$lib/tex";
 
 const TITLE = new Title({
     inline: new Inline(["Preface"])
@@ -12,12 +12,10 @@ const PARAGRAPH_2 = new Inline([
     `Intended as a detailed reference, this document does not aim to teach or meet pedagogical standards. While it may aid learning, it is not designed for mastery.`
 ]);
 
-const CONTENT = new Content([
-    PARAGRAPH_1,
-    PARAGRAPH_2
-]);
-
-export const PREFACE = {
+export const PREFACE_SECTION = new Section({
     title: TITLE,
-    content: CONTENT
-}
+    content: [
+        PARAGRAPH_1,
+        PARAGRAPH_2
+    ]
+});

@@ -1,6 +1,4 @@
 <script lang="ts">
-    import TexBlock from "$lib/ui/article/block/core/Block.svelte";
-    import * as m from "$lib/math/index";
 
     // Notes:
     // - https://personal.math.vt.edu/brown/doc/briggs_gnfs_thesis.pdf

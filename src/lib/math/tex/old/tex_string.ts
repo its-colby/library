@@ -1,1 +1,0 @@
-export type TEX = string & {__brand: 'TEX'};
