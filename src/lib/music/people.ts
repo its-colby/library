@@ -40,6 +40,7 @@ export const composers = {
     waldteufel: "Waldteufel",
     marquez: "Márquez",
     piazzolla: "Piazzolla",
+    prokofiev: "Prokofiev",
     abreu: "Abreu",
     holst: "Holst",
     shatrov: "Shatrov",

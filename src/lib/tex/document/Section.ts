@@ -102,13 +102,14 @@ export class Section {
                 });
             });
         } else if (this.show_content) {
-            let block_index = 0;
+            let statement_index = 0;
             this.content.value.forEach((item) => {
                 if (item instanceof Block) {
                     item.set_index({
                         prefixed_index: new_prefixed_index,
-                        index: block_index++
+                        index: statement_index
                     });
+                    statement_index += item.num_statements;
                 }
             });
         }

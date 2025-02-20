@@ -1,80 +1,73 @@
 import { Block, OneLineStatement, Inline, Section, Tex, Title } from "$lib/tex";
 
-const PARAGRAPH_1 = new Inline([
-    `Now, we will move on to roots of numbers. Lets start with the same strategy: set `, new Tex("x"), ` equal to a root of a number, and rearrange to get 0 on one-side. This can be seen in 2.3.1 as an example, and 2.3.2 as a general statement.`
+const P1 = new Inline([
+    `Let's try to reverse engineer more general statements about the set of algebraic numbers. Let's take the same approach with roots.`
 ]);
 
-const PARAGRAPH_2 = new Inline([
-    `As 2.3.3 shows, we don't have to stop here. We can show this for a nested root as well. Of course, we can do this arbitrarily many times. Let's formalize this into a stronger claim. Any nth degree root of an algebraic number is algebraic. In 2.3.4, we define a standard polynomial with rational coefficients, thus its root is algebraic by definition. Then, in 2.3.5, we construct another polynomial whose variables are all exponentially scaled versions of the original polynomial's variables. Lastly, we show that the root of the new polynomial is also algebraic in 2.3.6.`
+const P2 = Block.from_multiple_statements([
+    new Tex(`x = \\sqrt[3]{\\frac{2}{3}} \\quad \\to \\quad x^3 = \\frac{2}{3} \\quad \\to \\quad 3x^3 = 2 \\quad \\to \\quad 3x^3 - 2 = 0`),
+    new Tex(`3x^3 - 2 \\in \\mathbb{Q}[x] \\quad \\therefore \\quad \\sqrt[3]{\\frac{2}{3}} \\in \\mathbb{A}`)
 ]);
 
-const EXAMPLE_NTH_ROOT =
-`
-    \\sqrt[3]{2} 
-    \\enspace \\to \\enspace 
-    x = \\sqrt[3]{2}
-    \\enspace \\to \\enspace
-    x^3 = 2
-    \\enspace \\to \\enspace
-    x^3 - 2 = 0
-`;
+const P3 = new Inline([
+    `Now, lets substitute in variables to make this more general.`
+]);
 
-const GENERAL_NTH_ROOT =
-`
-    \\forall n \\in \\mathbb{N}
-    \\enspace , \\enspace
-    x^n - k \\in \\mathbb{Q}[x] 
-    \\implies
-    \\sqrt[n]{k} \\text{ is algebraic}
-`;
+const P4 = Block.from_multiple_statements([
+    new Tex(`\\sqrt[n]{\\frac{a}{b}} \\enspace \\mid \\enspace n \\in \\mathbb{N}\\enspace , \\enspace a, b \\in \\mathbb{Z}`),
+    new Tex(`x = \\sqrt[n]{\\frac{a}{b}} \\quad \\to \\quad x^n = \\frac{a}{b} \\quad \\to \\quad bx^n = a \\quad \\to \\quad bx^n - a = 0`),
+    new Tex(`bx^n - a \\in \\mathbb{Q}[x] \\quad \\therefore \\quad \\sqrt[n]{\\frac{a}{b}} \\in \\mathbb{A}`)
+]);
 
-const STRONG_PATTERN =
-`
-    \\forall m, n \\in \\mathbb{N}
-    \\enspace , \\enspace
-    x^{mn} - k \\in \\mathbb{Q}[x] 
-    \\implies
-    \\sqrt[m]{\\sqrt[n]{k}} \\text{ is algebraic}
-`;
+const P5 = new Inline([
+    `Thus, all nth degree roots of rational numbers are algebraic. However, we can prove an even more general statement than this. Let's compare the following two polynomials.`
+]);
 
-const STEP_1 = 
-`
-    \\exists f \\in \\mathbb{Q}[x] 
-    \\enspace , \\enspace
-    f(x) = a_nx^n + \\cdots + a_1x + a_0
-    \\enspace , \\enspace
-    f(\\alpha) = 0
-    \\implies
-    \\alpha \\in \\mathbb{A}
-`;
+const P6 = Block.from_multiple_statements([
+    new Tex(`f(x) = x^6 - 2x^2 - 8 \\quad \\in \\mathbb{Q}[x]`),
+    new Tex(`g(x) = x^3 - 2x - 8 \\quad \\in \\mathbb{Q}[x]`)
+]);
 
-const STEP_2 = 
-`
-    \\text{Let } g(x) = f(x^k) = a_nx^{nk} + \\cdots + a_1x^k + a_0
-    \\implies
-    g \\in \\mathbb{Q}[x]
-`;
+const P7 = new Inline([
+    `Notice that the first polynomial has a consistently higher degree in each term. Namely, if you were to divide each exponent in the first polynomial by 2, you would get the second polynomial. Let's rearrange these polynomials a bit to make this more clear.`
+]);
 
-const STEP_3 =
-`
-    \\text{Let } \\beta = \\sqrt[k]{\\alpha}
-    \\implies
-    g(\\beta) = f(\\beta^k) = f(\\alpha) = 0
-    \\enspace \\therefore \\enspace
-    \\beta \\in \\mathbb{A}
-`;
+const P8 = Block.from_multiple_statements([
+    new Tex(`f(x) = (x^2)^3 - 2(x^2)^1 - 8 \\quad \\in \\mathbb{Q}[x]`),
+    new Tex(`g(x) = (x)^3 - 2(x)^1 - 8 \\quad \\in \\mathbb{Q}[x]`)
+]);
 
-const BLOCK = Block.from_proof({
-    title: Tex.from_text("Roots of Algebraic Numbers are Algebraic"),
-    statements: [
-        new OneLineStatement({ value: new Tex(EXAMPLE_NTH_ROOT) }),
-        new OneLineStatement({ value: new Tex(GENERAL_NTH_ROOT) }),
-        new OneLineStatement({ value: new Tex(STRONG_PATTERN) }),
-        new OneLineStatement({ value: new Tex(STEP_1) }),
-        new OneLineStatement({ value: new Tex(STEP_2) }),
-        new OneLineStatement({ value: new Tex(STEP_3) })
-    ]
-});
+const P9 = new Inline([
+    `In this form, it is clear to see that`
+]);
+
+const P10 = Block.from_single_statement(
+    new Tex(`f(x) = g(x^2)`)
+);
+
+const P11 = new Inline([
+    `Thus, if `, new Tex(`f(x)`), ` has a soluation at `, new Tex(`\\alpha`), ` then `, new Tex(`g(x)`), ` must have a solution at `, new Tex(`\\alpha^2`), `. Or, alternatively, if `, new Tex(`g(x)`), ` has a solution at `, new Tex(`\\beta`), ` then `, new Tex(`f(x)`), ` must have a solution at `, new Tex(`\\sqrt{\\beta}`), `.`
+]);
+
+const P12 = Block.from_multiple_statements([
+    new Tex(`f(\\alpha) = g(\\alpha^2) = 0`),
+    new Tex(`f(\\sqrt{\\beta}) = g(\\beta) = 0`)
+]);
+
+const P13 = new Inline([
+    `Now, lets fill our example in with variables, and prove a more general statement. We will create two functions, just as before, where `, new Tex(`f(x) = g(x^k)`), `. Then, we will show two claims. The first is that an algebraic number raised to the `, new Tex(`k`), `th power is algebraic. This is shown through the variable `, new Tex(`\\alpha`), `. Then, we will show that the `, new Tex(`k`), `th root of an algebraic number is algebraic. This is shown through the variable `, new Tex(`\\beta`), `. `
+]);
+
+const P14 = Block.from_multiple_statements([
+    new Tex(`g(x) = a_nx^n + \\cdots + a_1x + a_0 \\quad \\in \\mathbb{Q}[x]`),
+    new Tex(`f(x) = a_n(x^k)^n + \\cdots + a_1(x^k) + a_0 \\quad \\in \\mathbb{Q}[x]`),
+    new Tex(`f(x) = g(x^k)`),
+    new Tex(`f(\\alpha) = 0 \\implies g(\\alpha^k) = 0`),
+    new Tex(`g(\\beta) = 0 \\implies f(\\sqrt[k]{\\beta}) = 0`),
+    new Tex(`f \\in \\mathbb{Q}[x] \\therefore \\alpha \\in \\mathbb{A}`),
+    new Tex(`g \\in \\mathbb{Q}[x] \\therefore \\beta \\in \\mathbb{A}`),
+    new Tex(`\\therefore \\quad \\alpha^k, \\sqrt[k]{\\beta} \\in \\mathbb{A}`)
+]);
 
 export const ROOTS_SECTION = new Section({
     title: new Title({
@@ -83,8 +76,19 @@ export const ROOTS_SECTION = new Section({
         ]),
     }),
     content: [
-        PARAGRAPH_1,
-        PARAGRAPH_2,
-        BLOCK
+        P1,
+        P2,
+        P3,
+        P4,
+        P5,
+        P6, 
+        P7,
+        P8,
+        P9,
+        P10,
+        P11,
+        P12,
+        P13,
+        P14
     ]
 })

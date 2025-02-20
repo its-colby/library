@@ -1,1 +1,1 @@
-export { default as component } from "../../../../src/routes/algorithms/general-number-field-sieve/+page.svelte";
+export { default as component } from "../../../../src/routes/mathematics/algebraic-number-theory/+page.svelte";

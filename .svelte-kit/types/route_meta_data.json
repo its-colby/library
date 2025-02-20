@@ -3,13 +3,10 @@
 		"src/routes/+layout.ts",
 		"src/routes/+layout.ts"
 	],
-	"/algorithms/general-number-field-sieve": [
-		"src/routes/+layout.ts"
-	],
 	"/mathematics/algebraic-number-theory": [
 		"src/routes/+layout.ts"
 	],
-	"/mathematics/topology": [
+	"/mathematics/ring-theory": [
 		"src/routes/+layout.ts"
 	],
 	"/music/curated-romantic-music": [

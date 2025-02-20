@@ -1,54 +1,46 @@
 import { Block, OneLineStatement, Inline, Section, Tex, Title } from "$lib/tex";
 
-const PARAGRAPH_1 = new Inline([
+const P1 = new Inline([
     `Henceforth, the adjective 'algebraic' will denote whether or not a number is an algebraic number.`
 ]);
 
-const PARAGRAPH_2 = new Inline([
-    `We know from experience that `, new Tex("\\sqrt{2}"), `, `, new Tex("i"), `, and `, new Tex("9"), ` are algebraic. But what does the set of algebraic numbers look like as a whole? Are all rational numbers algebraic? Which complex numbers aren't? To answer these questions, we will examine sets of numbers we suspect to be algebraic, like the rationals and integers, and attempt to construct univariate polynomials with rational coefficients that have them as solutions. Success indicates the number is algebraic; failure indicates it is not.`
+const P2 = new Inline([
+    `From now on, our goal will be to prove facts about the set of algebraic numbers. To start, we will prove which numbers are algebraic. Of course, we could simply define a random polynomial over the rationals, find the solution, and claim the number is algebraic.`
 ]);
 
-const PARAGRAPH_3 = new Inline([
-    `All rational numbers can be represented as a proportion of two integers. All one simply has to do is set this fraction equal to `, new Tex("x"), `, and attempt to rearrange and get 0 on one-side. This can be seen in 2.2.1 as an example, and 2.2.2 as a general statement.`
+const P3 = Block.from_multiple_statements([
+    new Tex("x^2 - 2 \\in \\mathbb{Q}[x]"),
+    new Tex("x^2 - 2 = 0 \\quad \\to \\quad x = \\pm \\sqrt{2} \\quad \\therefore \\quad \\pm \\sqrt{2} \\in \\mathbb{A}"),
+    new Tex("x^2 + 1 \\in \\mathbb{Q}[x]"),
+    new Tex("x^2 + 1 = 0 \\quad \\to \\quad x = \\pm i \\quad \\therefore \\quad \\pm i \\in \\mathbb{A}"),
+])
+
+const P4 = new Inline([
+    `However, ideally we could prove more general statements rather than iterating through all known polynomials one by one. First, observe that we don't have to define a polynomial, then attempt to solve it. Instead, we could define a solution, and attempt to derive its corresponding polynomial.`
 ]);
 
-const PARAGRAPH_4 = new Inline([
-    `Since all integers are rational and all natural numbers are integers, these familiar sets are all subsets of the algebraic numbers, as represented in 2.2.3.`
+const P5 = Block.from_multiple_statements([
+    new Tex("x = \\frac{7}{9} \\quad \\to \\quad 9x = 7 \\quad \\to \\quad 9x - 7 = 0"),
+    new Tex("9x - 7 \\in \\mathbb{Q}[x] \\quad \\therefore \\quad \\frac{7}{9} \\in \\mathbb{A}"),
+    new Tex("x = 9 \\quad \\to \\quad x - 9 = 0"),
+    new Tex("x - 9 \\in \\mathbb{Q}[x] \\quad \\therefore \\quad 9 \\in \\mathbb{A}"),
 ]);
 
+const P6 = new Inline([
+    `From these examples, it is pretty clear that we could have done the same steps for any rational number or any integer. Thus, we will abstract the particular numbers from the previous step, and use variables instead.`
+]);
 
-const RATIONALS_ARE_ALGEBRAIC =
-`
-    \\forall \\frac{a}{b} \\in \\mathbb{Q}
-    \\enspace \\to \\enspace
-    bx - a = 0 \\implies
-    \\frac{a}{b} \\text{ is algebraic}
-`;
+const P7 = Block.from_multiple_statements([
+    new Tex(`\\frac{a}{b} \\enspace \\mid \\enspace a, b \\in \\mathbb{Z} \\quad \\to \\quad x = \\frac{a}{b} \\quad \\to \\quad bx = a \\quad \\to \\quad bx - a = 0`),
+    new Tex(`bx - a \\in \\mathbb{Q}[x] \\quad \\therefore \\quad \\frac{a}{b} \\in \\mathbb{A}`),
+]);
 
-const RATIONALS_EXAMPLE =
-`
-    \\frac{7}{9} 
-    \\enspace \\to \\enspace 
-    x = \\frac{7}{9}
-    \\enspace \\to \\enspace
-    9x = 7
-    \\enspace \\to \\enspace
-    9x - 7 = 0
-`;
+const P8 = new Inline([
+    `Thus, all rational numbers are algebraic. And, of course, all integers are rational (just set b = 1 in the fraction above). Thus, all integers are algebraic. And, of course, all natural numbers are integers.`
+]);
 
-const INTEGERS_ARE_ALGEBRAIC =
-`
-    \\mathbb{N} \\subset \\mathbb{Z} \\subset \\mathbb{Q} \\subset \\mathbb{A}
-`;
+const P9 = Block.from_single_statement(new Tex(`\\mathbb{N} \\subset \\mathbb{Z} \\subset \\mathbb{Q} \\subset \\mathbb{A}`));
 
-const BLOCK = Block.from_proof({
-    title: Tex.from_text("The Rationals are Algebraic"),
-    statements: [
-        new OneLineStatement({ value: new Tex(RATIONALS_EXAMPLE) }),
-        new OneLineStatement({ value: new Tex(RATIONALS_ARE_ALGEBRAIC) }),
-        new OneLineStatement({ value: new Tex(INTEGERS_ARE_ALGEBRAIC) })
-    ]
-});
 
 export const RATIONALS_SECTION = new Section({
     title: new Title({
@@ -57,10 +49,14 @@ export const RATIONALS_SECTION = new Section({
         ]),
     }),
     content: [
-        PARAGRAPH_1,
-        PARAGRAPH_2,
-        PARAGRAPH_3,
-        PARAGRAPH_4,
-        BLOCK
+        P1,
+        P2,
+        P3,
+        P4,
+        P5,
+        P6,
+        P7,
+        P8,
+        P9,
     ]
 })

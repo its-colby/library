@@ -1454,3 +1454,18 @@ pieces.push(...augment_map({
         },
     ],
 }));
+
+// ------------------------------------------------
+// ------------------- Prokofiev --------------------
+// ------------------------------------------------
+
+pieces.push(...augment_map({
+    genre: genres.misc, 
+    composer: composers.prokofiev, 
+    notable: [
+        { 
+            title: "Peter and the Wolf",
+            link: "https://youtu.be/Fmi5zHg4QSM" 
+        },
+    ],
+}));

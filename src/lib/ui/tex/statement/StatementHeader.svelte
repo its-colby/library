@@ -13,16 +13,13 @@
 <div>
     <span 
         class="expression" 
-        class:multiple-statements={multiple_statements}
         class:has-children={has_secondaries}
     >
         {@html expression_string}
     </span>
-    {#if multiple_statements}
-        <span class="label">
-            {@html label_string}
-        </span>
-    {/if}
+    <span class="label">
+        {@html label_string}
+    </span>
 </div>
 
 

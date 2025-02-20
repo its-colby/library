@@ -38,6 +38,10 @@ export class Block {
         return this.header.is_set();
     }
 
+    public get num_statements(): number {
+        return this.statements.length;
+    }
+
     public set_index({
         index, 
         prefixed_index
@@ -51,9 +55,9 @@ export class Block {
                 prefixed_index
             });
         } else {
-            this.statements.forEach((statement, index) => {
+            this.statements.forEach((statement, offset) => {
                 statement.set_index({
-                    index: index++,
+                    index: (index ?? 0) + offset,
                     prefixed_index
                 });
             });
@@ -62,8 +66,13 @@ export class Block {
 
     public static from_single_statement(value: Tex) {
         return new Block({
-            title: value,
             statements: [new OneLineStatement({value})]
+        });
+    }
+
+    public static from_multiple_statements(values: Tex[]) {
+        return new Block({
+            statements: values.map(value => new OneLineStatement({value}))
         });
     }
 
