@@ -1,10 +1,27 @@
-import { mathematics } from "$lib/articles/mathematics";
-import { algorithms } from "$lib/articles/algorithms";
-import { music } from "$lib/articles/music";
+import { metadata as algebraic_number_theory } from "./algebraic_number_theory";
+import { Folder, Page } from "$lib/articles/utils";
+
+const mathematics = new Folder({
+    title: "Mathematics",
+    pages: [
+        algebraic_number_theory,
+    ]
+})
+
+const curated_romantic_music = new Page({
+    title: "Curated Romantic Music",
+    url: "/music/curated-romantic-music"
+})
+
+export const music = new Folder({
+    title: "Music",
+    pages: [
+        curated_romantic_music
+    ]
+})
 
 export const folders = [
     mathematics,
-    algorithms,
     music
 ] as const;
 

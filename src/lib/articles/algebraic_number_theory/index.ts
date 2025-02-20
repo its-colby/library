@@ -7,7 +7,7 @@ export const metadata = new Page({
 });
 
 import { PREFACE_SECTION } from "./preface";
-import { THE_SET_OF_ALGEBRAIC_NUMBERS_SECTION } from "./the_set_of_algebraic_numbers";
+import { THE_SET_OF_ALGEBRAIC_NUMBERS_SECTION } from "./algebraic_numbers";
 
 export const CONTENT = new Section({
     title: new Title({
