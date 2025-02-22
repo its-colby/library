@@ -13,8 +13,8 @@ export const server_loads = [];
 
 export const dictionary = {
 		"/": [2],
-		"/mathematics/algebraic-number-theory": [3],
-		"/mathematics/ring-theory": [4],
+		"/mathematics/abstract-algebra": [3],
+		"/mathematics/algebraic-number-theory": [4],
 		"/music/curated-romantic-music": [5]
 	};
 

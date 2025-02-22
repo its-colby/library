@@ -3,10 +3,10 @@
 		"src/routes/+layout.ts",
 		"src/routes/+layout.ts"
 	],
-	"/mathematics/algebraic-number-theory": [
+	"/mathematics/abstract-algebra": [
 		"src/routes/+layout.ts"
 	],
-	"/mathematics/ring-theory": [
+	"/mathematics/algebraic-number-theory": [
 		"src/routes/+layout.ts"
 	],
 	"/music/curated-romantic-music": [

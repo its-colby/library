@@ -1,8 +1,8 @@
 <script lang="ts">
-    import { Statement, OneLineStatement, MultiLineStatement } from "$lib/tex";
+    import { Statement, OneLineStatement, MultiLineStatement, InlineWrapper as TSInlineWrapper } from "$lib/tex";
     import StatementHeader from "./StatementHeader.svelte";
     import SubExpressions from "./SubExpressions.svelte";
-
+    import InlineWrapper from "./InlineWrapper.svelte";
     let { data, multiple_statements }: { data: Statement, multiple_statements: boolean } = $props();
 </script>
 
@@ -20,6 +20,10 @@
             has_secondaries={true}
         />
         <SubExpressions items={data.secondaries} />
+    {:else if data instanceof TSInlineWrapper}
+        <InlineWrapper 
+            inline_wrapper={data}
+        />
     {/if}
 </div>
 

@@ -14,6 +14,7 @@
     <span 
         class="expression" 
         class:has-children={has_secondaries}
+        class:wrap={expression.wrap}
     >
         {@html expression_string}
     </span>

@@ -1,8 +1,9 @@
 import { Optional } from "$lib/common/optional.type";
 import { Tex } from "$lib/tex/notation";
-import { Statement, OneLineStatement } from "$lib/tex/statement";
+import { Statement, OneLineStatement, InlineWrapper } from "$lib/tex/statement";
 import { BlockHeader } from "./BlockHeader";
 import { LabelType } from "$lib/tex/label";
+import { Inline } from "$lib/tex/inline";
 
 export class Block {
 
@@ -115,6 +116,13 @@ export class Block {
             title,
             label_type: LabelType.EXAMPLE,
             statements
+        });
+    }
+
+    public static from_inline(inline: Inline, title?: Tex) {
+        return new Block({
+            title,
+            statements: [new InlineWrapper({inline})]
         });
     }
 }

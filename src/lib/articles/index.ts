@@ -1,12 +1,12 @@
 import { metadata as algebraic_number_theory } from "./algebraic_number_theory";
-import { metadata as ring_theory } from "./ring_theory";
+import { metadata as abstract_algebra } from "./abstract_algebra";
 import { Folder, Page } from "$lib/articles/utils";
 
 const mathematics = new Folder({
     title: "Mathematics",
     pages: [
         algebraic_number_theory,
-        ring_theory
+        abstract_algebra
     ]
 })
 
