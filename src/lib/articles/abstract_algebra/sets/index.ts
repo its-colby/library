@@ -1,13 +1,14 @@
 import { Inline, Section, Title } from "$lib/tex";
 
 import { DEFINITION } from "./definition";
-
+import { NUMBERS } from "./numbers";
 export const SETS = new Section({
     title: new Title({
         inline: new Inline(["Sets"]),
     }),
     sections: [
         DEFINITION,
+        NUMBERS,
     ]
 })
 

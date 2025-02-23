@@ -1,3 +1,6 @@
+import { Inline, Section, Title, Tex } from "$lib/tex";
+
+
 const P1 = new Inline([
     `Think of all the kinds of numbers you know. There are negatives, positives, fractions, infinitely repeating decimals like `, new Tex(`\\pi`), `, prime numbers, imaginary numbers, and much more.`,
 ]);
@@ -9,4 +12,17 @@ const P2 = new Inline([
 const P3 = new Inline([
     `There exists the set of all natural numbers, `, new Tex(`\\mathbb{N}`), `, which represent all the numbers used to count something.`,
 ]);
+
+export const NUMBERS = new Section({
+    title: new Title({
+        inline: new Inline(["Sets of Numbers"]),
+    }),
+    content: [
+        P1,
+        P2,
+        P3,
+    ]
+})
+
+
 
