@@ -10,9 +10,17 @@
 </script>
 
 <div>
-    <Inline inline={inline_wrapper.inline} --font-size=""/>
+    <Inline 
+        inline={inline_wrapper.inline} 
+        --font-size={"20px"}
+        --font-weight={"600"}
+        --line-height={"1.5"}
+        --text-color={"var(--text-brand)"}
+        --tex-color={"var(--text-brand)"}
+        
+    />
     <span class="label">
-        {@html label_string}
+        {inline_wrapper.label.label().value}
     </span>
 </div>
 
@@ -23,15 +31,20 @@
         flex-direction: row;
         justify-content: space-between;
         gap: 20px;
-        align-items: center;
+        align-items: flex-start;
 
-        font: normal 1.21em KaTeX_Main,Times New Roman,serif;
-        line-height: 1.2;
+        padding: 0px;
+
+        /* text-align: center; */
+
         text-indent: 0;
         text-rendering: auto;
     }
 
     span.label {
-        font-size: 16px;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.5;
+        color: var(--text-brand);
     }
 </style>

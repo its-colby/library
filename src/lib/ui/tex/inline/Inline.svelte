@@ -22,8 +22,14 @@
 
 <style>
     span {
-        font-size: var(--font-size, 20px);
-        line-height: 1.5;
+        font-size: var(--font-size, 18px);
+        font-weight: var(--font-weight, 400);
+        line-height: var(--line-height, 1.5);
+        font-family: var(--font-family, inherit);
+    }
+
+    span.text {
+        color: var(--text-color, var(--text-neutral));
     }
 
     span.tex {

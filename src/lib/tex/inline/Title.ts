@@ -34,7 +34,7 @@ export class Title {
     }
 
     public get href(): string {
-        return this.inline.to_string();
+        return this.inline.to_string() + " " + this.label.label().value;
     }
 
     public set_index({

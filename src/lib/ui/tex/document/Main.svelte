@@ -1,14 +1,15 @@
 <script lang="ts">
-    import { Section } from "$lib/tex";
-    import Document from "$lib/ui/tex/document/Document.svelte";
+    import { Section as TS_Section } from "$lib/tex";
     import TableOfContents from "$lib/ui/tex/document/TableOfContents.svelte";
-    
-    let { data }: { data: Section } = $props();
+    import Section from "$lib/ui/tex/document/Section.svelte";
+    let { data }: { data: TS_Section } = $props();
 </script>
 
 <main>
     <TableOfContents data={data} />
-    <Document data={data} />
+    <div class="document-container">
+        <Section data={data} />
+    </div>
 </main>
 
 <style>
@@ -18,7 +19,11 @@
         gap: 20px;
         padding-left: 30px;
         padding-right: 50px;
+        padding-top: 30px;
     }
 
+    div.document-container {
+        width: 900px;
+    }
         
 </style>

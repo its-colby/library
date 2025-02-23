@@ -46,7 +46,10 @@
     >
         <span class="number">{x.label.label().value}</span>
         <span class="text">
-            <Inline inline={x.inline} --font-size="20px"/>
+            <Inline inline={x.inline} 
+                --font-size="20px"
+                --text-color-hover={"var(--text-contrast)"}
+            />
         </span>
     </a>
 {/snippet}

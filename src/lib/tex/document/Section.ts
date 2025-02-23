@@ -1,49 +1,14 @@
 import { Block } from "$lib/tex/block";
 import { Tex } from "$lib/tex/notation";
-import { Inline, Title } from "$lib/tex/inline";
+import { Inline, Title, Note } from "$lib/tex/inline";
 import { Optional } from "$lib/common/optional.type";
-
-
-// prefix = prev.section
-
-// section (prefix = undefined, depth = 0, index = undefined)
-
-// title (section.prefix, section.index)
-
-// ----section 1 (prefix = undefined, depth = 1, index = 0)
-
-// --------title 1 (prefix = undefined, index = depth)
-
-// --------subsection (prefix = 1, depth = 2, index = 0)
-// --------------title  1.1
-// --------------block  1.1.1
-// --------------inline
-
-// --------subsection (prefix = 1, depth = 2, index = 1)
-// --------------title 1.2
-// --------------block 1.2.1
-// --------------inline
-
-// -----section 2 (prefix = undefined, depth = 1, index = 1)
-
-// --------title 2 (prefix = undefined, index = 1)
-
-// --------subsection (prefix = section.index + 1, depth = section.depth + 1, index = 1)
-// --------------title  2.1
-// --------------block  2.1.1
-// --------------inline
-
-// --------subsection 
-// --------------title 2.2
-// --------------block 2.2.1
-// --------------inline
 
 export class Section {
     public readonly title: Title;
     public section_depth: Optional<number> = Optional.none();
     private _show_content: boolean;
     public sections: Optional<Section[]>;
-    public content: Optional<(Inline | Block)[]>;
+    public content: Optional<(Inline | Block | Note)[]>;
 
     constructor({
         title,
@@ -52,7 +17,7 @@ export class Section {
     }: {
         title: Title,
         sections?: Section[],
-        content?: (Inline | Block)[]
+        content?: (Inline | Block | Note)[]
     }) {
         this.title = title;
         this.sections = sections ? Optional.set(sections) : Optional.none();
