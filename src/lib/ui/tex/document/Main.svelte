@@ -6,7 +6,9 @@
 </script>
 
 <main>
-    <TableOfContents data={data} />
+    <div class="toc-container">
+        <TableOfContents data={data} />
+    </div>
     <div class="document-container">
         <Section data={data} />
     </div>
@@ -22,8 +24,14 @@
         padding-top: 30px;
     }
 
+    div.toc-container {
+        flex-shrink: 0;
+        width: 450px;
+    }
+
     div.document-container {
         width: 900px;
+        overflow-y: auto;
     }
         
 </style>

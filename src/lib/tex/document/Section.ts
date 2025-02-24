@@ -1,6 +1,6 @@
 import { Block } from "$lib/tex/block";
 import { Tex } from "$lib/tex/notation";
-import { Inline, Title, Note } from "$lib/tex/inline";
+import { Inline, Title, Note, List } from "$lib/tex/inline";
 import { Optional } from "$lib/common/optional.type";
 
 export class Section {
@@ -8,7 +8,7 @@ export class Section {
     public section_depth: Optional<number> = Optional.none();
     private _show_content: boolean;
     public sections: Optional<Section[]>;
-    public content: Optional<(Inline | Block | Note)[]>;
+    public content: Optional<(Inline | Block | Note | List)[]>;
 
     constructor({
         title,
@@ -17,7 +17,7 @@ export class Section {
     }: {
         title: Title,
         sections?: Section[],
-        content?: (Inline | Block | Note)[]
+        content?: (Inline | Block | Note | List)[]
     }) {
         this.title = title;
         this.sections = sections ? Optional.set(sections) : Optional.none();

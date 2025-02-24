@@ -1,10 +1,10 @@
 <script lang="ts">
-    import { Block as TS_Block, Inline as TS_Inline, Note as TS_Note } from "$lib/tex";
+    import { Block as TS_Block, Inline as TS_Inline, Note as TS_Note, List as TS_List } from "$lib/tex";
     import Block from "$lib/ui/tex/block/Block.svelte";
     import Inline from "$lib/ui/tex/inline/Inline.svelte";
     import Note from "$lib/ui/tex/inline/Note.svelte";
-
-    let { data }: { data: (TS_Block | TS_Inline | TS_Note)[] } = $props();
+    import List from "$lib/ui/tex/inline/List.svelte";
+    let { data }: { data: (TS_Block | TS_Inline | TS_Note | TS_List)[] } = $props();
 </script>
 
 <div>
@@ -22,6 +22,8 @@
             />
         {:else if x instanceof TS_Note}
             <Note note={x}/>
+        {:else if x instanceof TS_List}
+            <List list={x}/>
         {:else}
             <span>
                 Error loading content

@@ -92,14 +92,14 @@
 
 <style>
     div#table_of_contents {
-        width: 450px;
         display: flex;
         flex-direction: column;
         gap: 10px;
 
-        top: 71px;
+        top: 101px;
         position: sticky;
-        max-height: 100vh;
+        height: calc(100vh - 151px);
+        /* max-height: 100vh; */
         overflow-y: auto;
     }
 

@@ -1,4 +1,76 @@
 
+# Nullifying Leg Muscles
+
+A) Muscle can contract, but not productively
+B) Muscle cannot contract, load is too high
+C) Muscle cannot contract, its maximally shortened
+
+## Requirements
+
+### Gluteus Maximus:
+    - A) grounded femur
+        - supine femur/tibia -> only pelvic tilt possible
+        - prone femur -> small rom glute kickback
+        - recumbent femur -> no meaningful defense
+    - A) distance from legs
+        - high/backpack positions on grounded opponent -> bridges aren't effective and cant hook you
+        - large void between standing opponents -> cant get close
+    - A) front split
+        - grounded opponent in supine front split -> their force just stretches their other hip
+        - standing opponent in high single -> deeper front split OR off-balnce fall
+    - B) internally rotated femur 
+
+### Quadriceps:
+    - A) prone femur
+    - A) distance from legs
+    - A) prone tibia
+    - B) recumbent femur and tibia
+    - C) supine femur/tibia
+    - C) stretched hamstring
+
+### Hamstrings:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Quadriceps: a) only grounds and walls are effective, not bw b) leg straight c) tibia in air.
+
+Hamstrings: 0) prone no meaningful movement a) leg straight b) foot to butt c) tibia in air.
+
+adductors, hip flexion, abductors, calf, shin useless
+
+so 1) prone 2) leg straight via load on ankle up to lower femur 3) tibia in air, so:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # standing up from turtle
 
 no inside space (for leg hooks or wrist rides, tight waists, etc)
@@ -75,7 +147,11 @@ so for arms, its arm pinned above head,
 
 Let's systematically go through each muscle and determine how to shut it down. For simplicity, we will look at an opponent in the bottom position on the ground.
 
-Gluteus Maximus: posterior sacrum <-> posterior femur. a kickback or a hip thrust. a hip thrust is the only meaningful defensive movement. a) only grounds and walls are effective, not bodyweight. b) and a bit of a but don't allow hip flexion so leg straight. c) feet off floor. In summary, 1) prone 2) leg straight 3) tibia in air. 
+
+
+
+
+
 
 Quadriceps: a) only grounds and walls are effective, not bw b) leg straight c) tibia in air.
 
@@ -104,4 +180,5 @@ let's come back to this later
 
 
 now, how to upgrade from one position to the next?
+
 
