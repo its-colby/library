@@ -3,7 +3,7 @@ import { GOALS_SECTION } from "./goals";
 import { PREREQS_SECTION } from "./prereqs";
 
 const TITLE = new Title({
-    inline: new Inline(["Preface"])
+    value: "Preface"
 });
 
 export const PREFACE_SECTION = new Section({

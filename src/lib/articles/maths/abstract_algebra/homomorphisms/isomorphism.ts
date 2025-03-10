@@ -7,7 +7,7 @@ const P1 = new Inline([
 
 export const ISOMORPHISM = new Section({
     title: new Title({
-        inline: new Inline(["Isomorphisms"]),
+        value: "Isomorphisms",
     }),
     content: [
         P1,

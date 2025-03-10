@@ -46,11 +46,8 @@
         onclick={link_click}
     >
         <span class="number">{x.label.label().value}</span>
-        <span class="text">
-            <Inline inline={x.inline} 
-                --font-size="20px"
-                --text-color-hover={"var(--text-contrast)"}
-            />
+        <span class="section-text">
+            {x.value}
         </span>
     </a>
 {/snippet}
@@ -63,8 +60,8 @@
         onclick={link_click}
     >
         <span class="number">{x.label.label().value}</span>
-        <span class="text">
-            <Inline inline={x.inline} --font-size="18px"/>
+        <span class="subsection-text">
+            {x.value}
         </span>
     </a>
 {/snippet}
@@ -142,6 +139,18 @@
 
     span.number {
         font-size: 20px;
+    }
+
+    span.section-text {
+        font-size: 20px;
+    }
+
+    span.subsection-text {
+        font-size: 18px;
+    }
+
+    span.section-text:hover, span.subsection-text:hover {
+        color: var(--text-contrast);
     }
 
 </style>

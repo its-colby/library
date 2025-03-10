@@ -47,7 +47,7 @@ import { AUTOMORPHISM } from "./automorphism";
 import { ENDOMORPHISM } from "./endomorphism";
 export const HOMOMORPHISMS = new Section({
     title: new Title({
-        inline: new Inline(["Homomorphisms"]),
+        value: "Homomorphisms",
     }),
     sections: [
         FUNCTION,

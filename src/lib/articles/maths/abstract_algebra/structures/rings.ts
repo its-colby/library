@@ -7,7 +7,7 @@ const P1 = new Inline([
 
 export const RINGS = new Section({
     title: new Title({
-        inline: new Inline(["Rings"]),
+        value: "Rings",
     }),
     content: [
         P1,

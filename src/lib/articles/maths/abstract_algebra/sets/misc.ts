@@ -44,7 +44,7 @@ const P9 = new Inline([
 
 export const MISC = new Section({
     title: new Title({
-        inline: new Inline(["Miscellaneous Sets"]),
+        value: "Miscellaneous Sets",
     }),
     content: [
         P1,

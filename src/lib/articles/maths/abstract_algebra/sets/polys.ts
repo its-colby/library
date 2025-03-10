@@ -47,7 +47,7 @@ const P9 = new Inline([
 
 export const POLYNOMIALS = new Section({
     title: new Title({
-        inline: new Inline(["Sets of Polynomials"]),
+        value: "Sets of Polynomials",
     }),
     content: [
         P1,

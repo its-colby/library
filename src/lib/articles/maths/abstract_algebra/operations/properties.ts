@@ -10,7 +10,7 @@ const P2 = new Inline([
 
 export const PROPERTIES = new Section({
     title: new Title({
-        inline: new Inline(["Properties of Operations"]),
+        value: "Properties of Operations",
     }),
     content: [
         P1,

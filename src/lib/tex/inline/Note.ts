@@ -2,10 +2,10 @@ import { Inline } from "./Inline";
 
 export class Note {
     public readonly inlines: Inline[];
-    public readonly title: Inline;
+    public readonly title: string;
 
-    constructor(inlines: Inline[], title?: Inline) {
+    constructor(inlines: Inline[], title?: string) {
         this.inlines = inlines;
-        this.title = title ?? new Inline(["Click to Read Note"]);
+        this.title = title ?? "Click to Read Note";
     }
 }

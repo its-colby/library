@@ -71,9 +71,7 @@ const P14 = Block.from_multiple_statements([
 
 export const ROOTS_SECTION = new Section({
     title: new Title({
-        inline: new Inline([
-            "The Roots of Algebraic Numbers are Algebraic",
-        ]),
+        value: "The Roots of Algebraic Numbers are Algebraic",
     }),
     content: [
         P1,

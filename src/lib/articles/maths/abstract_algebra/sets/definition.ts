@@ -39,7 +39,7 @@ const P6 = new Note([
     new Inline([
         `Creating a mathematical definition of a "mathematical set" is non-trivial. The definition above, classified as the naive definition, is actually subject to many logical paradoxes. The mathematics of "set theory" includes multiple definitions of a "mathematical set" that attempt to avoid such paradoxes. These definitions are outside the scope of abstract algebra. Instead, we will take all commonly used mathematical sets as axiomatically valid, and leave the formalities to set theory. `
     ]),
-], new Inline(["A Note on the Definition of a Set"]));
+], "A Note on the Definition of a Set");
 
 const P7= new Inline([
     `Now that we have looked at the definition of a "mathematical set", we can look at how to define a *particular* "mathematical set". There are three common ways of defining sets. Each of the following "set definitions" will describe the same set, yet in a different manner.`
@@ -77,7 +77,7 @@ const P12 = new Note([
     new Inline([
         `These logical operators have more nuance to them than first glance. Each of them have very specific definitions in mathematical logic. To demonstrate this nuance, I will evaluate the truthhood of the following proposition: "Men have tails" `, new Tex(`\\lor`), ` "Cats have horns". Based on the logical definition of "or", this proposition is true, despite both statements being false. If we wanted this proposition to evalute to false, we would have to use "xor", also called "exclusive or", which is denoted by `, new Tex(`\\oplus`), `.`,
     ]),
-], new Inline(["A Note on Logical Connectives"]));
+], "A Note on Logical Connectives");
 
 const P13 = new Inline([
     `The following mathematical statement will define a set using "set-builder" notation and logical operators. It will also introduce the symbol `, new Tex(`\\in`), `, which is read as "is an element of".`
@@ -109,7 +109,7 @@ const P16 = new Inline([
 
 export const DEFINITION = new Section({
     title: new Title({
-        inline: new Inline(["Defining Particular Sets"]),
+        value: "Defining Particular Sets",
     }),
     content: [
         P0,

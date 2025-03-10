@@ -7,7 +7,7 @@ const P1 = new Inline([
 
 export const ENDOMORPHISM = new Section({
     title: new Title({
-        inline: new Inline(["Endomorphisms"]),
+        value: "Endomorphisms",
     }),
     content: [
         P1,

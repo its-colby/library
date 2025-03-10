@@ -53,7 +53,7 @@ const P12 = Block.from_multiple_statements([
 
 export const ARITHMETIC = new Section({
     title: new Title({
-        inline: new Inline(["Arithmetic on Sets"]),
+        value: "Arithmetic on Sets",
     }),
     content: [
         P1,

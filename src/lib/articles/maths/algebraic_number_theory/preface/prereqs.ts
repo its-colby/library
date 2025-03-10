@@ -6,7 +6,7 @@ const PARAGRAPH_1 = new Inline([
 
 export const PREREQS_SECTION = new Section({
     title: new Title({
-        inline: new Inline(["Prerequisites"])
+        value: "Prerequisites"
     }),
     content: [
         PARAGRAPH_1

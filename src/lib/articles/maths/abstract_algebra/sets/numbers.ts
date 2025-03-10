@@ -40,7 +40,7 @@ const P5 = Block.from_single_statement(new Tex(`\\mathbb{N} \\subset \\mathbb{Z}
 
 export const NUMBERS = new Section({
     title: new Title({
-        inline: new Inline(["Sets of Numbers"]),
+        value: "Sets of Numbers",
     }),
     content: [
         P1,

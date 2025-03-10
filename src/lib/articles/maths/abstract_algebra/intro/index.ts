@@ -31,7 +31,7 @@ const P7 = new Inline([
 
 export const INTRODUCTION = new Section({
     title: new Title({
-        inline: new Inline(["Introduction"]),
+        value: "Introduction",
     }),
     content: [
         P1,

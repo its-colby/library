@@ -25,7 +25,7 @@ const P4 = new List([
 
 export const SYMMETRIES = new Section({
     title: new Title({
-        inline: new Inline(["Sets of Symmetries"]),
+        value: "Sets of Symmetries",
     }),
     content: [
         P1,

@@ -1,4 +1,3 @@
-import { Inline } from "./Inline";
 import { Tex } from "../";
 import { Label, LabelConfig, IndexType, LabelType } from "$lib/tex/label";
 
@@ -9,17 +8,17 @@ const DEFAULT_LABEL_CONFIG = new LabelConfig({
 });
 
 export class Title {
-    public readonly inline: Inline;
+    public readonly value: string;
     public label: Label;
 
     constructor({
-        inline,
+        value,
         index_type = IndexType.NUMBER
     }: {
-        inline: Inline,
+        value: string,
         index_type?: IndexType
     }) {
-        this.inline = inline;
+        this.value = value;
         this.label = new Label({
             label_config: new LabelConfig({
                 ...DEFAULT_LABEL_CONFIG,
@@ -34,7 +33,7 @@ export class Title {
     }
 
     public get href(): string {
-        return this.inline.to_string() + " " + this.label.label().value;
+        return this.value + " " + this.label.label().value;
     }
 
     public set_index({
@@ -47,9 +46,9 @@ export class Title {
         this.label.set_index({index, prefixed_index});
     }
 
-    public static document_title(inline: Inline): Title {
+    public static document_title(value: string): Title {
         return new Title({
-            inline,
+            value,
             index_type: IndexType.NONE
         });
     }

@@ -23,12 +23,7 @@
     </span>
 
     <span class="text">
-        <Inline 
-            inline={title.inline}
-            --font-size={section_depth === 1 ? '30px' : '24px'}
-            --font-weight={"600"}
-            --text-color={"var(--text-neutral)"}
-        />
+        {title.value}
     </span>
 
 </svelte:element>
@@ -55,4 +50,5 @@
     h3 {
         font-size: 24px;
     }
+
 </style>

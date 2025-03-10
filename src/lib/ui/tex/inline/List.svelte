@@ -9,9 +9,7 @@
         <li>
             <Inline 
                 inline={inline} 
-                --font-size={"20px"}
-                --font-weight={"400"}
-                --line-height={"1.5"}
+                style_class="list"
             />
         </li>
     {/each}

@@ -12,7 +12,7 @@ export const metadata = new Page({
 
 export const CONTENT = new Section({
     title: new Title({
-        inline: new Inline([metadata.title]),
+        value: metadata.title,
         index_type: IndexType.NONE
     }),
     sections: [

@@ -12,11 +12,7 @@
 <div>
     <Inline 
         inline={inline_wrapper.inline} 
-        --font-size={"20px"}
-        --font-weight={"600"}
-        --line-height={"1.5"}
-        --text-color={"var(--text-brand)"}
-        --tex-color={"var(--text-brand)"}
+        style_class="text-statement"
         
     />
     <span class="label">
@@ -25,13 +21,11 @@
 </div>
 
 
-<style>
+<style lang="scss">
+    @use "$lib/theme/screens";
+
     div {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 20px;
-        align-items: flex-start;
 
         padding: 0px;
 
@@ -39,11 +33,24 @@
 
         text-indent: 0;
         text-rendering: auto;
+
+        @include screens.desktop {
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-direction: row;
+            gap: 20px;
+        }
+
+        @include screens.mobile {
+            align-items: flex-start;
+            flex-direction: column-reverse;
+            gap: 10px;
+        }
     }
 
     span.label {
         font-size: 20px;
-        font-weight: 600;
+        font-weight: 400;
         line-height: 1.5;
         color: var(--text-brand);
     }

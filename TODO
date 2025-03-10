@@ -1,12 +1,3 @@
-better naming like notation instead of declaration
-switch some entities to structures like a number field for example
-ideal mult/addition
-R to R/I surjective homomorphism
-tex refactor
-ui block  and statementfix up
-make TEX class with . syntax chaining
-example as children of statement or conditions, more fine-grained labels
-
-
-from mackenzie
-- try highlight a section of content, its fucked up
+adjust equation labels on mobile to be on top of the equation
+adjust fonts to use scss variables
+use rem over px

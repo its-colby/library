@@ -14,11 +14,7 @@
         {:else if x instanceof TS_Inline}
             <Inline 
                 inline={x} 
-                --font-size={"20px"}
-                --font-weight={"400"}
-                --line-height={"1.5"}
-                --text-color={"var(--text-neutral)"}
-                --tex-color={"var(--text-brand)"}
+                style_class="content"
             />
         {:else if x instanceof TS_Note}
             <Note note={x}/>

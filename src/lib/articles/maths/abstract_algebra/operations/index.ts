@@ -6,7 +6,7 @@ import { PROPERTIES } from "./properties";
 
 export const OPERATIONS = new Section({
     title: new Title({
-        inline: new Inline(["Operations"]),
+        value: "Operations",
     }),
     sections: [
         DEFINITION,

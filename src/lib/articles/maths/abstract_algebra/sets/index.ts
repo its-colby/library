@@ -8,7 +8,7 @@ import { ARITHMETIC } from "./arithmetic";
 import { MISC } from "./misc";
 export const SETS = new Section({
     title: new Title({
-        inline: new Inline(["Sets"]),
+        value: "Sets",
     }),
     sections: [
         DEFINITION,

@@ -31,7 +31,7 @@ const P6 = new Inline([
 
 export const STRUCTURES = new Section({
     title: new Title({
-        inline: new Inline(["Defining an Algebraic Structure"]),
+        value: "Defining an Algebraic Structure",
     }),
     content: [
         P1,

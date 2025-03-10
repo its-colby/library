@@ -6,7 +6,7 @@ import { GROUPS } from "./groups";
 
 export const ALGEBRAIC_STRUCTURES = new Section({
     title: new Title({
-        inline: new Inline(["Algebraic Structures"]),
+        value: "Algebraic Structures",
     }),
     sections: [
         STRUCTURES,

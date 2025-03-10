@@ -11,7 +11,7 @@ import { PREFACE_SECTION } from "./preface";
 
 export const CONTENT = new Section({
     title: new Title({
-        inline: new Inline([metadata.title]),
+        value: metadata.title,
         index_type: IndexType.NONE
     }),
     sections: [

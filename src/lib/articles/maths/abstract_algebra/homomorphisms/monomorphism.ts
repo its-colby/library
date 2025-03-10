@@ -7,7 +7,7 @@ const P1 = new Inline([
 
 export const MONOMORPHISM = new Section({
     title: new Title({
-        inline: new Inline(["Monomorphisms"]),
+        value: "Monomorphisms",
     }),
     content: [
         P1,

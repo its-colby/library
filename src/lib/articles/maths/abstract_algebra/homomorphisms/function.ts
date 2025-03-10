@@ -7,7 +7,7 @@ const P1 = new Inline([
 
 export const FUNCTION = new Section({
     title: new Title({
-        inline: new Inline(["Properties of Functions"]),
+        value: "Properties of Functions",
     }),
     content: [
         P1,

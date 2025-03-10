@@ -24,12 +24,22 @@
 </div>
 
 
-<style>
+<style lang="scss">
+    @use "$lib/theme/screens";
+
     div {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+
+        @include screens.desktop {
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row;
+        }
+
+        @include screens.mobile {
+            align-items: flex-start;
+            flex-direction: column-reverse;
+        }
     }
 
     span.expression {

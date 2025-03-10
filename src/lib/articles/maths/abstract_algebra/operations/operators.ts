@@ -10,7 +10,7 @@ const P2 = new Inline([
 
 export const OPERATORS = new Section({
     title: new Title({
-        inline: new Inline(["Examples of Operations"]),
+        value: "Examples of Operations",
     }),
     content: [
         P1,

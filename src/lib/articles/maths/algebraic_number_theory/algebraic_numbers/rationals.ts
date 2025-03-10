@@ -44,9 +44,7 @@ const P9 = Block.from_single_statement(new Tex(`\\mathbb{N} \\subset \\mathbb{Z}
 
 export const RATIONALS_SECTION = new Section({
     title: new Title({
-        inline: new Inline([
-            "The Rationals are Algebraic",
-        ]),
+        value: "The Rationals are Algebraic",
     }),
     content: [
         P1,

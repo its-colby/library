@@ -33,7 +33,7 @@ const P6 = new Inline([
 
 export const DEFINITION = new Section({
     title: new Title({
-        inline: new Inline(["Defining Operation"]),
+        value: "Defining Operation",
     }),
     content: [
         P1,

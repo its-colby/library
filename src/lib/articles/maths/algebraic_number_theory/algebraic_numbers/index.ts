@@ -5,7 +5,7 @@ import { Section, Inline, Title } from "$lib/tex";
 
 export const THE_SET_OF_ALGEBRAIC_NUMBERS_SECTION = new Section({
     title: new Title({
-        inline: new Inline(["The Set of Algebraic Numbers"]),
+        value: "The Set of Algebraic Numbers",
     }),
     sections: [
         DEFINITION_SECTION,

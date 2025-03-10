@@ -7,17 +7,15 @@
 </script>
 
 <h1>
-    <Inline 
-        inline={title.inline}
-        --font-size={"30px"}
-        --font-weight={"600"}
-        --text-color={"var(--text-neutral)"}
-    />
+    {title.value}
 </h1>
 
 <style>
     h1 {
         text-align: center;
         margin: 0px;
+        font-size: 30px;
+        font-weight: 600;
+        color: var(--text-neutral);
     }
 </style>

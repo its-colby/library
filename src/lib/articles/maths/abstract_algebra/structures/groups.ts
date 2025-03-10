@@ -7,7 +7,7 @@ const P1 = new Inline([
 
 export const GROUPS = new Section({
     title: new Title({
-        inline: new Inline(["Groups"]),
+        value: "Groups",
     }),
     content: [
         P1,

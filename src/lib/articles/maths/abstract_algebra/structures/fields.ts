@@ -7,7 +7,7 @@ const P1 = new Inline([
 
 export const FIELDS = new Section({
     title: new Title({
-        inline: new Inline(["Fields"]),
+        value: "Fields",
     }),
     content: [
         P1,

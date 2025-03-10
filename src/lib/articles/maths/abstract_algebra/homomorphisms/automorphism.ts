@@ -7,7 +7,7 @@ const P1 = new Inline([
 
 export const AUTOMORPHISM = new Section({
     title: new Title({
-        inline: new Inline(["Automorphisms"]),
+        value: "Automorphisms",
     }),
     content: [
         P1,

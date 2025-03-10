@@ -14,7 +14,7 @@ const PARAGRAPH_3 = new Inline([
 
 export const GOALS_SECTION = new Section({
     title: new Title({
-        inline: new Inline(["The Goals of This Document"])
+        value: "The Goals of This Document"
     }),
     content: [
         PARAGRAPH_1,

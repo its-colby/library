@@ -10,23 +10,15 @@
         {#each inlines as inline}
             <Inline 
                 inline={inline} 
-                --font-size={"18px"}
-                --font-weight={"400"}
-                --line-height={"1.5"}
+                style_class="note"
             />
         {/each}
     </div>
 {/snippet}
 
-{#snippet header(hovered: boolean, title: TS_Inline)}
+{#snippet header(hovered: boolean, title: string)}
     <h4 class={hovered ? "hovered" : ""}>
-        <Inline 
-                inline={title} 
-                --font-size={"18px"}
-                --font-weight={"600"}
-                --line-height={"1.5"}
-
-            />
+        {title}
     </h4>
 {/snippet}
 

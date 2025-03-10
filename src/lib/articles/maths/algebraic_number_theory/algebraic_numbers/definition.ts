@@ -93,9 +93,7 @@ const P17 = Block.from_single_statement(
 
 export const DEFINITION_SECTION = new Section({
     title: new Title({
-        inline: new Inline([
-            "Defining the Algebraic Numbers",
-        ]),
+        value: "Defining the Algebraic Numbers",
     }),
     content: [
         P1,
