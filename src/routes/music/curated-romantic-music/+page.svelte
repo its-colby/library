@@ -1,28 +1,13 @@
 <script lang="ts">
     import { pieces, GroupByStatement, statement_to_field, Tier, type Piece, type GoodPiece, type BadPiece } from "$lib/music/export";
-    import Dropdown from "$lib/ui/utils/Dropdown.svelte";
+    import { group_by_statements } from "$lib/ui/music/utils";
     import Accordion from "$lib/ui/utils/Accordion.svelte";
     import Tooltip from "$lib/ui/utils/Tooltip.svelte";
+    import Preface from "$lib/ui/music/preface/Preface.svelte"
+  import GroupBy from "$lib/ui/music/GroupBy.svelte";
+  import Title from "$lib/ui/music/Title.svelte";
 
-    // TODO: add accordion, add title, add tier meanings, clean up
-    // I define 'romantic music' as instrumental music that consistently manipulates the creation and resolve of musical tension in order to create a broader narrative structure—rising action, climax, and resolution. 
 
-    interface Statements {
-        primary: GroupByStatement;
-        secondary: GroupByStatement;
-    }
-    
-    const group_by_statements: Statements = {
-        primary: GroupByStatement.GENRE,
-        secondary: GroupByStatement.TIER,
-    }
-
-    function change_group_by_statement(level: keyof typeof group_by_statements, new_statement: GroupByStatement) {
-        group_by_statements[level] = new_statement;
-        if (level === "primary" && new_statement === group_by_statements.secondary) {
-            group_by_statements.secondary = Object.values(GroupByStatement).find(s => s !== new_statement) as GroupByStatement;
-        }
-    }
 
     function group_by(items: Piece[], level: keyof typeof group_by_statements): [string, Piece[]][] {
         const field_name = statement_to_field(group_by_statements[level]);
@@ -116,46 +101,7 @@
     function should_show_field(field: keyof Piece) {
         return field !== statement_to_field(group_by_statements.primary) && field !== statement_to_field(group_by_statements.secondary);
     }
-
-    function get_group_by_statements(level: keyof typeof group_by_statements): GroupByStatement[] {
-        const statements = Object.values(GroupByStatement).filter(statement => statement !== group_by_statements[level] && statement !== group_by_statements["primary"]);
-        return statements;
-    }
-
-    const legend = {
-        [Tier.AMAZING]: "Emotionally captivating from start to end.",
-        [Tier.PARTIALLY_AMAZING]: "Emotionally captivating for 1 or more movements.",
-        [Tier.NOTABLE]: "1 or more memorable themes.",
-        [Tier.DEFICIENT]: "No memorable themes or emotional captivation."
-    };
 </script>
-
-{#snippet group_by_buttons()}
-    <nav id="group-by-buttons-container">
-        <span class="group-by-label">Group By:</span>
-        {@render group_by_button("primary")}
-        <span class="group-by-button-separator">{'>'}</span>
-        {@render group_by_button("secondary")}
-    </nav>
-{/snippet}
-
-{#snippet group_by_button(level: keyof typeof group_by_statements)}
-    <Dropdown 
-        header={chosen_group_by} 
-        header_data={group_by_statements[level]}
-        row={group_by_option} 
-        items={get_group_by_statements(level)} 
-        on_click={(statement) => change_group_by_statement(level, statement)}
-    />
-{/snippet}
-
-{#snippet chosen_group_by(group_by_statement: GroupByStatement)}
-    <span class="chosen-group-by">{group_by_statement}</span>
-{/snippet}
-
-{#snippet group_by_option(item: string)}
-    <span class="group-by-option">{item}</span>
-{/snippet}
 
 {#snippet primary_sections()}
     <div id="primary-sections-container">
@@ -228,75 +174,88 @@
     </ul>
 {/snippet}
 
-{#snippet preface()}
-    <aside id="preface-container">
-        <p>
-            This page presents a collection of instrumental music that can be organized by composer, genre, or my own judgement of its quality as a romantic piece.
-        </p>
-        <p>
-            This page is intended for those who enjoy romantic music and want to discover new pieces or better performances. If you're not an avid listener, this page is not for you. In order to enjoy romantic music, your mind must be trained to automatically recognize the creation and resolution of musical tension.
-        </p>
-        <p>
-            Please read the explanations below to understand the different tiers of judgement that I applied to each piece.
-        </p>
-        {#each Object.entries(legend) as [tier, definition]}
-
-            <p class="tier-definition-container">
-                <span class="tier-label">{tier}</span>
-                <span class="tier-label-separator">—</span>
-                <span class="tier-definition">{definition}</span>
-            </p>
-
-        {/each}
-    </aside>
-{/snippet}
-
 <main>
-
-    <h1 id="title">Curated Romantic Music</h1>
-    {@render preface()}
-    {@render group_by_buttons()}
+    <div class="top">
+        <Title/>
+        <Preface />
+        <GroupBy/>
+    </div>
     {@render primary_sections()}
     
 </main>
 
-<style>
+<style lang="scss">
+    @use "$lib/theme/screens";
+
+    .top {
+        display: flex;
+        flex-direction: column;
+
+        @include screens.desktop {
+            padding-left: 250px;
+            padding-right: 250px;
+        }
+    }
+
     main {
-        padding-top: 40px;
-        padding-left: 250px;
-        padding-right: 250px;
+        @include screens.desktop {
+            padding-top: 40px;
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
+
+        @include screens.mobile {
+            padding-left: 1.5rem;
+            padding-right: 1rem;
+        }
     }
 
     div#primary-sections-container {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 100px;
-        margin-top: 30px;
+        gap: 1rem;
+
+        @include screens.desktop {
+            padding-top: 3rem;
+        }
+        @include screens.mobile {
+            padding-top: 1rem;
+
+        }
     }
 
-    nav#group-by-buttons-container {
+    section.primary-section {
         display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 30px;
-        color: var(--text-neutral);
-        justify-content: flex-end;
+        flex-direction: column;
     }
 
     section.secondary-section {
-        padding-top: 15px;
-        padding-bottom: 15px;
-        margin-left: 20px;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+
+        @include screens.desktop {
+            padding-left: 1.2rem;
+        }
+
+        @include screens.mobile {
+            padding-left: 0;
+        }
     }
 
     ul.secondary-section-details-container {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 0.5rem;
         margin: 0px;
-        padding-top: 10px;
+        padding-top: 0.5rem;
+        
+        margin: 0;
+        padding: 0;
+
+        @include screens.desktop {
+            padding-left: 1.2rem;
+        }
     }
 
     li.piece-details {
@@ -309,24 +268,6 @@
         font-weight: 400;
         color: var(--text-neutral);
         margin: 0px;
-    }
-
-    span.group-by-label, span.chosen-group-by, span.group-by-option, aside#preface-container {
-        font-size: 18px;
-        font-weight: 400;
-        color: var(--text-neutral);
-    }
-
-    span.chosen-group-by, span.group-by-option {
-        cursor: pointer;
-    }
-
-    span.chosen-group-by {
-        text-decoration: underline;
-    }
-
-    span.chosen-group-by:hover, span.group-by-option:hover {
-        color: var(--text-contrast);
     }
 
     span.composer {
@@ -351,7 +292,7 @@
         text-decoration: underline;
     }
 
-    h1#title, h2.primary-section-header, h3.secondary-section-header {
+    h2.primary-section-header, h3.secondary-section-header {
         color: var(--text-neutral);
         margin: 0px;
     }
@@ -360,41 +301,13 @@
         color: var(--text-contrast);
     }
 
-    h1#title {
-        font-size: 36px;
-        font-weight: 600;
-    }
-
     h2.primary-section-header {
         font-size: 24px;
         font-weight: 500;
-        margin-bottom: 15px;
     }
 
     h3.secondary-section-header {
         font-size: 20px;
         font-weight: 400;
-    }
-
-    p {
-        margin: 0px;
-        margin-bottom: 5px;
-    }
-
-    aside#preface-container {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        padding-top: 20px;
-        padding-bottom: 70px;
-    }
-
-    span.tier-label {
-        color: var(--text-brand);
-    }
-
-    span.tier-label-separator {
-        padding-left: 5px;
-        padding-right: 5px;
     }
 </style>
