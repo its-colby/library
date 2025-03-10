@@ -1,0 +1,46 @@
+@use './screens.scss';
+
+:root {
+    --font-weight-base: 400;
+    --font-weight-bold: 500;
+
+    --font-size-regular: 1rem;
+    --font-size-medium: 1.1rem;
+    --font-size-kinda-large: 1.3rem;
+    --font-size-large: 1.7rem;
+
+    @include screens.desktop {
+        --font-size-base: 18px;
+    }
+
+    @include screens.tablet {
+        --font-size-base: 16px;
+    }
+
+    @include screens.mobile {
+        --font-size-base: 16px;
+    }
+}
+
+%all-fonts {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+}
+
+%base-font {
+    @extend %all-fonts;
+    font-weight: var(--font-weight-base);
+    font-size: var(--font-size-base);
+}
+
+%kinda-large-font {
+    @extend %all-fonts;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-kinda-large);
+}
+
+%large-font {
+    @extend %all-fonts;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-large);
+}

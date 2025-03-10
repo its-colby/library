@@ -3,7 +3,7 @@
     import Inline from "$lib/ui/tex/inline/Inline.svelte";
     import { onMount } from 'svelte';
     
-    let { data }: { data: Section } = $props();
+    let { data, link_click = () => {} }: { data: Section, link_click?: () => void } = $props();
     let current_section: string | null = $state(null);
 
     onMount(() => {
@@ -43,6 +43,7 @@
         class="section-title" 
         class:active={current_section === x.href}
         href={"#" + x.href}
+        onclick={link_click}
     >
         <span class="number">{x.label.label().value}</span>
         <span class="text">
@@ -59,6 +60,7 @@
         class="sub_section-title" 
         class:active={current_section === x.href}
         href={"#" + x.href}
+        onclick={link_click}
     >
         <span class="number">{x.label.label().value}</span>
         <span class="text">

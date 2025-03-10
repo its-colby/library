@@ -1,7 +1,7 @@
 <script lang="ts">
     import Tooltip from '$lib/ui/utils/Tooltip.svelte';
     import { Sun, Moon } from 'lucide-svelte';
-    import { theme } from '$lib/common/theme';
+    import { theme } from '$lib/theme';
 
     let { size = 40 } : { size?: number } = $props();
 </script>

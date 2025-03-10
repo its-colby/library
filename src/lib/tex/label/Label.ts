@@ -1,4 +1,4 @@
-import { Optional } from "$lib/common/optional.type";
+import { Optional } from "$lib/common";
 import { Tex } from "$lib/tex/notation";
 import { LabelType } from "./LabelType";
 import { IndexType } from "./IndexType";

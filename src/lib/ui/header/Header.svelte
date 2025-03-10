@@ -1,44 +1,38 @@
 <script lang="ts">
     import ColorThemeToggle from '$lib/ui/utils/ColorThemeToggle.svelte';
-    import { theme } from '$lib/common/theme';
+    import { theme } from '$lib/theme';
 </script>
 
 <header>
-    <h2>Colby Anderson</h2>
-    <nav><a href="/">Writings</a></nav>
+    <nav><a href="/">Colby's Blog</a></nav>
     <ColorThemeToggle size={25}/>
 </header>
 
 
-<style>
+<style lang="scss">
+    @use '$lib/theme/screens.scss';
+    @use '$lib/theme/fonts.scss';
+
     header {
         background-color: var(--header-background);
-        padding: 10px 30px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        min-height: 40px;
+        padding: 0.5rem 1.5rem;
         top: 0;
         position: sticky;
         z-index: 100;
-    }
 
-    header h2 {
-        font-size: 18px;
-        font-weight: 500;
-        color: var(--text-neutral);
+        height: 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        // @include screens.mobile {
+        //     position: relative;
+        // }
     }
 
     a {
-        font-size: 18px;
-        font-weight: 500;
-        text-decoration: none;
+        @extend %kinda-large-font;
         color: var(--text-neutral);
-    }
-
-    nav {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+        text-decoration: none;
     }
 </style>

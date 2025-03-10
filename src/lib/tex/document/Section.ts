@@ -1,7 +1,7 @@
 import { Block } from "$lib/tex/block";
 import { Tex } from "$lib/tex/notation";
 import { Inline, Title, Note, List } from "$lib/tex/inline";
-import { Optional } from "$lib/common/optional.type";
+import { Optional } from "$lib/common";
 
 export class Section {
     public readonly title: Title;

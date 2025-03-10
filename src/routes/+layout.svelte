@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { theme } from '$lib/common/theme';
+    import { theme } from '$lib/theme';
     import { onMount } from 'svelte';
     import Header from '$lib/ui/header/Header.svelte';
     onMount(() => {
@@ -13,11 +13,13 @@
 {@render children()}
 
 
-<style>
-:global(body, html) {
+<style lang="scss">
+    @use '$lib/theme/fonts.scss';
+
+    :global(body, html) {
         margin: 0;
         padding: 0;
-        font-family: 'Roboto', sans-serif;
+        @extend %base-font;
         background-color: var(--main-background);
     }
 </style>

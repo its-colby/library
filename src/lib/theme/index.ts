@@ -227,4 +227,3 @@ export const theme = new Theme({
         }),
     },
 });
-  

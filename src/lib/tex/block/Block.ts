@@ -1,4 +1,4 @@
-import { Optional } from "$lib/common/optional.type";
+import { Optional } from "$lib/common";
 import { Tex } from "$lib/tex/notation";
 import { Statement, OneLineStatement, InlineWrapper } from "$lib/tex/statement";
 import { BlockHeader } from "./BlockHeader";
