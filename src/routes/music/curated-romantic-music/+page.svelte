@@ -1,6 +1,6 @@
 <script lang="ts">
     import { pieces, GroupByStatement, statement_to_field, Tier, type Piece, type GoodPiece, type BadPiece } from "$lib/music/export";
-    import { group_by_statements } from "$lib/ui/music/utils";
+    import { group_by_statements } from "$lib/ui/music/utils.svelte";
     import Accordion from "$lib/ui/utils/Accordion.svelte";
     import Tooltip from "$lib/ui/utils/Tooltip.svelte";
     import Preface from "$lib/ui/music/preface/Preface.svelte"

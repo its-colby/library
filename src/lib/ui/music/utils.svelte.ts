@@ -5,7 +5,7 @@ export interface Statements {
     secondary: GroupByStatement;
 }
 
-export const group_by_statements: Statements = {
+export const group_by_statements: Statements = $state({
     primary: GroupByStatement.GENRE,
     secondary: GroupByStatement.TIER,
-}
+});

@@ -1,6 +1,6 @@
 <script lang="ts">
     import { GroupByStatement } from "$lib/music/export";
-    import { group_by_statements } from "./utils";
+    import { group_by_statements } from "./utils.svelte";
     import Dropdown from "$lib/ui/utils/Dropdown.svelte";
 
     function change_group_by_statement(level: keyof typeof group_by_statements, new_statement: GroupByStatement) {
