@@ -1,1 +1,1 @@
-export { default as component } from "../../../../src/routes/music/curated-romantic-music/+page.svelte";
+export { default as component } from "../../../../src/routes/mathematics/irreducible-polynomials/+page.svelte";

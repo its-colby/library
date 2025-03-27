@@ -1,4 +1,19 @@
+
 Folders:
+    - What's its purpose?
+    - How to name it? 
+        - consistent conventions (kebab case)
+        - a concept, max 3 words, 
+    - colocation
+    - use plural for collections
+    - include a read-me if necessary (more for onboarding)
+    - What to include in it?
+        - at a glance (up to 3-5  children)
+    - a note on hierarchy - base it on likelihood of files needed at once
+    - don't be afraid to have a folder with only 1 child thats also a folder or just 1 child thats a file
+    - dont be afraid to have a large depth
+    - folder of code should be self-contained as possible
+    - when coding, shouldn't need to go back and forth between more than 1-2 folders
     - always create export files that appropriately name exports
 
 Files:

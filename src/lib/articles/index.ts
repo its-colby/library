@@ -15,6 +15,7 @@ export const music = new Folder({
 
 export const folders = [
     MATHS,
+    // ALGORITHMS,
     music
 ] as const;
 

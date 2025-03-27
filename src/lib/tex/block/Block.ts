@@ -65,14 +65,16 @@ export class Block {
         }
     }
 
-    public static from_single_statement(value: Tex) {
+    public static from_single_statement(value: Tex, title?: Tex) {
         return new Block({
+            title,
             statements: [new OneLineStatement({value})]
         });
     }
 
-    public static from_multiple_statements(values: Tex[]) {
+    public static from_multiple_statements(values: Tex[], title?: Tex) {
         return new Block({
+            title,
             statements: values.map(value => new OneLineStatement({value}))
         });
     }

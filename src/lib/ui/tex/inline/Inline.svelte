@@ -41,6 +41,21 @@
         font-family: 'Roboto', sans-serif;
     }
 
+    .div {
+        /* display: inline-flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 4px; */
+        /* display: flex;
+        flex-wrap: wrap; */
+    }
+
+    span.tex {
+        font-size: 18px;
+        display: inline-block; /* makes eq. break on new line */
+        /* width: 100%; */
+    }
+
     span.note.text, span.content.text, span.list.text {
         color: var(--text-neutral);
     }

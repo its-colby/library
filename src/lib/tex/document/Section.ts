@@ -37,6 +37,24 @@ export class Section {
         return this.section_depth.is_set() ? this.section_depth.value : 0;
     }
 
+    public static from_content(content: (Inline | Block | Note | List)[], title: string): Section {
+        return new Section({
+            title: new Title({
+                value: title
+            }),
+            content
+        });
+    }
+
+    public static from_sections(sections: Section[], title: string): Section {
+        return new Section({
+            title: new Title({
+                value: title
+            }),
+            sections
+        });
+    }
+
     public assign_indices({
         prefixed_index,
         index,

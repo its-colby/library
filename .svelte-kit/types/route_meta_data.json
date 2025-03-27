@@ -9,6 +9,15 @@
 	"/mathematics/algebraic-number-theory": [
 		"src/routes/+layout.ts"
 	],
+	"/mathematics/galois-groups": [
+		"src/routes/+layout.ts"
+	],
+	"/mathematics/irreducible-polynomials": [
+		"src/routes/+layout.ts"
+	],
+	"/mathematics/ring-theory": [
+		"src/routes/+layout.ts"
+	],
 	"/music/curated-romantic-music": [
 		"src/routes/+layout.ts"
 	]

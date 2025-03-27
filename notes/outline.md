@@ -1,3 +1,46 @@
+
+
+
+
+
+Lagrange's Theorem
+Orbit-stabilizer theorem
+Cayley’s Theorem
+Sylow Theorems
+Jordan-Hölder Theorem
+Zassenhaus’ Lemma
+Burnside’s Lemma
+
+Gauss's Lemma
+Eisenstein's Criterion
+Hilbert’s Basis Theorem
+Nullstellensatz
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 theory of computation
         - computability / recursiontheory
                 - halting problem

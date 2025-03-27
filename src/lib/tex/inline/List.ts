@@ -1,9 +1,17 @@
 import type { Inline } from "./Inline";
 
-export class List {
-    public inlines: Inline[];
+export type ListElement = [Inline] | [Inline, List];
 
-    constructor(inlines: Inline[]) {
-        this.inlines = inlines;
+export class List {
+    public elements: ListElement[];
+
+    constructor(param: ListElement[] | Inline[]) {
+        if (param.length === 0 || Array.isArray(param[0])) {
+            // ListElement[]
+            this.elements = param as ListElement[];
+        } else {
+            // Inline[]
+            this.elements = (param as Inline[]).map(inline => [inline]);
+        }
     }
 }
