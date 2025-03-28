@@ -1,11 +1,13 @@
 <script lang="ts">
-    import { Folder, Page, folders } from "$lib/articles";
+    import { Folder, Page, folders } from "$lib/content";
     import { ExternalLink } from "lucide-svelte";
 </script>
 
 <main>
     {#each folders as folder}
-        {@render Section(folder)}
+        {#if folder.has_published_pages}
+            {@render Section(folder)}
+        {/if}
     {/each}
 </main>
 
@@ -14,7 +16,7 @@
         <h1>{folder.title}</h1>
         <nav>
             <ul>
-                {#each folder.pages as page}
+                {#each folder.published_pages as page}
                     {@render page_link(page)}
                 {/each}
             </ul>
@@ -34,8 +36,8 @@
 {/snippet}
 
 <style lang="scss">
-    @use '$lib/theme/screens.scss';
-    @use '$lib/theme/fonts.scss';
+    @use '$lib/front-end/theme/screens.scss';
+    @use '$lib/front-end/theme/fonts.scss';
 
     main {
         display: flex;

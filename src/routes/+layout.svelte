@@ -1,7 +1,7 @@
 <script lang="ts">
-    import { theme } from '$lib/theme';
+    import { theme } from '$lib/front-end/theme';
     import { onMount } from 'svelte';
-    import Header from '$lib/ui/header/Header.svelte';
+    import Header from '$lib/front-end/ui/header/Header.svelte';
     onMount(() => {
         theme.apply(document.documentElement);
     });
@@ -14,7 +14,7 @@
 
 
 <style lang="scss">
-    @use '$lib/theme/fonts.scss';
+    @use '$lib/front-end/theme/fonts.scss';
 
     :global(body, html) {
         margin: 0;
