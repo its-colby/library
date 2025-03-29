@@ -1,11 +1,11 @@
 <script lang="ts">
-    import { pieces, GroupByStatement, statement_to_field, Tier, type Piece, type GoodPiece, type BadPiece } from "$lib/content/music/export";
-    import { group_by_statements } from "$lib/ui/music/utils.svelte";
-    import Accordion from "$lib/ui/utils/Accordion.svelte";
-    import Tooltip from "$lib/ui/utils/Tooltip.svelte";
-    import Preface from "$lib/ui/music/preface/Preface.svelte"
-  import GroupBy from "$lib/ui/music/GroupBy.svelte";
-  import Title from "$lib/ui/music/Title.svelte";
+    import { pieces, GroupByStatement, statement_to_field, Tier, type Piece } from "$lib/content/music";
+    import { group_by_statements } from "$lib/front-end/ui/music/utils.svelte";
+    import Accordion from "$lib/front-end/ui/utils/Accordion.svelte";
+    import Tooltip from "$lib/front-end/ui/utils/Tooltip.svelte";
+    import Preface from "$lib/front-end/ui/music/preface/Preface.svelte"
+    import GroupBy from "$lib/front-end/ui/music/GroupBy.svelte";
+    import Title from "$lib/front-end/ui/music/Title.svelte";
 
 
 
@@ -185,7 +185,7 @@
 </main>
 
 <style lang="scss">
-    @use "$lib/theme/screens";
+    @use "$lib/front-end/theme/screens";
 
     .top {
         display: flex;

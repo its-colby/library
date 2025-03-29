@@ -3,22 +3,10 @@
 		"src/routes/+layout.ts",
 		"src/routes/+layout.ts"
 	],
-	"/mathematics/abstract-algebra": [
+	"/mathematics/staging": [
 		"src/routes/+layout.ts"
 	],
-	"/mathematics/algebraic-number-theory": [
-		"src/routes/+layout.ts"
-	],
-	"/mathematics/galois-groups": [
-		"src/routes/+layout.ts"
-	],
-	"/mathematics/irreducible-polynomials": [
-		"src/routes/+layout.ts"
-	],
-	"/mathematics/ring-theory": [
-		"src/routes/+layout.ts"
-	],
-	"/music/curated-romantic-music": [
+	"/music/classical-compilation": [
 		"src/routes/+layout.ts"
 	]
 }

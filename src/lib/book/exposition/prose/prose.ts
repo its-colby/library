@@ -18,18 +18,18 @@ export class Prose {
         const parts = input.split('$$');
         
         // Check for valid pairing of $$ delimiters
-        if (segments.length % 2 === 0) {
+        if (parts.length % 2 === 0) {
             throw new Error('Unmatched $$ delimiter found');
         }
         
-        segments.forEach((segment, index) => {
+        parts.forEach((part, index) => {
             // Even indices are regular text, odd indices are Tex
             if (index % 2 === 0) {
-                segments.push(segment); // Keep empty strings for proper spacing
+                segments.push(part); // Keep empty strings for proper spacing
             } else {
-                segments.push(new Tex(segment));
+                segments.push(new Tex(part));
                 // Add empty string between consecutive Tex elements
-                if (index < segments.length - 2) {
+                if (index < parts.length - 2) {
                     segments.push("");
                 }
             }

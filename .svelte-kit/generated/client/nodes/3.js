@@ -1,1 +1,1 @@
-export { default as component } from "../../../../src/routes/mathematics/abstract-algebra/+page.svelte";
+export { default as component } from "../../../../src/routes/mathematics/staging/+page.svelte";

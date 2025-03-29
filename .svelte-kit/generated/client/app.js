@@ -5,23 +5,15 @@ export const nodes = [
 	() => import('./nodes/1'),
 	() => import('./nodes/2'),
 	() => import('./nodes/3'),
-	() => import('./nodes/4'),
-	() => import('./nodes/5'),
-	() => import('./nodes/6'),
-	() => import('./nodes/7'),
-	() => import('./nodes/8')
+	() => import('./nodes/4')
 ];
 
 export const server_loads = [];
 
 export const dictionary = {
 		"/": [2],
-		"/mathematics/abstract-algebra": [3],
-		"/mathematics/algebraic-number-theory": [4],
-		"/mathematics/galois-groups": [5],
-		"/mathematics/irreducible-polynomials": [6],
-		"/mathematics/ring-theory": [7],
-		"/music/curated-romantic-music": [8]
+		"/mathematics/staging": [3],
+		"/music/classical-compilation": [4]
 	};
 
 export const hooks = {

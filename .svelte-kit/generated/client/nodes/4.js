@@ -1,1 +1,1 @@
-export { default as component } from "../../../../src/routes/mathematics/algebraic-number-theory/+page.svelte";
+export { default as component } from "../../../../src/routes/music/classical-compilation/+page.svelte";

@@ -1,15 +1,15 @@
-import type { Page } from "./page";
+import type { Webpage } from "./webpage";
 
 export class Folder {
     public title: string;
-    public pages: Page[];
+    public pages: Webpage[];
 
     constructor({
         title,
         pages
     }: {
         title: string;
-        pages: Page[];
+        pages: Webpage[];
     }) {
         this.title = title;
         this.pages = pages;
@@ -19,7 +19,7 @@ export class Folder {
         return this.pages.some((page) => page.published);
     }
 
-    public get published_pages(): Page[] {
+    public get published_pages(): Webpage[] {
         return this.pages.filter((page) => page.published);
     }
 }

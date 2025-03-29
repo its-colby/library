@@ -1,9 +1,9 @@
-import { metadata as ring_theory } from "./ring-theory";
+import { staging_webpage } from "./staging";
 import { Folder } from "../utils";
 
 export const mathematics = new Folder({
     title: "Mathematics",
     pages: [
-        ring_theory
+        staging_webpage
     ]
 })

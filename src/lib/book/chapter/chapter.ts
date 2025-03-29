@@ -6,7 +6,7 @@ import { Title, ChapterTitle, DocumentTitle } from "./title";
 
 
 
-class Exposition {
+export class Exposition {
     public readonly components: ExpositionComponent[];
 
     constructor(components: ExpositionComponent[]) {
@@ -14,7 +14,7 @@ class Exposition {
     }
 }
 
-class Subchapters {
+export class Subchapters {
     public readonly subchapters: BookChapter[];
 
     constructor(subchapters: BookChapter[]) {
@@ -42,10 +42,6 @@ export class BookChapter {
     }
 
 
-
-    public get has_subchapters(): boolean {
-        return this.layout instanceof Subchapters;
-    }
 
     public get nesting_depth(): number {
         return this._nesting_depth.is_set() ? this._nesting_depth.value : 0;
@@ -101,12 +97,13 @@ export class BookChapter {
 
         this._nesting_depth = Optional.set(nesting_depth);
 
-        const ordinal = new Ordinal({
-            prefixed_ordinal,
-            zero_based_index
-        })
+        const ordinal = nesting_depth == 0 ? undefined
+            : new Ordinal({
+                prefixed_ordinal,
+                zero_based_index
+            });
 
-        if (this.title instanceof ChapterTitle) {
+        if (this.title instanceof ChapterTitle && ordinal) {
             this.title.set_ordinal(ordinal);
         }
 
@@ -126,7 +123,7 @@ export class BookChapter {
                         prefixed_ordinal: ordinal,
                         zero_based_index: statement_index
                     }));
-                    statement_index += item.num_statements;
+                    statement_index += 1;
                 }
             });
         }

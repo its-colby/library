@@ -1,11 +1,11 @@
-import { Folder, Page } from "./utils";
+import { Folder, Webpage } from "./utils";
 import { mathematics } from "./maths";
 
 
 export const music = new Folder({
     title: "Music",
     pages: [
-        new Page({
+        new Webpage({
             title: "Classical Compilation",
             url: "/music/classical-compilation",
             published: true

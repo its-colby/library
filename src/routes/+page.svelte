@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Folder, Page, folders } from "$lib/content";
+    import { Folder, Webpage, folders } from "$lib/content";
     import { ExternalLink } from "lucide-svelte";
 </script>
 
@@ -24,7 +24,7 @@
     </section>
 {/snippet}
 
-{#snippet page_link(page: Page)}
+{#snippet page_link(page: Webpage)}
     <li>
         <h3>
             <a href={page.url} target="_blank" rel="noopener noreferrer">
