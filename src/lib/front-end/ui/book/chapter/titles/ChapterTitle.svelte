@@ -15,12 +15,18 @@
 
 
 <svelte:element 
-    this={section_depth === 1 ? 'h2' : 'h3'}
+    this={
+        section_depth === 1 ? 'h2' : 
+        section_depth === 2 ? 'h3' : 
+        'h4'
+    }
     id={title.unique_identifier}
 >
-    <span class="number">
-        {title.ordinal.value}
-    </span>
+    {#if section_depth !== 3}
+        <span class="number">
+            {title.ordinal.value}
+        </span>
+    {/if}
 
     <span class="text">
         <Prose 
@@ -33,16 +39,13 @@
 
 
 <style>
-    h2, h3 {
+    h2, h3, h4 {
         scroll-margin-top: 100px;
-
         font-weight: 600;
         color: var(--text-neutral);
-
         display: flex;
         align-items: center;
         gap: 20px;
-
         margin: 0px;
     }
 
@@ -51,7 +54,13 @@
     }
 
     h3 {
-        font-size: 24px;
+        font-size: 29px;
+        padding-top: 25px;
+    }
+
+    h4 {
+        font-size: 23px;
+        padding-top: 25px;
     }
 
 </style>

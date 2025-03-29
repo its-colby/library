@@ -8,6 +8,9 @@ export const staging_webpage = new Webpage({
     published: false,
 });
 
-export const staging_document = T.BookChapter.new_document([
-    maximal_ideals,
-], staging_webpage.title);
+export const staging_document = T.BookChapter.new_document({
+    chapters: [
+        maximal_ideals,
+    ],
+    title: staging_webpage.title
+});

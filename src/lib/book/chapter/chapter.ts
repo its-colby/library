@@ -15,9 +15,14 @@ export class Exposition {
 }
 
 export class Subchapters {
+    public readonly introduction: ExpositionComponent[];
     public readonly subchapters: BookChapter[];
 
-    constructor(subchapters: BookChapter[]) {
+    constructor(
+        introduction: ExpositionComponent[], 
+        subchapters: BookChapter[]
+    ) {
+        this.introduction = introduction;
         this.subchapters = subchapters;
     }
 }
@@ -59,23 +64,33 @@ export class BookChapter {
         });
     }
 
-    public static from_subchapters(
-        subchapters: BookChapter[], 
+    public static from_subchapters({
+        introduction = [],
+        subchapters,
+        title
+    }: {
+        introduction?: ExpositionComponent[],
+        subchapters: BookChapter[],
         title: string | Prose
-    ): BookChapter {
+    }): BookChapter {
         return new BookChapter({
             title: new ChapterTitle(title),
-            layout: new Subchapters(subchapters)
+            layout: new Subchapters(introduction, subchapters)
         });
     }
 
-    public static new_document(
-        chapters: BookChapter[], 
+    public static new_document({
+        introduction = [],
+        chapters,
+        title
+    }: {
+        introduction?: ExpositionComponent[],
+        chapters: BookChapter[],
         title: string | Prose
-    ): BookChapter {
+    }): BookChapter {
         const document = new BookChapter({
             title: new DocumentTitle(title),
-            layout: new Subchapters(chapters)
+            layout: new Subchapters(introduction, chapters)
         });
 
         document.assign_ordinals({});

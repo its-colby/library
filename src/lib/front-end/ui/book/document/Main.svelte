@@ -1,6 +1,6 @@
 <script lang="ts">
     import { BookChapter } from "$lib/book";
-    import TableOfContents from "./TableOfContents.svelte";
+    import TableOfContents from "./TOC.svelte";
     import Chapter from "$lib/front-end/ui/book/chapter/Chapter.svelte";
     import { Menu } from "lucide-svelte";
 

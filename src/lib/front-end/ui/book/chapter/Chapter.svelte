@@ -13,6 +13,10 @@
 
     {#if data.layout instanceof T.Subchapters}
 
+        {#if data.layout.introduction.length > 0}
+            <Exposition components={data.layout.introduction} />
+        {/if}
+
         {#each data.layout.subchapters as subchapter}
             <Chapter data={subchapter} />
         {/each}

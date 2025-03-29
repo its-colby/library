@@ -6,10 +6,10 @@
     let { list }: { list: T.List } = $props();
 </script>
 
-<ul>
-    {#each list.elements as element}
+<ul class={list.style}>
+    {#each list.elements as element, index}
         {#if element instanceof T.Prose}
-            <li>
+            <li data-index={index + 1}>
                 <Prose 
                     prose={element} 
                 style_class="list"
@@ -45,10 +45,23 @@ li {
 }
 
 li::before {
-    content: "•";
+    /* content: "•"; */
     color: var(--text-neutral);
+    /* font-size: 1.5em;
+    margin-top: -0.1em; */
+}
+
+.bullet li::before {
+    content: "•";
     font-size: 1.5em;
     margin-top: -0.1em;
+}
+
+/* Number style */
+.number li::before {
+    content: attr(data-index) ".";
+    font-size: 1em;
+    margin-top: 0;
 }
 
 </style>

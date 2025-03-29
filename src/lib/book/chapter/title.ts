@@ -48,6 +48,6 @@ export class ChapterTitle extends Title {
     }
 
     public get unique_identifier(): string {
-        return this.prose.to_string() + " " + this._ordinal.value;
+        return this._ordinal.value.value.replace(/\./g, '-');
     }
 }
