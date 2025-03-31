@@ -31,6 +31,7 @@ ul {
     flex-direction: column;
     gap: 10px;
     padding-left: 0.5em;
+    margin: 0;
 }
 
 .sublist {

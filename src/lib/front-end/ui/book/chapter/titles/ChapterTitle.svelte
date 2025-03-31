@@ -55,7 +55,7 @@
 
     h3 {
         font-size: 29px;
-        padding-top: 25px;
+        padding-top: 50px;
     }
 
     h4 {

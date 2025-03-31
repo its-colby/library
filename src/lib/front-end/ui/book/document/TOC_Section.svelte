@@ -39,12 +39,14 @@
 
     {#if chapter.layout instanceof T.Subchapters && section_depth < 3}
         {#each chapter.layout.subchapters as subchapter}
-            <TOC_Section 
-                chapter={subchapter} 
-                section_depth={section_depth + 1} 
-                link_click={link_click}
-                current_section={current_section}
-            />
+            {#if section_depth < 2 || current_section?.startsWith(chapter.title?.unique_identifier ?? '')}
+                <TOC_Section 
+                    chapter={subchapter} 
+                    section_depth={section_depth + 1} 
+                    link_click={link_click}
+                    current_section={current_section}
+                />
+            {/if}
         {/each}
     {/if}
 </div>

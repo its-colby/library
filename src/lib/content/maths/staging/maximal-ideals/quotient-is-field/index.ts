@@ -43,6 +43,9 @@ export const quotient = [
 ];
 
 
+//  residue field
+// This fact can fail in non-unital or non-commutative rings.
+
 // 5 * x = 1 mod 7
 // 
 // sr = 1 mod m, for any s, there is always an r such that we can get the product to be 1 more than a multiple of m.

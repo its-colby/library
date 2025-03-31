@@ -35,3 +35,6 @@ const hilbert_basis_theorem = T.Inline.parse(`
 const hilbert_basis_theorem_continued = T.Inline.parse(`
     If R is a noetherian ring, then R /I is noetherian.
 `);
+
+// Hilbert Basis Theorem
+
