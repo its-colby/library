@@ -15,15 +15,21 @@
     let current_section: string | null = $state(null);
 
     onMount(() => {
+        let lastVisibleSection = '';
+        
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    console.log(entry.target.id);
-                    current_section = entry.target.id;
+                    lastVisibleSection = entry.target.id;
+                    current_section = lastVisibleSection;
+                } else if (current_section === entry.target.id) {
+                    // Only update to last visible section if the section that's
+                    // leaving view is our current section
+                    current_section = lastVisibleSection;
                 }
             });
         }, {
-            rootMargin: '-100px 0px -50% 0px', // Adjust these values to fine-tune when sections are considered "active"
+            rootMargin: '-100px 0px -50% 0px',
             threshold: 0
         });
 

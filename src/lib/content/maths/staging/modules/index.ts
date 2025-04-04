@@ -27,7 +27,9 @@ export const modules = T.BookChapter.from_subchapters({
 // ----- ascending chain condition on submodules
 // ----- Q as a Z-module is not noetherian, Z sub 1/2 Z sub 1/4 Z sub 1/8 Z ...
 
+// injective
 
+// superfluous submodule, essential submodule
 
 // Z-module Z
 // ----- free module of rank 1

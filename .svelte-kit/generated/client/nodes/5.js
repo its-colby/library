@@ -1,1 +1,1 @@
-export { default as component } from "../../../../src/routes/mathematics/galois-groups/+page.svelte";
+export { default as component } from "../../../../src/routes/music/classical-compilation/+page.svelte";

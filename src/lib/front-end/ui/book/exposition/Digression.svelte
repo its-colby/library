@@ -2,18 +2,30 @@
     import * as T from "$lib/book";
     import Accordion from "$lib/front-end/ui/utils/Accordion.svelte";
     import Prose from "./Prose.svelte";
-
+    import List from "./List.svelte";
+    import Statement from "./statement/Statement.svelte";
 
     let { digression }: { digression: T.Digression } = $props();
 </script>
 
-{#snippet details(paragraphs: T.Prose[])}
+{#snippet details(elements: T.DigressionElement[])}
     <div>
-        {#each paragraphs as paragraph}
-            <Prose 
-                prose={paragraph} 
-                style_class="note"
-            />
+        {#each elements as element}
+            {#if element instanceof T.Prose}
+                <Prose 
+                    prose={element} 
+                    style_class="note"
+                />
+            {:else if element instanceof T.List}
+                <List 
+                    list={element}
+                    prose_style_class="note"
+                />
+            {:else if element instanceof T.Statement}
+                <Statement 
+                    data={element}
+                />
+            {/if}
         {/each}
     </div>
 {/snippet}
@@ -30,7 +42,7 @@
         header={header} 
         details={details} 
         header_data={digression.title} 
-        details_data={digression.paragraphs} 
+        details_data={digression.elements} 
         --chevron-color={"var(--text-neutral)"}
         --chevron-color-hovered={"var(--text-contrast)"}
     />

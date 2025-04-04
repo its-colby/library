@@ -38,16 +38,18 @@
     {/if}
 
     {#if chapter.layout instanceof T.Subchapters && section_depth < 3}
-        {#each chapter.layout.subchapters as subchapter}
-            {#if section_depth < 2 || current_section?.startsWith(chapter.title?.unique_identifier ?? '')}
-                <TOC_Section 
-                    chapter={subchapter} 
-                    section_depth={section_depth + 1} 
-                    link_click={link_click}
-                    current_section={current_section}
-                />
-            {/if}
-        {/each}
+        <div class={`toc-subsections depth-${section_depth}`}>
+            {#each chapter.layout.subchapters as subchapter}
+                {#if section_depth < 2 || current_section?.startsWith(chapter.title?.unique_identifier ?? '')}
+                    <TOC_Section 
+                        chapter={subchapter} 
+                        section_depth={section_depth + 1} 
+                        link_click={link_click}
+                        current_section={current_section}
+                    />
+                {/if}
+            {/each}
+        </div>
     {/if}
 </div>
 
@@ -74,9 +76,21 @@
         opacity: 1;
     }
 
-    div.toc-section {
+    div.toc-subsections {
         display: flex;
         flex-direction: column;
+    }
+
+    div.toc-subsections.depth-0 {
+        gap: 40px;
+    }
+
+    div.toc-subsections.depth-1 {
+        padding-top: 10px;
+        gap: 10px;
+    }
+
+    div.toc-subsections.depth-2 {
         gap: 10px;
     }
 

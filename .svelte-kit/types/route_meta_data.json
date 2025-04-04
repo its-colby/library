@@ -3,6 +3,9 @@
 		"src/routes/+layout.ts",
 		"src/routes/+layout.ts"
 	],
+	"/mathematics/maximal-ideals": [
+		"src/routes/+layout.ts"
+	],
 	"/mathematics/staging": [
 		"src/routes/+layout.ts"
 	],

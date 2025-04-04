@@ -51,6 +51,7 @@
 
     h2 {
         font-size: 30px;
+        padding-top: 100px;
     }
 
     h3 {

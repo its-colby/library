@@ -3,7 +3,7 @@
     import Prose from "./Prose.svelte";
     import List from "./List.svelte";
 
-    let { list }: { list: T.List } = $props();
+    let { list, prose_style_class = "list" }: { list: T.List, prose_style_class?: "list" | "note" } = $props();
 </script>
 
 <ul class={list.style}>
@@ -12,7 +12,7 @@
             <li data-index={index + 1}>
                 <Prose 
                     prose={element} 
-                style_class="list"
+                    style_class={prose_style_class}
                 />
             </li>
         {:else if element instanceof T.List}
