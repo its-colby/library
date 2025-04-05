@@ -25,7 +25,7 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        padding-top: 20px;
+        padding-top: 1rem;
 
         @include screens.desktop {
             padding-bottom: 3rem;
@@ -38,9 +38,8 @@
 
     p {
         color: var(--text-neutral);
-        @extend %base-font;
+        @include fonts.themed-font('100', 'normal');
 
-        margin: 0px;
-        margin-bottom: 5px;
+        margin: 0;
     }
 </style>

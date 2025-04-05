@@ -37,24 +37,29 @@
         {@render link(chapter.title)}
     {/if}
 
-    {#if chapter.layout instanceof T.Subchapters && section_depth < 3}
+    {#if (chapter.layout instanceof T.Subchapters) &&
+        (
+            section_depth < 2 || 
+            current_section?.startsWith(chapter.title?.unique_identifier ?? '')
+        )
+    }
         <div class={`toc-subsections depth-${section_depth}`}>
             {#each chapter.layout.subchapters as subchapter}
-                {#if section_depth < 2 || current_section?.startsWith(chapter.title?.unique_identifier ?? '')}
-                    <TOC_Section 
-                        chapter={subchapter} 
-                        section_depth={section_depth + 1} 
-                        link_click={link_click}
-                        current_section={current_section}
-                    />
-                {/if}
+                <TOC_Section 
+                    chapter={subchapter} 
+                    section_depth={section_depth + 1} 
+                    link_click={link_click}
+                    current_section={current_section}
+                />
             {/each}
         </div>
     {/if}
 </div>
 
 
-<style>
+<style lang="scss">
+    @use '$lib/front-end/theme/fonts';
+
     a {
         text-decoration: none;
         color: var(--text-neutral);
@@ -63,8 +68,8 @@
 
         display: flex;
         flex-direction: row;
-        gap: 20px;
-        align-items: center;
+        gap: 1rem;
+        align-items: flex-start;
     }
 
     a.active {
@@ -76,44 +81,43 @@
         opacity: 1;
     }
 
-    div.toc-subsections {
+    a.depth-1 {
+        @include fonts.themed-font('110', 'normal');
+    }
+
+    a.depth-2 {
+        @include fonts.themed-font('100', 'normal');
+    }
+
+    a.depth-3 {
+        @include fonts.themed-font('90', 'normal');
+    }
+
+
+
+    div.toc-section, div.toc-subsections {
         display: flex;
         flex-direction: column;
     }
 
     div.toc-subsections.depth-0 {
-        gap: 40px;
+        gap: 2rem;
+    }
+
+    div.toc-section.depth-1 {
+        gap: 0.5rem;
     }
 
     div.toc-subsections.depth-1 {
-        padding-top: 10px;
-        gap: 10px;
+        gap: 0.5rem;
+        padding-left: 1rem;
     }
 
     div.toc-subsections.depth-2 {
-        gap: 10px;
+        padding-top: 0.5rem;
+        gap: 0.5rem;
+        padding-left: 2rem;
+        padding-bottom: 0.5rem;
     }
-
-    div.toc-section.depth-2, div.toc-section.depth-3 {
-        padding-left: 20px;
-    }
-
-    a.depth-1 {
-        font-size: 20px;
-    }
-
-    a.depth-2 {
-        font-size: 18px;
-    }
-
-    a.depth-3 {
-        font-size: 16px;
-    }
-
-
-    /* span:hover {
-        color: var(--text-contrast);
-    } */
-
 
 </style>

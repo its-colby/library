@@ -1,6 +1,5 @@
 <script lang="ts">
     import * as T from "$lib/book";
-    import Prose from "$lib/front-end/ui/book/exposition/Prose.svelte";
     import { onMount } from 'svelte';
     import TOC_Section from "$lib/front-end/ui/book/document/TOC_Section.svelte";
 
@@ -78,12 +77,10 @@
     div#table_of_contents {
         display: flex;
         flex-direction: column;
-        gap: 10px;
 
         top: 101px;
         position: sticky;
         height: calc(100vh - 151px);
-        /* max-height: 100vh; */
         overflow-y: auto;
     }
 

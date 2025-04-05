@@ -38,30 +38,35 @@
 </svelte:element>
 
 
-<style>
+<style lang="scss">
+    @use '$lib/front-end/theme/fonts';
+
     h2, h3, h4 {
         scroll-margin-top: 100px;
-        font-weight: 600;
         color: var(--text-neutral);
         display: flex;
-        align-items: center;
-        gap: 20px;
-        margin: 0px;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 1rem;
+        margin: 0;
     }
 
     h2 {
-        font-size: 30px;
-        padding-top: 100px;
+        @include fonts.themed-font('170', 'bold');
+        padding-top: 5rem;
+        padding-bottom: 1rem;
     }
 
     h3 {
-        font-size: 29px;
-        padding-top: 50px;
+        @include fonts.themed-font('130', 'bold');
+        padding-top: 3rem;
+        padding-bottom: 1rem;
     }
 
     h4 {
-        font-size: 23px;
-        padding-top: 25px;
+        @include fonts.themed-font('110', 'bold');
+        padding-top: 1rem;
+        padding-bottom: 1rem;
     }
 
 </style>

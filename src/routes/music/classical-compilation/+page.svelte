@@ -186,20 +186,21 @@
 
 <style lang="scss">
     @use "$lib/front-end/theme/screens";
+    @use "$lib/front-end/theme/fonts";
 
     .top {
         display: flex;
         flex-direction: column;
 
         @include screens.desktop {
-            padding-left: 250px;
-            padding-right: 250px;
+            margin: 0 auto;
+            max-width: 45rem;
         }
     }
 
     main {
         @include screens.desktop {
-            padding-top: 40px;
+            padding-top: 2rem;
             padding-left: 3rem;
             padding-right: 3rem;
         }
@@ -261,21 +262,20 @@
     li.piece-details {
         display: flex;
         flex-direction: row;
-        align-items: center;
-        gap: 15px;
+        align-items: flex-start;
+        gap: 1rem;
 
-        font-size: 18px;
-        font-weight: 400;
+        @include fonts.themed-font('100', 'normal');
         color: var(--text-neutral);
-        margin: 0px;
+        margin: 0;
     }
 
     span.composer {
-        width: 150px;
+        width: 6rem;
     }
 
     span.piece-title-container {
-        width: 200px;
+        width: 12rem;
     }
 
     a.piece-title {
@@ -285,7 +285,7 @@
 
     li.piece-details > span.deficient-piece-title {
         color: var(--text-neutral);
-        width: 200px;
+        width: 12rem;
     }
 
     a.piece-title:hover {
@@ -294,7 +294,7 @@
 
     h2.primary-section-header, h3.secondary-section-header {
         color: var(--text-neutral);
-        margin: 0px;
+        margin: 0;
     }
 
     h3.secondary-section-header.open {
@@ -302,12 +302,10 @@
     }
 
     h2.primary-section-header {
-        font-size: 24px;
-        font-weight: 500;
+        @include fonts.themed-font('170', 'normal');
     }
 
     h3.secondary-section-header {
-        font-size: 20px;
-        font-weight: 400;
+        @include fonts.themed-font('130', 'normal');
     }
 </style>

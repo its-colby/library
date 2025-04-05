@@ -28,36 +28,24 @@
     {/each}
 </div>
 
-<style>
+<style lang="scss">
+    @use '$lib/front-end/theme/fonts';
 
     span.text {
         font-size: inherit;
     }
 
     div.note {
-        font-size: 18px;
+        @include fonts.themed-font('90', 'normal');
     }
 
     div.content, div.list, div.text-statement {
-        font-size: 20px;
-    }
-
-    span.note {
-        font-weight: 400;
-        line-height: 1.5;
-        font-family: 'Roboto', sans-serif;
-    }
-
-    span.content, span.list {
-        font-weight: 400;
-        line-height: 1.5;
-        font-family: 'Roboto', sans-serif;
+        @include fonts.themed-font('100', 'normal');
     }
 
     span.tex {
         font-size: 0.9em;
-        display: inline-block; /* makes eq. break on new line */
-        /* width: 100%; */
+        display: inline-block;
     }
 
     span.note.text, span.content.text, span.list.text {
@@ -66,12 +54,6 @@
 
     span.note.tex, span.text-statement.tex, span.content.tex, span.list.tex {
         color: var(--text-brand);
-    }
-
-    span.text-statement {
-        font-weight: 500;
-        line-height: 1.5;
-        font-family: 'Roboto', sans-serif;
     }
 
     span.text-statement.text {

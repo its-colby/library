@@ -64,9 +64,9 @@
     }
 
     h1 {
-        @extend %kinda-large-font;
         margin: 0;
         color: var(--text-neutral);
+        @include fonts.themed-font('130', 'bold');
     }
 
     nav {
@@ -87,8 +87,7 @@
 
     h3 {
         margin: 0;
-        font-size: var(--font-size-medium);
-        font-weight: var(--font-weight-base);
+        @include fonts.themed-font('100', 'normal');
     }
 
     a {

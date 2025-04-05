@@ -42,20 +42,19 @@
 {/snippet}
 
 <style lang="scss">
-    @use "$lib/front-end/theme/screens";
+    @use "$lib/front-end/theme/fonts";
 
     nav {
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: 10px;
+        gap: 0.5rem;
         color: var(--text-neutral);
         justify-content: center;
     }
 
-span.group-by-label, span.chosen-group-by, span.group-by-option{
-        font-size: 18px;
-        font-weight: 400;
+    span.group-by-label, span.chosen-group-by, span.group-by-option {
+        @include fonts.themed-font('100', 'normal');
         color: var(--text-neutral);
     }
 

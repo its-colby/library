@@ -48,27 +48,27 @@
     />
 </aside>
 
-<style>
-    aside {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+<style lang="scss">
+    @use '$lib/front-end/theme/fonts';
 
+    aside {
         border-color: var(--text-neutral);
         border-width: 1px;
         border-style: solid;
         border-radius: 10px;
 
-        padding: 10px;
+        padding: 0.5rem;
+
+        width: fit-content;
+        transition: width 0.3s ease;
     }
 
     h4 {
-        font-size: 18px;
-        font-weight: 600;
-        line-height: 1.5;
+        @include fonts.themed-font('100', 'normal');
         color: var(--text-neutral);
 
         margin: 0;
+        padding-right: 0.5rem;
     }
 
     h4.hovered {
@@ -78,10 +78,10 @@
     div {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 1rem;
 
-        padding-top: 10px;
-        padding-left: 40px;
-        padding-right: 40px;
+        padding-top: 0.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 </style>

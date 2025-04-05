@@ -10,35 +10,40 @@
 
 </script>
 
-{#each Object.entries(legend) as [tier, definition]}
+<div class="legend-container">
+    {#each Object.entries(legend) as [tier, definition]}
 
-    <p class="tier-definition-container">
+    <div class="tier-definition-container">
         <span class="tier-label">{tier}</span>
         <span class="tier-label-separator">—</span>
         <span class="tier-definition">{definition}</span>
-    </p>
+    </div>
 
-{/each}
+    {/each}
+</div>
 
 <style lang="scss">
     @use "$lib/front-end/theme/fonts";
 
-    p {
-        margin: 0px;
-        margin-bottom: 5px;
+    div.legend-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    div.tier-definition-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
     }
 
     span {
-        @extend %base-font;
+        @include fonts.themed-font('100', 'normal');
         color: var(--text-neutral);
     }
 
     span.tier-label {
         color: var(--text-brand);
-    }
-
-    span.tier-label-separator {
-        padding-left: 5px;
-        padding-right: 5px;
     }
 </style>

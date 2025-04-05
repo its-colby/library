@@ -26,7 +26,7 @@
     }
 
     a {
-        @extend %kinda-large-font;
+        @include fonts.themed-font('130', 'normal');
         color: var(--text-neutral);
         text-decoration: none;
     }

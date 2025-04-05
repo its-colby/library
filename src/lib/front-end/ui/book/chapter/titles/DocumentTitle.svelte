@@ -13,12 +13,15 @@
     />
 </h1>
 
-<style>
+<style lang="scss">
+    @use '$lib/front-end/theme/fonts';
+
     h1 {
         text-align: center;
-        margin: 0px;
-        font-size: 30px;
-        font-weight: 600;
+        @include fonts.themed-font('170', 'bold');
         color: var(--text-neutral);
+
+        margin: 0;
+        padding-bottom: 2rem;
     }
 </style>
