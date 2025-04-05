@@ -19,5 +19,5 @@ export const chapter_1 = T.BookChapter.from_exposition([
         `),
     ]),
 ], 
-    T.Prose.parse(`Proving $$\\langle 2x + 4 \\rangle \\subset \\langle 2 \\rangle$$`)
+    T.Prose.parse(`Non-Example: $$\\langle 2x + 4 \\rangle$$`)
 );

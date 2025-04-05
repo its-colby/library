@@ -17,5 +17,4 @@ export const chapter = T.BookChapter.from_exposition([
             $$\\langle \\ (x-4) \\ \\rangle$$ This is maximal.
         `),
     ]),
-], T.Prose.parse(`$$\\mathbb{R}[x]$$`));
-
+], T.Prose.parse(`Examples`));

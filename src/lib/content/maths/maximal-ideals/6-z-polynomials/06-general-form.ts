@@ -29,7 +29,7 @@ export const chapter_6 = T.BookChapter.from_exposition([
         `),
     ]),
 
-], T.Prose.parse(`General Form of Maximal Ideals in $$\\mathbb{Z}[x]$$`));
+], T.Prose.parse(`Generalized Example: $$\\langle p, f \\mod p \\rangle$$`));
 
 
 // prove p must be contained in the ideal

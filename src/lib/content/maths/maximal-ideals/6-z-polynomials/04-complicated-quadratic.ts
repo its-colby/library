@@ -16,5 +16,5 @@ export const chapter_4 = T.BookChapter.from_exposition([
         `),
     ]),
 ], 
-    T.Prose.parse(`Proving $$\\langle \\ 2, \\ 4x^2 + 5x + 3 \\ \\rangle \\subset \\langle \\ 2, \\ x + 1 \\ \\rangle$$`)
+    T.Prose.parse(`Non-Example: $$\\langle \\ 2, \\ 4x^2 + 5x + 3 \\ \\rangle$$`)
 );

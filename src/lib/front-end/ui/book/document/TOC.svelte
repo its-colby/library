@@ -14,6 +14,8 @@
 
     let current_section: string | null = $state(null);
 
+    let tocContainer: HTMLElement | null = $state(null);
+
     onMount(() => {
         let lastVisibleSection = '';
         
@@ -22,9 +24,25 @@
                 if (entry.isIntersecting) {
                     lastVisibleSection = entry.target.id;
                     current_section = lastVisibleSection;
+                    
+                    // Find the active TOC link
+                    const activeTocLink = tocContainer?.querySelector(
+                        `a[href="#${lastVisibleSection}"]`
+                    );
+                    
+                    if (activeTocLink && tocContainer) {
+                        // Calculate if element is outside visible area
+                        const linkRect = activeTocLink.getBoundingClientRect();
+                        const containerRect = tocContainer.getBoundingClientRect();
+                        
+                        if (linkRect.top < containerRect.top || linkRect.bottom > containerRect.bottom) {
+                            activeTocLink.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'nearest'
+                            });
+                        }
+                    }
                 } else if (current_section === entry.target.id) {
-                    // Only update to last visible section if the section that's
-                    // leaving view is our current section
                     current_section = lastVisibleSection;
                 }
             });
@@ -44,7 +62,7 @@
 </script>
 
 {#if data.layout instanceof T.Subchapters && data.nesting_depth === 0 }
-    <div id="table_of_contents">
+    <div id="table_of_contents" bind:this={tocContainer}>
         <TOC_Section 
             chapter={data} 
             section_depth={0} 

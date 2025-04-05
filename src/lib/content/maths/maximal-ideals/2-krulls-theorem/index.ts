@@ -19,3 +19,8 @@ export const chapter = T.BookChapter.from_exposition([
     ]),
 
 ], T.Prose.parse(`Krull's Theorem`));
+
+
+
+// change to "existence of maximal ideals"
+// In a division ring, the only two-sided ideals are 0 and the whole ring.

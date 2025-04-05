@@ -10,3 +10,9 @@ export const mathematics = new Folder({
         maximal_ideals_webpage,
     ]
 })
+
+
+
+
+// algebras
+// lie-algebras, weyl-algebras

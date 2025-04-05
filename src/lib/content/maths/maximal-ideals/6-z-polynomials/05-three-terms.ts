@@ -16,5 +16,5 @@ export const chapter_5 = T.BookChapter.from_exposition([
         `),
     ])
 ],
-    T.Prose.parse(`Proving $$\\langle \\ 2, \\ x + 1, x^2 \\ \\rangle = \\langle 1 \\rangle$$`)
+    T.Prose.parse(`Non-Example: $$\\langle \\ 2, \\ x + 1, \\ x^2 \\ \\rangle$$`)
 );

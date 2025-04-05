@@ -7,7 +7,7 @@ export const chapter = T.BookChapter.from_exposition([
     `),
 
     T.Prose.parse(`
-        Note, the following proof is almost identical to the proof for residue simple rings. The key difference is in the preimages of the surjective ring homomorphism $$\\phi: \\mathcal{R} \\to \\mathcal{R}/\\mathcal{M}$$. When $$\\mathcal{M}$$ is two-sided, the preimage of a two-sided ideal is a two-sided ideal. But, when $$\\mathcal{M}$$ is a left ideal, the preimage of a left ideal is not always a left ideal. However, in this case, the preimage of a left $$\\mathcal{R}$$-module is still a left $$\\mathcal{R}$$-module (and therefore a left ideal in $$\\mathcal{R}$$). 
+        Note, the following proof is almost identical to the proof for residue simple rings. The key difference is in the preimages of the homomorphisms $$\\phi: \\mathcal{R} \\to \\mathcal{R}/\\mathcal{M}$$. When $$\\mathcal{M}$$ is two-sided, the homomorphism is a ring homomorphism, and the preimage of a two-sided ideal is a two-sided ideal. But, when $$\\mathcal{M}$$ is a left ideal, the homomorphism is a surjective module homomorphism, and the preimage of a left ideal is not always a left ideal. However, in this case, the preimage of a left $$\\mathcal{R}$$-module is still a left $$\\mathcal{R}$$-module (and therefore a left ideal in $$\\mathcal{R}$$). 
     `),
 
     T.List.numbered([
@@ -33,7 +33,7 @@ export const chapter = T.BookChapter.from_exposition([
             The preimages of $$0$$ ($$\\mathcal{M}$$) and $$b$$ (some element not in $$\\mathcal{M}$$) under $$\\phi$$ are in $$\\mathcal{A}$$. Therefore, $$\\mathcal{M} \\subset \\mathcal{A}$$. But, according to the definition of a left maximal ideal, $$\\mathcal{A}$$ must be $$\\mathcal{R}$$.
         `),
         T.Prose.parse(`
-           According to the definition of a ring homomorphism, the image of $$\\mathcal{R}$$ under $$\\phi$$ is $$\\mathcal{R}/\\mathcal{M}$$. And, the image of $$\\mathcal{A}$$ under $$\\phi$$ is $$\\mathcal{B}$$. And since $$\\mathcal{A} = \\mathcal{R}$$, we have $$\\mathcal{B} = \\mathcal{R}/\\mathcal{M}$$. Therefore, the only nonzero left module $$\\mathcal{B}$$ in $$\\mathcal{R}/\\mathcal{M}$$ is the entire module.
+           According to the definition of a module homomorphism, the image of $$\\mathcal{R}$$ under $$\\phi$$ is $$\\mathcal{R}/\\mathcal{M}$$. And, the image of $$\\mathcal{A}$$ under $$\\phi$$ is $$\\mathcal{B}$$. And since $$\\mathcal{A} = \\mathcal{R}$$, we have $$\\mathcal{B} = \\mathcal{R}/\\mathcal{M}$$. Therefore, the only nonzero left module $$\\mathcal{B}$$ in $$\\mathcal{R}/\\mathcal{M}$$ is the entire module.
         `),
     ]),
 
