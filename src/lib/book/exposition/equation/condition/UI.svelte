@@ -1,7 +1,7 @@
 <script lang="ts">
     import katex from "katex";
     import 'katex/dist/katex.min.css';
-    import { Expression } from "$lib/book";
+    import { Expression } from "$book/exposition/equation/expression";
 
     let { items } : {items: Expression[]} = $props();
 

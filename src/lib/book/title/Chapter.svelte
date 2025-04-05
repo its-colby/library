@@ -1,6 +1,6 @@
 <script lang="ts">
-    import { ChapterTitle } from "$lib/book";
-    import Prose from "$lib/front-end/ui/book/exposition/Prose.svelte";
+    import { ChapterTitle } from "$book/title";
+    import Prose_UI from "$book/exposition/prose/UI.svelte";
     import 'katex/dist/katex.min.css';
 
     let { 
@@ -29,7 +29,7 @@
     {/if}
 
     <span class="text">
-        <Prose 
+        <Prose_UI 
             prose={title.prose} 
             style_class="chapter-title"
         />

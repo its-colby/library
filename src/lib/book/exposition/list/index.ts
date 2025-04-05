@@ -1,4 +1,4 @@
-import { Prose } from "../prose";
+import { Prose } from "$book/exposition/prose";
 
 type ListElement = Prose | List;
 

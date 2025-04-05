@@ -1,6 +1,6 @@
 import { Optional } from "$lib/common";
-import { Prose } from "$lib/book/exposition";
-import { Ordinal } from "$lib/book/utils";
+import { Prose } from "$book/exposition";
+import { Ordinal } from "$book/utils";
 
 
 
@@ -20,7 +20,7 @@ export abstract class Title {
 
 
 
-export class DocumentTitle extends Title {
+export class BookTitle extends Title {
     constructor(prose: Prose | string) {
         super(prose);
     }

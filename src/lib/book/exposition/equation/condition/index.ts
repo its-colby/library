@@ -1,7 +1,8 @@
-import { Tex } from "../prose";
-import { Statement } from "./statement";
-import { Expression } from "./expression";
+import { Tex } from "$book/utils";
+import { Statement } from "$book/exposition/equation/statement";
+import { Expression } from "$book/exposition/equation/expression";
 import { Ordinal } from "$lib/book/utils/ordinal";
+
 export class Conditions extends Statement {
 
     public primary: Expression;

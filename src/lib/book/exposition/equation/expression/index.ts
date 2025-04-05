@@ -1,16 +1,16 @@
 import { Optional } from "$lib/common";
-import { Tex, Prose } from "../prose";
-import { Statement } from "./statement";
 import { Ordinal } from "$lib/book/utils/ordinal";
+import { Tex } from "$book/utils";
+import { Statement } from "$book/exposition/equation/statement";
 
-export class Theorem extends Statement {
+export class Expression extends Statement {
 
-    public prose: Prose;
+    public readonly tex: Tex;
     public ordinal: Optional<Ordinal> = Optional.none();
 
-    constructor(prose: Prose) {
+    constructor(tex: Tex){
         super();
-        this.prose = prose;
+        this.tex = tex;
     }
 
     public set_ordinal(ordinal: Ordinal) {

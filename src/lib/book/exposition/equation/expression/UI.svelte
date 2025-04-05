@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Expression } from "$lib/book";
+    import { Expression } from "$book/exposition/equation/expression";
     import katex from "katex";
     import 'katex/dist/katex.min.css';
 

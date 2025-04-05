@@ -1,14 +1,12 @@
 <script lang="ts">
-    import { Theorem } from "$lib/book";
-    import katex from "katex";
-    import 'katex/dist/katex.min.css';
-    import Prose from "$lib/front-end/ui/book/exposition/Prose.svelte";
+    import { Theorem } from "$book/exposition/equation/theorem";
+    import Prose_UI from "$book/exposition/prose/UI.svelte";
 
     let { theorem } : { theorem: Theorem }= $props();
 </script>
 
 <div>
-    <Prose 
+    <Prose_UI 
         prose={theorem.prose} 
         style_class="text-statement"
         

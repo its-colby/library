@@ -1,13 +1,13 @@
 <script lang="ts">
-    import { DocumentTitle } from "$lib/book";
-    import Prose from "$lib/front-end/ui/book/exposition/Prose.svelte";
+    import { BookTitle } from "$book/title";
+    import Prose_UI from "$book/exposition/prose/UI.svelte";
 
-    let { title }: { title: DocumentTitle } = $props();
+    let { title }: { title: BookTitle } = $props();
 
 </script>
 
 <h1>
-    <Prose 
+    <Prose_UI 
         prose={title.prose} 
         style_class="document-title"
     />

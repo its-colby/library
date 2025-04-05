@@ -1,0 +1,22 @@
+@use 'screens.scss';
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-background);
+
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+
+    @include screens.desktop {
+        font-size: 18px;
+    }
+
+    @include screens.tablet {
+        font-size: 16px;
+    }
+
+    @include screens.mobile {
+        font-size: 16px;
+    }
+}

@@ -1,29 +1,30 @@
 <script lang="ts">
-    import * as T from "$lib/book";
-    import Prose from "./Prose.svelte";
-    import List from "./List.svelte";
+    import { List } from "$book/exposition/list";
+    import { Prose } from "$book/exposition/prose";
+    import Prose_UI from "$book/exposition/prose/UI.svelte";
+    import List_UI from "./UI.svelte";
 
     let { 
         list, 
         prose_style_class = "list" 
     }: { 
-        list: T.List, 
+        list: List, 
         prose_style_class?: "list" | "note" 
     } = $props();
 </script>
 
 <ul class={list.style}>
     {#each list.elements as element, index}
-        {#if element instanceof T.Prose}
+        {#if element instanceof Prose}
             <li data-index={index + 1}>
-                <Prose 
+                <Prose_UI 
                     prose={element} 
                     style_class={prose_style_class}
                 />
             </li>
-        {:else if element instanceof T.List}
+        {:else if element instanceof List}
             <div class="sublist">
-                <List list={element} />
+                <List_UI list={element} />
             </div>
         {/if}
     {/each}

@@ -12,7 +12,8 @@
 		"moduleResolution": "bundler",
 		"baseUrl": "",
 		"paths": {
-			"$lib/*": ["src/lib/*"]
+			"$lib/*": ["src/lib/*"],
+			"$book/*": ["src/lib/book/*"]
 		},
 		"types": ["svelte", "@sveltejs/kit"]
 	}

@@ -1,28 +1,32 @@
 <script lang="ts">
-    import * as T from "$lib/book";
     import Accordion from "$lib/front-end/ui/utils/Accordion.svelte";
-    import Prose from "./Prose.svelte";
-    import List from "./List.svelte";
-    import Statement from "./statement/Statement.svelte";
+    import Prose_UI from "$book/exposition/prose/UI.svelte";
+    import List_UI from "$book/exposition/list/UI.svelte";
+    import Statement_UI from "$book/exposition/equation/statement/UI.svelte";
+    import { Digression, type DigressionElement } from "$book/exposition/digression";
+    import { Prose } from "$book/exposition/prose";
+    import { List } from "$book/exposition/list";
+    import { Statement } from "$book/exposition/equation/statement";
 
-    let { digression }: { digression: T.Digression } = $props();
+
+    let { digression }: { digression: Digression } = $props();
 </script>
 
-{#snippet details(elements: T.DigressionElement[])}
+{#snippet details(elements: DigressionElement[])}
     <div>
         {#each elements as element}
-            {#if element instanceof T.Prose}
-                <Prose 
+            {#if element instanceof Prose}
+                <Prose_UI 
                     prose={element} 
                     style_class="note"
                 />
-            {:else if element instanceof T.List}
-                <List 
+            {:else if element instanceof List}
+                <List_UI 
                     list={element}
                     prose_style_class="note"
                 />
-            {:else if element instanceof T.Statement}
-                <Statement 
+            {:else if element instanceof Statement}
+                <Statement_UI 
                     data={element}
                 />
             {/if}

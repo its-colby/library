@@ -1,7 +1,8 @@
 <script lang="ts">
-    import * as T from "$lib/book";
-    import TOC_Section from "$lib/front-end/ui/book/document/TOC_Section.svelte";
-    import Prose from "$lib/front-end/ui/book/exposition/Prose.svelte";
+    import { BookChapter, Subchapters } from "$book/chapter";
+    import { ChapterTitle } from "$book/title";
+    import TOC_Chapter_UI from "$book/table-of-contents/Chapter.svelte";
+    import Prose_UI from "$book/exposition/prose/UI.svelte";
 
     let {
         chapter,
@@ -9,14 +10,14 @@
         current_section,
         link_click = () => {} 
     }: { 
-        chapter: T.BookChapter, 
+        chapter: BookChapter, 
         section_depth: number,
         current_section: string | null,
         link_click?: () => void 
     } = $props();
 </script>
 
-{#snippet link(title: T.ChapterTitle)}
+{#snippet link(title: ChapterTitle)}
     <a 
         class={`section-title depth-${section_depth}`}
         class:active={current_section === title.unique_identifier}
@@ -27,17 +28,17 @@
             <span class="number">{title.ordinal.value}</span>
         {/if}
         <span class="section-text">
-            <Prose prose={title.prose} style_class="toc-section-title" />
+            <Prose_UI prose={title.prose} style_class="toc-section-title" />
         </span>
     </a>
 {/snippet}
 
 <div class={`toc-section depth-${section_depth}`}>
-    {#if chapter.title instanceof T.ChapterTitle}
+    {#if chapter.title instanceof ChapterTitle}
         {@render link(chapter.title)}
     {/if}
 
-    {#if (chapter.layout instanceof T.Subchapters) &&
+    {#if (chapter.layout instanceof Subchapters) &&
         (
             section_depth < 2 || 
             current_section?.startsWith(chapter.title?.unique_identifier ?? '')
@@ -45,7 +46,7 @@
     }
         <div class={`toc-subsections depth-${section_depth}`}>
             {#each chapter.layout.subchapters as subchapter}
-                <TOC_Section 
+                <TOC_Chapter_UI 
                     chapter={subchapter} 
                     section_depth={section_depth + 1} 
                     link_click={link_click}

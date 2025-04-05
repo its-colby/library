@@ -1,6 +1,12 @@
 {
 	"compilerOptions": {
 		"paths": {
+			"$book": [
+				"../src/lib/book"
+			],
+			"$book/*": [
+				"../src/lib/book/*"
+			],
 			"$lib": [
 				"../src/lib"
 			],

@@ -1,7 +1,7 @@
 <script lang="ts">
     import * as T from "$lib/book";
     import { onMount } from 'svelte';
-    import TOC_Section from "$lib/front-end/ui/book/document/TOC_Section.svelte";
+    import TOC_Chapter_UI from "$book/table-of-contents/Chapter.svelte";
 
     let { 
         data, 
@@ -62,7 +62,7 @@
 
 {#if data.layout instanceof T.Subchapters && data.nesting_depth === 0 }
     <div id="table_of_contents" bind:this={tocContainer}>
-        <TOC_Section 
+        <TOC_Chapter_UI 
             chapter={data} 
             section_depth={0} 
             link_click={link_click}

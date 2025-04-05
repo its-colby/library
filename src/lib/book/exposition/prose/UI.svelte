@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Prose } from "$lib/book";
+    import { Prose } from "$book/exposition/prose";
     import katex from 'katex';
     import 'katex/dist/katex.min.css';
 

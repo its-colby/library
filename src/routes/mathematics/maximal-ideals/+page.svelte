@@ -1,6 +1,6 @@
 <script lang="ts">
     import { maximal_ideals } from "$lib/content/maths/maximal-ideals";
-    import Main from "$lib/front-end/ui/book/document/Main.svelte";
+    import Book_UI from "$book/main-ui/UI.svelte";
 </script>
 
-<Main data={maximal_ideals} />
+<Book_UI data={maximal_ideals} />

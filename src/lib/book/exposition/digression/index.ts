@@ -1,6 +1,6 @@
-import type { List } from "../list";
-import { Prose } from "../prose";
-import { Statement } from "../equation";
+import { List } from "$book/exposition/list";
+import { Prose } from "$book/exposition/prose";
+import { Statement } from "$book/exposition/equation";
 
 export type DigressionElement = Prose | List | Statement;
 

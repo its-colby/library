@@ -1,7 +1,7 @@
 <script lang="ts">
     import { BookChapter } from "$lib/book";
-    import TableOfContents from "./TOC.svelte";
-    import Chapter from "$lib/front-end/ui/book/chapter/Chapter.svelte";
+    import TOC_UI from "$book/table-of-contents/UI.svelte";
+    import Chapter_UI from "$book/chapter/Chapter.svelte";
     import { Menu } from "lucide-svelte";
 
     let { data }: { data: BookChapter } = $props();
@@ -24,7 +24,7 @@
         tabindex="0"
     >
         <div class="toc-modal">
-            <TableOfContents 
+            <TOC_UI 
                 data={data} 
                 link_click={() => show_mobile_toc = false} 
             />
@@ -32,10 +32,10 @@
     </div>
 
     <div class="toc-container" class:show-mobile={!show_mobile_toc}>
-        <TableOfContents data={data} />
+        <TOC_UI data={data} />
     </div>
     <div class="document-container">
-        <Chapter data={data} />
+        <Chapter_UI data={data} />
     </div>
 </main>
 
@@ -118,9 +118,10 @@
     }
 
     div.document-container {
-        width: 900px;
+        max-width: 45rem;
         overflow-y: auto;
         padding-bottom: 100px;
+        margin: 0 auto;
 
         @include screens.mobile {
             width: 100%;
