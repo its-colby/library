@@ -15,7 +15,7 @@ export const dictionary = {
 		"/": [2],
 		"/mathematics/maximal-ideals": [3],
 		"/mathematics/staging": [4],
-		"/music/classical-compilation": [5]
+		"/music/compilation-of-classical-music": [5]
 	};
 
 export const hooks = {

@@ -65,7 +65,7 @@
         text-decoration: none;
         color: var(--text-neutral);
         opacity: 0.5;
-        transition: opacity 0.1s ease-in-out;
+        transition: all 0.1s ease-in-out;
 
         display: flex;
         flex-direction: row;

@@ -9,7 +9,7 @@
 	"/mathematics/staging": [
 		"src/routes/+layout.ts"
 	],
-	"/music/classical-compilation": [
+	"/music/compilation-of-classical-music": [
 		"src/routes/+layout.ts"
 	]
 }

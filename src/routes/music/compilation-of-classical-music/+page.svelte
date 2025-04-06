@@ -174,6 +174,10 @@
     </ul>
 {/snippet}
 
+<svelte:head>
+    <title>Compilation of Classical Music</title>
+</svelte:head>
+
 <main>
     <div class="top">
         <Title/>

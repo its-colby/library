@@ -6,8 +6,8 @@ export const music = new Folder({
     title: "Music",
     pages: [
         new Webpage({
-            title: "Classical Compilation",
-            url: "/music/classical-compilation",
+            title: "Compilation of Classical Music",
+            url: "/music/compilation-of-classical-music",
             published: true
         })
     ]

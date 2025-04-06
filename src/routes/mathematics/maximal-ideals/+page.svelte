@@ -3,4 +3,8 @@
     import Book_UI from "$book/main-ui/UI.svelte";
 </script>
 
+<svelte:head>
+    <title>{maximal_ideals.title.prose.to_string()}</title>
+</svelte:head>
+
 <Book_UI data={maximal_ideals} />
