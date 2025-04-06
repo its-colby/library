@@ -6,7 +6,6 @@
 
     let { data }: { data: BookChapter } = $props();
     let show_mobile_toc = $state(false);
-
 </script>
 
 <main>
@@ -69,13 +68,23 @@
         @extend %base-font;
     }
 
+    :global(body, html) {
+        overflow: hidden;
+    }
+
     main {
         display: flex;
         gap: 20px;
         padding-left: 30px;
         padding-right: 50px;
         flex-direction: row;
-        padding-top: 30px;
+
+        position: fixed; // Change to absolute
+        top: 4rem;       // Position below header
+        left: 0;
+        right: 0;
+        bottom: 0; 
+        overflow: hidden;
     }
 
     .toc-overlay {
@@ -118,14 +127,21 @@
     }
 
     div.document-container {
-        max-width: 45rem;
-        overflow-y: auto;
-        padding-bottom: 100px;
+        max-width: 46rem;
         margin: 0 auto;
+        padding-bottom: 25rem;
+        padding-right: 1rem;
+        padding-top: 2rem;
+
+        overflow-y: auto;
+        box-sizing: border-box;
+        height: 100%;
+        position: relative;
+
+        scroll-behavior: smooth;
 
         @include screens.mobile {
             width: 100%;
         }
     }
-        
 </style>

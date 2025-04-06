@@ -1,17 +1,13 @@
 adjust fonts to use scss variables
 use rem over px
 
-On big screen - widen TOC by 20/30 px, center align content container, scrolling bar on chrome issue
+On big screen - widen TOC by 20/30 px, scrolling bar on chrome issue
 
 On mobile screen - font sizes (make everything em/rem)
 
 On non mobile screens - scrolling of TOC should jump by more than 1 header
 
-change naming to be more consistent
-
 smaller file sizes, better hierarchy
-
-maybe tightly couple book UI and JS lib?
 
 finish maximal ideals content
 

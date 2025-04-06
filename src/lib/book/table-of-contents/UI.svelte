@@ -30,11 +30,15 @@
                     );
                     
                     if (activeTocLink && tocContainer) {
-                        // Calculate if element is outside visible area
+                        // Modified scroll behavior
                         const linkRect = activeTocLink.getBoundingClientRect();
                         const containerRect = tocContainer.getBoundingClientRect();
                         
                         if (linkRect.top < containerRect.top || linkRect.bottom > containerRect.bottom) {
+                            // Use scrollTop instead of scrollIntoView
+                            // const scrollOffset = linkRect.top - containerRect.top - (containerRect.height / 2);
+                            // tocContainer.scrollTop += scrollOffset;
+
                             activeTocLink.scrollIntoView({
                                 behavior: 'smooth',
                                 block: 'nearest'
@@ -77,11 +81,17 @@
     div#table_of_contents {
         display: flex;
         flex-direction: column;
+        padding-bottom: 5rem;
+        padding-top: 2rem;
 
-        top: 101px;
-        position: sticky;
-        height: calc(100vh - 151px);
+        /* top: 101px; */
+        /* position: sticky; */
+        /* height: calc(100vh - 151px); */
         overflow-y: auto;
+        box-sizing: border-box;
+        height: 100%;
+
+        /* scroll-behavior: smooth; */
     }
 
 </style>
