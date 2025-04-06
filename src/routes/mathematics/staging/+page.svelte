@@ -1,6 +1,6 @@
 <script lang="ts">
     import { staging_document } from "$lib/content/maths/staging";
-    import Book_UI from "$book/main-ui/UI.svelte";
+    import Book_UI from "$lib/book/main-ui/Main.svelte";
 </script>
 
 <svelte:head>

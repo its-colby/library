@@ -1,6 +1,6 @@
 <script lang="ts">
     import { ChapterTitle } from "$book/title";
-    import Prose_UI from "$book/exposition/prose/UI.svelte";
+    import Prose_UI from "$lib/book/exposition/prose/Main.svelte";
     import 'katex/dist/katex.min.css';
 
     let { 

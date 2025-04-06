@@ -1,8 +1,8 @@
 <script lang="ts">
     import { List } from "$book/exposition/list";
     import { Prose } from "$book/exposition/prose";
-    import Prose_UI from "$book/exposition/prose/UI.svelte";
-    import List_UI from "./UI.svelte";
+    import Prose_UI from "$lib/book/exposition/prose/Main.svelte";
+    import List_UI from "./Main.svelte";
 
     let { 
         list, 

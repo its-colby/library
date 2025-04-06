@@ -1,7 +1,7 @@
 <script lang="ts">
     import { BookChapter } from "$lib/book";
-    import TOC_UI from "$book/table-of-contents/UI.svelte";
-    import Chapter_UI from "$book/chapter/Chapter.svelte";
+    import TOC_UI from "$lib/book/table-of-contents/Main.svelte";
+    import Chapter_UI from "$lib/book/chapter/Main.svelte";
     import { Menu } from "lucide-svelte";
 
     let { data }: { data: BookChapter } = $props();

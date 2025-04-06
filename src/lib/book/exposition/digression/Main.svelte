@@ -1,7 +1,7 @@
 <script lang="ts">
     import Accordion from "$lib/front-end/ui/utils/Accordion.svelte";
-    import Prose_UI from "$book/exposition/prose/UI.svelte";
-    import List_UI from "$book/exposition/list/UI.svelte";
+    import Prose_UI from "$lib/book/exposition/prose/Main.svelte";
+    import List_UI from "$lib/book/exposition/list/Main.svelte";
     import Statement_UI from "$book/exposition/equation/statement/UI.svelte";
     import { Digression, type DigressionElement } from "$book/exposition/digression";
     import { Prose } from "$book/exposition/prose";

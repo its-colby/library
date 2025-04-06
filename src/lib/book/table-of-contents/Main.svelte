@@ -65,33 +65,32 @@
 </script>
 
 {#if data.layout instanceof T.Subchapters && data.nesting_depth === 0 }
-    <div id="table_of_contents" bind:this={tocContainer}>
-        <TOC_Chapter_UI 
-            chapter={data} 
-            section_depth={0} 
-            link_click={link_click}
-            current_section={current_section}
-        />
-    </div>
+    <nav id="table_of_contents" bind:this={tocContainer} aria-label="Table of Contents">
+        <ol>
+            <TOC_Chapter_UI 
+                chapter={data} 
+                section_depth={0} 
+                link_click={link_click}
+                current_section={current_section}
+            />
+        </ol>
+    </nav>
 {/if}
 
-
-
 <style>
-    div#table_of_contents {
+    nav#table_of_contents {
         display: flex;
         flex-direction: column;
         padding-bottom: 5rem;
         padding-top: 2rem;
-
-        /* top: 101px; */
-        /* position: sticky; */
-        /* height: calc(100vh - 151px); */
         overflow-y: auto;
         box-sizing: border-box;
         height: 100%;
-
-        /* scroll-behavior: smooth; */
     }
 
+    ol {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
 </style>

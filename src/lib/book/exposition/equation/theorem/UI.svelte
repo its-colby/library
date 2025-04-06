@@ -1,6 +1,6 @@
 <script lang="ts">
     import { Theorem } from "$book/exposition/equation/theorem";
-    import Prose_UI from "$book/exposition/prose/UI.svelte";
+    import Prose_UI from "$lib/book/exposition/prose/Main.svelte";
 
     let { theorem } : { theorem: Theorem }= $props();
 </script>
