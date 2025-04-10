@@ -1,6 +1,6 @@
 import { Folder, Webpage } from "./utils";
 import { mathematics } from "./maths";
-
+import { cryptology } from "./crypto";
 
 export const music = new Folder({
     title: "Music",
@@ -15,6 +15,7 @@ export const music = new Folder({
 
 export const folders = [
     mathematics,
+    cryptology,
     music
 ] as const;
 

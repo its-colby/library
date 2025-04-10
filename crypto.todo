@@ -1,0 +1,84 @@
+
+
+(1983) Coin flipping by telephone
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(1985) The knowledge complexity of interactive proof-systems
+(1986) How to construct random functions
+(1987) How to play ANY mental game
+(1988) Non-interactive zero-knowledge and its applications
+(1991) Proofs that yield nothing but their validity
+(2014) Cryptography miracles, secure auctions, matching problem
+
+
+
+
+(1976) 
+"New Directions in Cryptography"
+by Whitfield Diffie and Martin E. Hellman
+
+(1977) 
+"A Public Key Cryptosystem and a Signature Scheme Based on Discrete Logarithms" by Taher Elgamal
+
+(1978)
+"Secure Communications over Insecure Channels"
+by Ralph C. Merkle
+
+(1982) "Probabilistic encryption & how to play mental poker keeping secret all partial information"
+by Silvio Micali, Shafi Goldwasser
+
+(1982)
+"Protocols for Secure Computations"
+by Andrew C. Yao
+
+
+(1983)
+"Blind Signatures for Untraceable Payments"
+by David Chaum
+
+(1984)
+"How to Share a Secret"
+by Adi Shamir
+
+(1986)
+"How to Play ANY Mental Game"
+by Oded Goldreich, Silvio Micali, and Avi Wigderson
+
+(1987)
+"Multiparty Unconditionally Secure Protocols"
+by David Chaum, Claude Crépeau, and Ivan Damgård
+
+
+(1988)
+"Zero-Knowledge Interactive Proofs"
+by Shafi Goldwasser, Silvio Micali, and Charles Rackoff
+
+
+(1991)
+"The Secure Hash Algorithm (SHA)"
+by National Institute of Standards and Technology (NIST)
+
+
+
+
+
+s_B = u_A + p_B r_A1
+s_A = u_B + p_A r_B1
+s_B2 = s_B - u_B + p_B r_B2
+
+p_U = s_B2 + s_A - u_A + p_A r_A2
+
+p_B r_A1 + p_B r_B2 + p_A r_B1 + p_A r_A2

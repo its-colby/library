@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { BookChapter } from "$lib/book";
+    import { BookChapter, Subchapters } from "$lib/book";
     import TOC_UI from "$lib/book/table-of-contents/Main.svelte";
     import Chapter_UI from "$lib/book/chapter/Main.svelte";
     import { Menu } from "lucide-svelte";
@@ -14,25 +14,28 @@
         <span>TOC</span>
     </button>
 
-    <div 
-        class="toc-overlay" 
-        class:show={show_mobile_toc} 
-        onclick={() => show_mobile_toc = false}
-        onkeydown={(e) => e.key === 'Escape' && (show_mobile_toc = false)}
-        role="button"
-        tabindex="0"
-    >
-        <div class="toc-modal">
-            <TOC_UI 
-                data={data} 
-                link_click={() => show_mobile_toc = false} 
-            />
+    {#if data.layout instanceof Subchapters}
+        <div 
+            class="toc-overlay" 
+            class:show={show_mobile_toc} 
+            onclick={() => show_mobile_toc = false}
+            onkeydown={(e) => e.key === 'Escape' && (show_mobile_toc = false)}
+            role="button"
+            tabindex="0"
+        >
+            <div class="toc-modal">
+                <TOC_UI 
+                    data={data} 
+                    link_click={() => show_mobile_toc = false} 
+                />
+            </div>
         </div>
-    </div>
 
-    <div class="toc-container" class:show-mobile={!show_mobile_toc}>
-        <TOC_UI data={data} />
-    </div>
+        <div class="toc-container" class:show-mobile={!show_mobile_toc}>
+            <TOC_UI data={data} />
+        </div>
+    {/if}
+    
     <div class="document-container">
         <Chapter_UI data={data} />
     </div>

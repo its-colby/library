@@ -64,6 +64,16 @@ export class BookChapter {
         });
     }
 
+    public static book_from_exposition(
+        components: ExpositionComponent[],
+        title: string | Prose
+    ): BookChapter {
+        return new BookChapter({
+            title: new BookTitle(title),
+            layout: new Exposition(components)
+        });
+    }
+
     public static from_subchapters({
         introduction = [],
         subchapters,

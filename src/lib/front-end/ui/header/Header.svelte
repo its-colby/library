@@ -3,7 +3,7 @@
 </script>
 
 <header>
-    <nav><a href="/">Colby's Blog</a></nav>
+    <nav><a href="/">Colby's Library</a></nav>
     <ColorThemeToggle size={25}/>
 </header>
 

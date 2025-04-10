@@ -7,7 +7,7 @@ import { prime_ideals } from "./prime-ideals";
 export const staging_webpage = new Webpage({
     title: "Staging",
     url: "/mathematics/staging",
-    published: true,
+    published: false,
 });
 
 export const staging_document = T.BookChapter.new_document({

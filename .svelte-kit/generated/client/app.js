@@ -6,16 +6,20 @@ export const nodes = [
 	() => import('./nodes/2'),
 	() => import('./nodes/3'),
 	() => import('./nodes/4'),
-	() => import('./nodes/5')
+	() => import('./nodes/5'),
+	() => import('./nodes/6'),
+	() => import('./nodes/7')
 ];
 
 export const server_loads = [];
 
 export const dictionary = {
 		"/": [2],
-		"/mathematics/maximal-ideals": [3],
-		"/mathematics/staging": [4],
-		"/music/compilation-of-classical-music": [5]
+		"/cryptology/papers": [3],
+		"/mathematics/maximal-ideals": [4],
+		"/mathematics/number-theory": [5],
+		"/mathematics/staging": [6],
+		"/music/compilation-of-classical-music": [7]
 	};
 
 export const hooks = {
