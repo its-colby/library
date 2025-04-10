@@ -1,1 +1,1 @@
-export { default as component } from "../../../../src/routes/mathematics/number-theory/+page.svelte";
+export { default as component } from "../../../../src/routes/ring-theory/algebras/+page.svelte";

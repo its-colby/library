@@ -3,19 +3,11 @@
 		"src/routes/+layout.ts",
 		"src/routes/+layout.ts"
 	],
-	"/cryptology/papers": [
+	"/classical-music/compilation-of-classical-music": [
 		"src/routes/+layout.ts"
 	],
-	"/mathematics/maximal-ideals": [
-		"src/routes/+layout.ts"
-	],
-	"/mathematics/number-theory": [
-		"src/routes/+layout.ts"
-	],
-	"/mathematics/staging": [
-		"src/routes/+layout.ts"
-	],
-	"/music/compilation-of-classical-music": [
+	"/[...slug]": [
+		"src/routes/[...slug]/+page.ts",
 		"src/routes/+layout.ts"
 	]
 }

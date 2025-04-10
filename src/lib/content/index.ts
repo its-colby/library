@@ -1,25 +1,23 @@
 import { Folder, Webpage } from "./utils";
-import { mathematics } from "./maths";
-import { cryptology } from "./crypto";
 
 export const music = new Folder({
-    title: "Music",
+    title: "Classical Music",
     pages: [
         new Webpage({
             title: "Compilation of Classical Music",
-            url: "/music/compilation-of-classical-music",
+            url: "/compilation-of-classical-music",
             published: true
         })
-    ]
+    ],
+    url: "/classical-music"
 });
 
+
+import { folders as mathematics } from "./mathematics";
+
 export const folders = [
-    mathematics,
-    cryptology,
+    ...mathematics,
     music
 ] as const;
 
-
 export * from "./utils";
-export * from "./maths";
-export * from "./music";

@@ -1,1 +1,1 @@
-export { default as component } from "../../../../src/routes/mathematics/maximal-ideals/+page.svelte";
+export { default as component } from "../../../../src/routes/classical-music/compilation-of-classical-music/+page.svelte";
