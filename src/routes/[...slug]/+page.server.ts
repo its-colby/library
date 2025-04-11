@@ -1,5 +1,8 @@
 import { folders } from "$lib/content";
 
+// Only prerender this dynamic route if we have published pages
+export const prerender = folders.some(folder => folder.has_published_pages);
+
 export function entries() {
     const routes = [];
     
@@ -8,11 +11,6 @@ export function entries() {
             const path = page.url.slice(1).split('/');
             routes.push({ slug: path.join('/') });
         }
-    }
-    
-    // Always include at least one route to prevent prerender errors
-    if (routes.length === 0) {
-        routes.push({ slug: '404' }); // This will match /404 and show your 404 page
     }
     
     return routes;
