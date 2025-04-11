@@ -9,5 +9,5 @@ export const ring_theory = new Folder({
         algebras_page,
         ...ideals_pages,
     ],
-    published: false
+    published: true
 });

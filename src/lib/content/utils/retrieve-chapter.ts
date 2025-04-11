@@ -8,7 +8,7 @@ export function retrieve_chapter(
 ): Optional<BookChapter> {
     
     for (const folder of folders) {
-        for (const page of folder.pages) {
+        for (const page of folder.published_pages) {
             if (page.url === target_path && page.published && page.chapter) {
                 return Optional.set(page.chapter);
             }
