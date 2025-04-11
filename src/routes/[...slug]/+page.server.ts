@@ -10,5 +10,10 @@ export function entries() {
         }
     }
     
+    // Always include at least one route to prevent prerender errors
+    if (routes.length === 0) {
+        routes.push({ slug: '404' }); // This will match /404 and show your 404 page
+    }
+    
     return routes;
 } 
