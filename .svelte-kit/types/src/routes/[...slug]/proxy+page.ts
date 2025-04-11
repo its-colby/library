@@ -4,6 +4,11 @@ import { error } from "@sveltejs/kit";
 import { folders, retrieve_chapter } from "$lib/content";
 
 export const load = async ({ params }: Parameters<PageLoad>[0]) => {
+    // Special case for the 404 route we added for prerendering
+    if (params.slug === '404') {
+        throw error(404, 'Page not found');
+    }
+
     const slug_array = params.slug ? params.slug.split('/') : [];
     const target_path = "/" + slug_array.join("/");
 
