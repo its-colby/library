@@ -1,8 +1,5 @@
 import { folders } from "$lib/content";
 
-// Only prerender this dynamic route if we have published pages
-export const prerender = folders.some(folder => folder.has_published_pages);
-
 export function entries() {
     const routes = [];
     
@@ -12,6 +9,8 @@ export function entries() {
             routes.push({ slug: path.join('/') });
         }
     }
+    
+    routes.push({ slug: '404' });
     
     return routes;
 } 
