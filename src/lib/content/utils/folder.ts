@@ -1,26 +1,35 @@
-import type { Webpage } from "./webpage";
+import { Webpage } from "./webpage";
 import { url_from } from "./url-from-title";
+import { Category } from "./category";
 
 export class Folder {
     public title: string;
     public readonly url: string;
     public pages: Webpage[];
+    public categories: Category[];
     public readonly published: boolean;
 
     constructor({
         title,
         url,
         pages,
+        categories,
         published = true
     }: {
         title: string;
         url?: string;
-        pages: Webpage[];
+        pages?: Webpage[];
+        categories?: Category[];
         published?: boolean;
     }) {
         this.title = title;
         this.url = url ?? url_from(title);
-        this.pages = pages;
+        if (categories) {
+            this.pages = categories.flatMap((category) => category.pages);
+        } else {
+            this.pages = pages ?? [];
+        }
+        this.categories = categories ?? [];
         this.pages.forEach((page) => page.prepend_to_url(this.url));
         this.published = published;
     }

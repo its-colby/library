@@ -3,13 +3,17 @@ import { error } from "@sveltejs/kit";
 import { folders, retrieve_chapter } from "$lib/content";
 
 export const load: PageLoad = async ({ params }) => {
-    // Special case for the 404 route we added for prerendering
     if (params.slug === '404') {
         return { chapter: null, error: 404 };
     }
 
-    const slug_array = params.slug ? params.slug.split('/') : [];
-    const target_path = "/" + slug_array.join("/");
+    const target_path = "/" + params.slug;
+
+    // console.log(target_path);
+    // console.log('Published Pages:', folders.map(folder => ({
+    //     folder: folder.title,
+    //     pages: folder.published_pages.map(page => page.url)
+    // })));
 
     const result = retrieve_chapter(folders, target_path);
     if (result.is_none()) {

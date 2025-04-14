@@ -15,11 +15,26 @@
     <section>
         <h1>{folder.title}</h1>
         <nav>
-            <ul>
-                {#each folder.published_pages as page}
-                    {@render page_link(page)}
-                {/each}
-            </ul>
+            {#if folder.categories.length > 0}
+                <div class="categories-grid">
+                    {#each folder.categories as category}
+                        <div class="category">
+                            <h2>{category.title}</h2>
+                            <ul class="category-list">
+                                {#each category.published_pages as page}
+                                    {@render page_link(page)}
+                                {/each}
+                            </ul>
+                        </div>
+                    {/each}
+                </div>
+            {:else}
+                <ul class="non-category-list">
+                    {#each folder.published_pages as page}
+                        {@render page_link(page)}
+                    {/each}
+                </ul>
+            {/if}
         </nav>
     </section>
 {/snippet}
@@ -44,10 +59,13 @@
         flex-direction: column;
         align-items: center;
         gap: 3rem;
-        width: 100%;
+        width: 100vw;
+        min-height: 100vh;
+        box-sizing: border-box;
         padding-top: 2rem;
         padding-right: 1.5rem;
         padding-left: 1.5rem;
+        padding-bottom: 10rem;
     }
 
     section {
@@ -55,12 +73,16 @@
         text-align: center;
 
         @include screens.desktop {
-            width: 500px;
+            width: 46rem;
         }
 
         @include screens.mobile {
             width: 100%;
         }
+
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
     }
 
     h1 {
@@ -69,20 +91,51 @@
         @include fonts.themed-font('130', 'bold');
     }
 
+    h2 {
+        margin: 0;
+        color: var(--text-neutral);
+        @include fonts.themed-font('110', 'bold');
+        text-align: left;
+    }
+
     nav {
         padding: 0;
         margin: 0;
+    }
+
+    .categories-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1.5rem;
+        width: 100%;
+
+        @include screens.mobile {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .category {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
     }
 
     ul {
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
-        padding-top: 1rem;
-        text-align: left;
         list-style: none;
         padding-left: 0;
         margin: 0;
+    }
+
+    ul.non-category-list > li > h3 {
+        text-align: center;
+    }
+
+    ul.non-category-list > li > h3 > a {
+        justify-content: center;
     }
 
     h3 {
@@ -93,7 +146,6 @@
     a {
         text-decoration: none;
         color: var(--text-brand);
-
         display: flex;
         align-items: center;
         gap: 0.5rem;

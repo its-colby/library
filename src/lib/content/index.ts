@@ -14,9 +14,11 @@ export const music = new Folder({
 
 
 import { folders as mathematics } from "./mathematics";
+import { folders as computer_science } from "./computer-science";
 
 export const folders = [
     ...mathematics,
+    ...computer_science,
     music
 ] as const;
 

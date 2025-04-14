@@ -1,14 +1,13 @@
-adjust fonts to use scss variables
-use rem over px
-
-On big screen - widen TOC by 20/30 px, scrolling bar on chrome issue
-
-On mobile screen - font sizes (make everything em/rem)
-
 On non mobile screens - scrolling of TOC should jump by more than 1 header
 
-smaller file sizes, better hierarchy
+search bar for content
+more colors and standardize them?
+on-hover definitions
+links within content
 
-finish maximal ideals content
+maybe standardize prerequisite material digression as optional for each chapter and better stylize the UI
+maybe standardize a "read before and read next - recommended sections at start and end of each book"
 
-start with some prelimary small standalone content for other topics, then aggregate over time?
+maybe on hover on home page shows table of contents somehow?
+
+add more hierarchy

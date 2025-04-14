@@ -1,9 +1,16 @@
 <script lang="ts">
     import ColorThemeToggle from '$lib/front-end/ui/utils/ColorThemeToggle.svelte';
+    import { Undo2 } from 'lucide-svelte';
+    import { page } from '$app/state';
 </script>
 
 <header>
-    <nav><a href="/">Colby's Library</a></nav>
+    <nav><a href="/" class:show-undo={page.url.pathname !== '/'}>
+        <span>Colby's Library</span>
+        {#if page.url.pathname !== '/'}
+            <Undo2 size={25}/>
+        {/if}
+    </a></nav>
     <ColorThemeToggle size={25}/>
 </header>
 
@@ -29,5 +36,13 @@
         @include fonts.themed-font('130', 'normal');
         color: var(--text-neutral);
         text-decoration: none;
+
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    a.show-undo:hover {
+        color: var(--text-contrast);
     }
 </style>
