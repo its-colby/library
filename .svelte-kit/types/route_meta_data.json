@@ -3,7 +3,7 @@
 		"src/routes/+layout.ts",
 		"src/routes/+layout.ts"
 	],
-	"/classical-music/compilation-of-classical-music": [
+	"/miscellaneous/compilation-of-classical-music": [
 		"src/routes/+layout.ts"
 	],
 	"/[...slug]": [

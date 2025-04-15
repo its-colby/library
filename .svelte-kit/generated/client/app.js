@@ -12,7 +12,7 @@ export const server_loads = [];
 
 export const dictionary = {
 		"/": [2],
-		"/classical-music/compilation-of-classical-music": [4],
+		"/miscellaneous/compilation-of-classical-music": [4],
 		"/[...slug]": [~3]
 	};
 

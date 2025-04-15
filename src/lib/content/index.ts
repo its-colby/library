@@ -1,7 +1,7 @@
 import { Folder, Webpage } from "./utils";
 
 export const music = new Folder({
-    title: "Classical Music",
+    title: "Miscellaneous",
     pages: [
         new Webpage({
             title: "Compilation of Classical Music",
@@ -9,7 +9,7 @@ export const music = new Folder({
             published: true
         })
     ],
-    url: "/classical-music"
+    url: "/miscellaneous"
 });
 
 

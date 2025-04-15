@@ -12,9 +12,9 @@ import { chapter as c1 } from "./1-trivial-cases";
 import { chapter as c2 } from "./2-p-adics";
 import { chapter as c3 } from "./3-localizations";
 
-export const chapter = T.BookChapter.from_subchapters({
+export const chapter = T.BookChapter.new_document({
     introduction: introduction,
-    subchapters: [
+    chapters: [
         c1,
         c2,
         c3,

@@ -1,1 +1,1 @@
-export { default as component } from "../../../../src/routes/classical-music/compilation-of-classical-music/+page.svelte";
+export { default as component } from "../../../../src/routes/miscellaneous/compilation-of-classical-music/+page.svelte";

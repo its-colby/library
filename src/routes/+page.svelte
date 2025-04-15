@@ -44,7 +44,7 @@
         <h3>
             <a href={page.url} target="_blank" rel="noopener noreferrer">
                 <span>{page.title}</span>
-                <ExternalLink size={16} />
+                <span class="external-link"><ExternalLink size={16} /></span>
             </a>
         </h3>
     </li>
@@ -83,6 +83,10 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
+    }
+
+    .external-link {
+        transform: translateY(0.1em);
     }
 
     h1 {
@@ -138,6 +142,14 @@
         justify-content: center;
     }
 
+    ul.category-list > li > h3 {
+        text-align: left;
+    }
+
+    ul.category-list > li > h3 > a {
+        justify-content: flex-start;
+    }
+
     h3 {
         margin: 0;
         @include fonts.themed-font('100', 'normal');
@@ -147,7 +159,7 @@
         text-decoration: none;
         color: var(--text-brand);
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: 0.5rem;
     }
 
