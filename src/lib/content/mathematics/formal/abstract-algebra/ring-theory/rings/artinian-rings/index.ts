@@ -1,5 +1,5 @@
-import * as T from "$lib/book";
-import { Webpage } from "$lib/content/utils";
+import * as T from "$book";
+import { File } from "$directory";
 
 export const chapter = T.BookChapter.book_from_exposition([
     T.Prose.parse(`
@@ -8,7 +8,7 @@ export const chapter = T.BookChapter.book_from_exposition([
     `),
 ], T.Prose.parse(`Artinian Rings`));
 
-export const page = Webpage.from_chapter(chapter);
+export const file = File.from_chapter(chapter);
 
 // an Artinian ring (sometimes Artin ring) is a ring that satisfies the descending chain condition on (one-sided) ideals; 
 // every non-empty set of ideals has a minimal element

@@ -1,4 +1,4 @@
-import * as T from "$lib/book";
+import * as T from "$book";
 
 import { chapter as z_8z_all } from "./z-8z-all";
 import { chapter as z_8z_coprime } from "./z-8z-coprime";

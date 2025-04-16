@@ -1,6 +1,13 @@
-import { page as maximal_ideals } from "./maximal-ideals";
-import { page as prime_ideals } from "./prime-ideals";
-import { Category } from "$lib/content/utils/category";
+import { Folder } from "$directory";
 
-export const category = new Category("Ideals", [maximal_ideals, prime_ideals]);
+import { file as maximal_ideals } from "./maximal-ideals";
+import { file as prime_ideals } from "./prime-ideals";
+
+export const folder = new Folder({
+    title: "Ideals",
+    files: [
+        maximal_ideals, 
+        prime_ideals
+    ]
+});
 

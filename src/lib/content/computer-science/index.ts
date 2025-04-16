@@ -1,5 +1,10 @@
-import { folders as applied } from "./applied";
+import { Folder } from "$directory";
 
-export const folders = [
-    ...applied,
-];
+import { folder as applied } from "./applied";
+
+export const folder = new Folder({
+    title: "Computer Science",
+    folders: [
+        applied,
+    ],
+});

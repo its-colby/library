@@ -1,16 +1,17 @@
-import { page as universal_composability } from "./universal-composability";
-import { page as reductions } from "./reductions";
-import { page as hybrid_arguments } from "./hybrid-arguments";
-import { page as game_based } from "./game-based";
-import { Category } from "$lib/content/utils/category";
+import { Folder } from "$directory";
 
-export const category = new Category(
-    "Proof Methods", 
-    [
+import { file as universal_composability } from "./universal-composability";
+import { file as reductions } from "./reductions";
+import { file as hybrid_arguments } from "./hybrid-arguments";
+import { file as game_based } from "./game-based";
+
+export const folder = new Folder({
+    title: "Proof Methods", 
+    files: [
         universal_composability,
         reductions,
         hybrid_arguments,
         game_based,
     ]
-);
+});
 

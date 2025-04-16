@@ -1,18 +1,20 @@
-import { page as regular } from "./regular";
-import { page as blind } from "./blind";
-import { page as aggregate } from "./aggregate";
-import { page as ring } from "./ring";
-import { page as threshold } from "./threshold";
-import { Category } from "$lib/content/utils/category";
+import { Folder } from "$directory";
 
-export const category = new Category(
-    "Digital Signatures", 
-    [
+import { file as regular } from "./regular";
+import { file as blind } from "./blind";
+import { file as aggregate } from "./aggregate";
+import { file as ring } from "./ring";
+import { file as threshold } from "./threshold";
+
+export const folder = new Folder({
+    title: "Digital Signatures", 
+    files: [
         regular,
         blind,
         aggregate,
         ring,
         threshold,
     ]
-);
+});
+
 

@@ -1,0 +1,32 @@
+<script lang="ts">
+    import { Sun, Moon } from 'lucide-svelte';
+    
+    import Tooltip from '$ui-utils/Tooltip.svelte';
+
+    import { theme } from '$theme';
+
+    let { size = 40 } : { size?: number } = $props();
+</script>
+
+{#snippet content()}
+    <button onclick={() => theme.toggle_and_apply(document.documentElement)} aria-label="Toggle theme">
+        {#if theme.is_light}
+            <Moon class="icon" size={size}/>
+        {:else}
+            <Sun class="icon" size={size}/>
+        {/if}
+    </button>
+{/snippet}
+
+<Tooltip text="Toggle theme" {content} position="below"/>
+
+<style>
+    button {
+        background: none;
+        border: none;
+
+        cursor: pointer;
+        
+        color: var(--text-contrast);
+    }
+</style>

@@ -1,8 +1,8 @@
 <script lang="ts">
-    import { theme } from '$lib/front-end/theme';
+    import { theme } from '$theme';
     import { onMount } from 'svelte';
-    import "$lib/front-end/theme/global.scss";
-    import Header from '$lib/front-end/ui/header/Header.svelte';
+    import "$theme/global.scss";
+    import Header from '$header/Header.svelte';
 
     
     onMount(() => {

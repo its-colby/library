@@ -1,5 +1,5 @@
-import * as T from "$lib/tex";
-import { Tex } from "$lib/tex";
+import * as T from "$book";
+import { Tex } from "$book";
 
 const integral_domain_properties_preface = new T.Inline([
     `An "integral domain" is defined as a non-trivial "ring" with the following properties.`

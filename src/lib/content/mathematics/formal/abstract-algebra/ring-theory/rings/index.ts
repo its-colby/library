@@ -1,17 +1,18 @@
-import { page as local_rings } from "./local-rings";
-import { page as simple_rings } from "./simple-rings";
-import { page as boolean_rings } from "./boolean-rings";
-import { page as noetherian_rings } from "./noetherian-rings";
-import { page as artinian_rings } from "./artinian-rings";
-import { Category } from "$lib/content/utils/category";
+import { Folder } from "$directory";
 
-export const category = new Category(
-    "Rings", 
-    [
+import { file as local_rings } from "./local-rings";
+import { file as simple_rings } from "./simple-rings";
+import { file as boolean_rings } from "./boolean-rings";
+import { file as noetherian_rings } from "./noetherian-rings";
+import { file as artinian_rings } from "./artinian-rings";
+
+export const folder = new Folder({
+    title: "Rings", 
+    files: [
         local_rings, 
         simple_rings, 
         boolean_rings, 
         noetherian_rings, 
         artinian_rings
     ]
-);
+});

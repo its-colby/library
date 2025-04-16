@@ -1,8 +1,8 @@
-import * as T from "$lib/book";
+import * as T from "$book";
 
 import { chapters as examples } from "./examples";
 import { chapters as theorems } from "./theorems";
-import { Webpage } from "$lib/content/utils";
+import { File } from "$directory";
 const introduction = [
     T.Prose.parse(`
         Conjugacy classes are fundamental to understanding the structure of groups, particularly non-abelian groups.
@@ -20,4 +20,4 @@ export const chapter = T.BookChapter.new_document({
     title: T.Prose.parse(`Conjugacy Classes`)
 });
 
-export const page = Webpage.from_chapter(chapter);
+export const file = File.from_chapter(chapter);

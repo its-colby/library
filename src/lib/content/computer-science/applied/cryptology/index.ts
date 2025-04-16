@@ -1,12 +1,13 @@
-import { Folder } from "$lib/content/utils";
+import { Folder } from "$directory";
 
-import { category as proof_methods } from "./proof-methods";
-import { category as computational_assumptions } from "./computational-assumptions";
-import { category as mpc } from "./mpc";
-import { category as digital_signatures } from "./digital-signatures";
+import { folder as proof_methods } from "./proof-methods";
+import { folder as computational_assumptions } from "./computational-assumptions";
+import { folder as mpc } from "./mpc";
+import { folder as digital_signatures } from "./digital-signatures";
+
 export const folder = new Folder({
     title: "Cryptology",
-    categories: [
+    folders: [
         proof_methods,
         computational_assumptions,
         mpc,

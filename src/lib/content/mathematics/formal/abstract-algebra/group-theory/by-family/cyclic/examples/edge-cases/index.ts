@@ -1,4 +1,4 @@
-import * as T from "$lib/book";
+import * as T from "$book";
 
 import { chapter as order_1 } from "./order-1";
 import { chapter as order_2 } from "./order-2";

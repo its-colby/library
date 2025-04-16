@@ -1,7 +1,12 @@
-import { folders as abstract_algebra } from "./formal";
-import { folder as number_theory } from "./applied";
+import { Folder } from "$directory";
 
-export const folders = [
-    ...abstract_algebra,
-    number_theory,
-];
+import { folder as formal } from "./formal";
+import { folder as applied } from "./applied";
+
+export const folder = new Folder({
+    title: "Mathematics",
+    folders: [
+        formal,
+        applied,
+    ],
+});

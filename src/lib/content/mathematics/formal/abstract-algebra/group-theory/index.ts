@@ -1,17 +1,16 @@
-import { Folder } from "$lib/content/utils";
-import { Category } from "$lib/content/utils/category";
+import { Folder } from "$directory";
 
 
 
-import { category as substructures } from "./substructures";
-import { category as by_family } from "./by-family";
-import { category as by_property } from "./by-property";
-import { category as foundations } from "./foundations";
-import { category as products } from "./products";
+import { folder as substructures } from "./substructures";
+import { folder as by_family } from "./by-family";
+import { folder as by_property } from "./by-property";
+import { folder as foundations } from "./foundations";
+import { folder as products } from "./products";
 
 export const folder = new Folder({
     title: "Group Theory",
-    categories: [
+    folders: [
         by_family,
         by_property,
         substructures,

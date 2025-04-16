@@ -1,4 +1,4 @@
-import * as T from "$lib/book";
+import * as T from "$book";
 
 import { chapter as n_gon_symmetries } from "./n-gon-symmetries";
 import { chapter as direct_products } from "./direct-products";

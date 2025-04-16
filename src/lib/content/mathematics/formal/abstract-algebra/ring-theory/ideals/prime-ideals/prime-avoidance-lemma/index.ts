@@ -1,4 +1,4 @@
-import * as T from "$lib/book";
+import * as T from "$book";
 
 export const prime_avoidance_lemma = T.BookChapter.from_exposition([
     T.Prose.parse(`

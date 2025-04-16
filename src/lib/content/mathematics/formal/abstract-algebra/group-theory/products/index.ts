@@ -1,16 +1,16 @@
-import { Category } from "$lib/content/utils/category";
+import { Folder } from "$directory";
 
-import { page as direct } from "./direct";
-import { page as semidirect } from "./semidirect";
-import { page as wreath } from "./wreath";
+import { file as direct } from "./direct";
+import { file as semidirect } from "./semidirect";
+import { file as wreath } from "./wreath";
 
-export const category = new Category(
-    "Products",
-    [
+export const folder = new Folder({
+    title: "Products",
+    files: [
         direct,
         semidirect,
         wreath,
     ]
-);
+});
 
 

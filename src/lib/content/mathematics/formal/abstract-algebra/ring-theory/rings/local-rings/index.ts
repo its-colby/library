@@ -1,5 +1,5 @@
-import * as T from "$lib/book";
-import { Webpage } from "$lib/content/utils";
+import * as T from "$book";
+import { File } from "$directory";
 
 const introduction = [
     T.Prose.parse(`
@@ -22,7 +22,7 @@ export const chapter = T.BookChapter.new_document({
     title: T.Prose.parse(`Local Rings`)
 });
 
-export const page = Webpage.from_chapter(chapter);
+export const file = File.from_chapter(chapter);
 
 // The coordinate ring of an affine algebraic variety at a point
 //  The ring of germs of functions at a point:

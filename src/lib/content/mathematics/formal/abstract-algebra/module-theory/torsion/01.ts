@@ -9,7 +9,7 @@
 // ----- Ann([a]) = {r in R | r * [a] = 0}
 // ----- In Z/6Z, Ann([1]) = 6Z, Ann([2]) = 3Z, Ann([3]) = 2Z, Ann([4]) = 3Z, Ann([5]) = 6Z
 
-import * as T from "$lib/book";
+import * as T from "$book";
 
 export const chapter_1 = T.BookChapter.from_exposition([
     T.List.numbered([

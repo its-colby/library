@@ -3,7 +3,7 @@
 // ----- 2Z/6Z is not a free module
 // ----- 2Z/6Z is a projective module (3z/6z + 2z/6z = z/6z) [over Z/6Z]
 
-import * as T from "$lib/book";
+import * as T from "$book";
 
 export const chapter_2 = T.BookChapter.from_exposition([
     T.List.numbered([

@@ -1,4 +1,4 @@
-import * as T from "$lib/book";
+import * as T from "$book";
 
 import { chapter as pentagon } from "./pentagon";
 import { chapter as hexagon } from "./hexagon";

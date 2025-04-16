@@ -10,10 +10,30 @@
 		"sourceMap": true,
 		"strict": true,
 		"moduleResolution": "bundler",
-		"baseUrl": "",
+		"baseUrl": ".",
 		"paths": {
 			"$lib/*": ["src/lib/*"],
-			"$book/*": ["src/lib/book/*"]
+
+			"$content": ["src/lib/content"],
+
+			"$book": ["src/lib/site-components/book"],
+			"$book/*": ["src/lib/site-components/book/*"],
+			"$book-ui/*": ["src/lib/site-components/book/*"],
+
+			"$music-compilation": ["src/lib/site-components/music-compilation"],
+			"$music-compilation-ui/*": ["src/lib/site-components/music-compilation/ui/*"],
+
+			"$directory": ["src/lib/site-components/directory"],
+			"$directory-ui/*": ["src/lib/site-components/directory/ui/*"],
+			
+			"$common": ["src/lib/common"],
+
+			"$theme": ["src/lib/ui/theme"],
+			"$theme/*": ["src/lib/ui/theme/*"],
+
+			"$header/*": ["src/lib/ui/header/*"],
+
+			"$ui-utils/*": ["src/lib/ui/utils/*"]
 		},
 		"types": ["svelte", "@sveltejs/kit"]
 	}

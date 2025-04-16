@@ -1,14 +1,15 @@
-import { page as integer_factorization } from "./integer-factorization";
-import { page as discrete_logarithm } from "./discrete-logarithm";
-import { page as bilinear_pairings } from "./bilinear-pairings";
-import { Category } from "$lib/content/utils/category";
+import { Folder } from "$directory";
 
-export const category = new Category(
-    "Computational Assumptions", 
-    [
+import { file as integer_factorization } from "./integer-factorization";
+import { file as discrete_logarithm } from "./discrete-logarithm";
+import { file as bilinear_pairings } from "./bilinear-pairings";
+
+export const folder = new Folder({
+    title: "Computational Assumptions", 
+    files: [
         integer_factorization,
         discrete_logarithm,
         bilinear_pairings,
     ]
-);
+});
 

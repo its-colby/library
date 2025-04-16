@@ -1,4 +1,4 @@
-import * as T from "$lib/book";
+import * as T from "$book";
 
 export const krull_dimension = T.BookChapter.from_exposition([
     T.Prose.parse(`

@@ -1,25 +1,16 @@
-import { Folder, Webpage } from "./utils";
+import { Folder } from "$directory";
 
-export const music = new Folder({
-    title: "Miscellaneous",
-    pages: [
-        new Webpage({
-            title: "Compilation of Classical Music",
-            url: "/compilation-of-classical-music",
-            published: true
-        })
+import { folder as mathematics } from "./mathematics";
+import { folder as computer_science } from "./computer-science";
+import { folder as miscellaneous } from "./miscellaneous";
+
+export const root = new Folder({
+    title: "__root__",
+    slug: "",
+    root: true,
+    folders: [
+        mathematics,
+        computer_science,
+        miscellaneous,
     ],
-    url: "/miscellaneous"
 });
-
-
-import { folders as mathematics } from "./mathematics";
-import { folders as computer_science } from "./computer-science";
-
-export const folders = [
-    ...mathematics,
-    ...computer_science,
-    music
-] as const;
-
-export * from "./utils";

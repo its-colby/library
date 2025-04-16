@@ -1,4 +1,4 @@
-import * as T from "$lib/book";
+import * as T from "$book";
 import { chapter as fourth_roots } from "./4th-roots";
 import { chapter as sixth_roots } from "./6th-roots";
 

@@ -1,6 +1,13 @@
-import { page as rings } from "./rings";
-import { page as algebras } from "./algebras";
-import { Category } from "$lib/content/utils/category";
+import { Folder } from "$directory";
 
-export const category = new Category("Foundations", [rings, algebras]);
+import { file as rings } from "./rings";
+import { file as algebras } from "./algebras";
+
+export const folder = new Folder({
+    title: "Foundations",
+    files: [
+        rings, 
+        algebras
+    ]
+});
 

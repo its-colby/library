@@ -1,16 +1,7 @@
-import { folders } from "$lib/content";
+import { root } from "$content";
 
 export function entries() {
-    const routes = [];
-    
-    for (const folder of folders) {
-        for (const page of folder.published_pages) {
-            const path = page.url.slice(1).split('/');
-            routes.push({ slug: path.join('/') });
-        }
-    }
-    
+    const routes = root.published_urls().map(url => ({ slug: url }));
     routes.push({ slug: '404' });
-    
     return routes;
 } 

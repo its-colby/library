@@ -1,5 +1,5 @@
-import * as T from "$lib/book";
-import { Webpage } from "$lib/content/utils";
+import * as T from "$book";
+import { File } from "$directory";
 
 import { chapters as examples } from "./examples";
 
@@ -15,7 +15,7 @@ export const chapter = T.BookChapter.new_document({
     title: T.Prose.parse(`Cyclic Groups`),
 });
 
-export const page = Webpage.from_chapter(chapter);
+export const file = File.from_chapter(chapter);
 
 // infinite
 // integers (mult, add)

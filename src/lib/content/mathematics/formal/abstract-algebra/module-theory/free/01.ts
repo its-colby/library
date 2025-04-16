@@ -2,7 +2,7 @@
 // ----- free module of rank 2, basis {1, i}
 // ----- Z-module Z[i] is a ring
 
-import * as T from "$lib/book";
+import * as T from "$book";
 
 export const chapter_1 = T.BookChapter.from_exposition([
     T.List.numbered([

@@ -1,4 +1,4 @@
-import * as T from "$lib/book";
+import * as T from "$book";
 import { chapter as jordan_holder } from "./jordan-holder";
 import { chapter as quotient_group } from "./quotient-groups";
 

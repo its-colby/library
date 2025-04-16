@@ -1,17 +1,17 @@
-import { Category } from "$lib/content/utils/category";
+import { Folder } from "$directory";
 
-import { page as free } from "./free";
-import { page as p_groups } from "./p-groups";
-import { page as nilpotent } from "./nilpotent";
-import { page as frobenius } from "./frobenius";
+import { file as free } from "./free";
+import { file as p_groups } from "./p-groups";
+import { file as nilpotent } from "./nilpotent";
+import { file as frobenius } from "./frobenius";
 
-export const category = new Category(
-    "Classifications by Property", 
-    [
+export const folder = new Folder({
+    title: "Classifications by Property", 
+    files: [
         free,
         p_groups,
         nilpotent,
         frobenius,
     ]
-);
+});
 

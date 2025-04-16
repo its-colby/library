@@ -1,4 +1,4 @@
-import * as T from "$lib/book";
+import * as T from "$book";
 
 export const chapter_3 = T.BookChapter.from_exposition([
     T.List.numbered([

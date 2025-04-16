@@ -1,6 +1,6 @@
 // - Krull's theorem , nonzero ring
 
-import * as T from "$lib/book";
+import * as T from "$book";
 
 const introduction = [
     T.Prose.parse(`

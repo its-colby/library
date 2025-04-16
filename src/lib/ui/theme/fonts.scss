@@ -1,0 +1,46 @@
+@use '$theme/screens.scss';
+@use 'sass:map';
+
+$font-weights: (
+    'normal': 400,
+    'bold': 600,
+);
+
+$font-sizes: (
+    '90': 0.9rem,
+    '100': 1rem,
+    '110': 1.1rem,
+    '130': 1.3rem,
+    '170': 1.7rem,
+);
+
+%base-font {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+}
+
+
+@mixin themed-font($size: '100', $weight: 'normal') {
+    @if not map.has-key($font-sizes, $size) {
+        @error "Size `#{$size}` is not valid. Valid sizes are: #{map-keys($font-sizes)}";
+    }
+    @if not map.has-key($font-weights, $weight) {
+        @error "Weight `#{$weight}` is not valid. Valid weights are: #{map-keys($font-weights)}";
+    }
+
+    font-size: map.get($font-sizes, $size);
+    font-weight: map.get($font-weights, $weight);
+}
+
+
+%text-base {
+    @include themed-font('100', 'normal');
+}
+
+%kinda-large-font {
+    @include themed-font('130', 'bold');
+}
+
+%text-large {
+    @include themed-font('170', 'bold');
+}

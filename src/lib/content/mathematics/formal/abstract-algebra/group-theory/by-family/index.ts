@@ -1,16 +1,18 @@
-import { page as alternating } from "./alternating";
-import { page as cyclic } from "./cyclic";
-import { page as dihedral } from "./dihedral";
-import { page as symmetric } from "./symmetric";
-import { Category } from "$lib/content/utils/category";
+import { Folder } from "$directory";
 
-export const category = new Category(
-    "Family Classifications", 
-    [
+
+import { file as alternating } from "./alternating";
+import { file as cyclic } from "./cyclic";
+import { file as dihedral } from "./dihedral";
+import { file as symmetric } from "./symmetric";
+
+export const folder = new Folder({
+    title: "Family Classifications", 
+    files: [
         alternating,
         cyclic,
         dihedral,
         symmetric,
     ]
-);
+});
 

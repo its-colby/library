@@ -1,17 +1,18 @@
-import { Category } from "$lib/content/utils/category";
+import { Folder } from "$directory";
 
-import { page as groups } from "./groups";
-import { page as orbits_and_stablizers } from "./orbits-and-stablizers";
-import { page as group_actions } from "./group-actions";
-import { page as presentations } from "./presentations";
+import { file as groups } from "./groups";
+import { file as orbits_and_stablizers } from "./orbits-and-stablizers";
+import { file as group_actions } from "./group-actions";
+import { file as presentations } from "./presentations";
 
-export const category = new Category(
-    "Foundations", 
-    [
+
+export const folder = new Folder({
+    title: "Foundations", 
+    files: [
         groups,
         orbits_and_stablizers,
         group_actions,
         presentations,
     ]
-);
+});
 

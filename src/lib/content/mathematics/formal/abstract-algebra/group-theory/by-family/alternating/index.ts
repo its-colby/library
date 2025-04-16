@@ -1,5 +1,5 @@
-import * as T from "$lib/book";
-import { Webpage } from "$lib/content/utils";
+import * as T from "$book";
+import { File } from "$directory";
 
 import { chapter as basic_properties } from "./examples/basic-properties";
 import { chapter as three_d_symmetries } from "./examples/three-d-symmetries";
@@ -25,7 +25,7 @@ export const chapter = T.BookChapter.new_document({
     title: T.Prose.parse(`Alternating Groups`)
 });
 
-export const page = Webpage.from_chapter(chapter);
+export const file = File.from_chapter(chapter);
 
 // even permutations
 //  but it is the rotational symmetry group of the icosahedron/dodecahedron in 3D.

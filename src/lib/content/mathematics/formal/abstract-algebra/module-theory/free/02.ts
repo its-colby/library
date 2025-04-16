@@ -4,7 +4,7 @@
 // ----- no torsion
 // ----- z * f(x) + z_2 * g(x)
 
-import * as T from "$lib/book";
+import * as T from "$book";
 
 export const chapter_2 = T.BookChapter.from_exposition([
     T.List.numbered([

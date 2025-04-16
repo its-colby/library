@@ -1,5 +1,5 @@
-import * as T from "$lib/book";
-import { Webpage } from "$lib/content/utils";
+import * as T from "$book";
+import { File } from "$directory";
 import { chapters as theorems } from "./theorems";
 
 export const chapter = T.BookChapter.new_document({
@@ -12,4 +12,4 @@ export const chapter = T.BookChapter.new_document({
     chapters: [...theorems],
 });
 
-export const page = Webpage.from_chapter(chapter);
+export const file = File.from_chapter(chapter);

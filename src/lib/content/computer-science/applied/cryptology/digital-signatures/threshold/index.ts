@@ -1,5 +1,5 @@
-import * as T from "$lib/book";
-import { Webpage } from "$lib/content/utils";
+import * as T from "$book";
+import { File } from "$directory";
 
 export const chapter = T.BookChapter.book_from_exposition([
     T.Prose.parse(`
@@ -7,4 +7,4 @@ export const chapter = T.BookChapter.book_from_exposition([
     `),
 ], T.Prose.parse(`Threshold Signatures`));
 
-export const page = Webpage.from_chapter(chapter);
+export const file = File.from_chapter(chapter);

@@ -1,5 +1,5 @@
-import * as T from "$lib/book";
-import { Webpage } from "$lib/content/utils";
+import * as T from "$book";
+import { File } from "$directory";
 
 import { chapter as edge_cases } from "./examples/edge-cases";
 import { chapter as symmetry_groups } from "./examples/symmetry-groups";
@@ -26,6 +26,6 @@ export const chapter = T.BookChapter.new_document({
     title: T.Prose.parse(`Cosets`)
 });
 
-export const page = Webpage.from_chapter(chapter);
+export const file = File.from_chapter(chapter);
 
 // cyclic, dihedral, etc
