@@ -7,5 +7,5 @@ export const folder = new Folder({
     folders: [
         cryptology,
     ],
-    slug: "/applied",
+    slug: "applied",
 });

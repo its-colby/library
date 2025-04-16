@@ -25,12 +25,13 @@
         align-items: center;
         gap: 3rem;
         width: 100vw;
-        min-height: 100vh;
+        height: 100%;
         box-sizing: border-box;
         padding-top: 2rem;
         padding-right: 1.5rem;
         padding-left: 1.5rem;
         padding-bottom: 10rem;
+        overflow-y: auto;
     }
 
     ul {
@@ -41,6 +42,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 3rem;
+        gap: 4rem;
     }
 </style>

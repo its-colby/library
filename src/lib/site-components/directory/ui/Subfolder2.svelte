@@ -15,7 +15,7 @@
     <h2>
         <Link webpage={folder} />
     </h2>
-    <Link_List webpages={webpages} />
+    <Link_List webpages={webpages} center={false} />
 </section>
 
 <style lang="scss">

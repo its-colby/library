@@ -7,7 +7,7 @@ export const folder = new Folder({
     folders: [
         abstract_algebra,
     ],
-    slug: "/formal",
+    slug: "formal",
 });
 
 

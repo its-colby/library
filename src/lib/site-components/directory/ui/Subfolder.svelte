@@ -32,6 +32,9 @@
         margin: 0;
         color: var(--text-neutral);
         @include fonts.themed-font('130', 'bold');
+        
+        display: flex;
+        justify-content: center;
     }
 
     section {

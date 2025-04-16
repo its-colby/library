@@ -3,10 +3,10 @@
 
     import { type Webpage, Folder } from "$directory";
 
-    let { webpages }: { webpages: Webpage[] } = $props();
+    let { webpages, center = true }: { webpages: Webpage[], center?: boolean } = $props();
 </script>
 
-<ul>
+<ul class={center ? 'center' : ''}>
     {#each webpages as webpage}
         <li>
             <h3 class={webpage instanceof Folder ? 'folder' : 'file'}>
@@ -27,6 +27,10 @@
         list-style: none;
         padding: 0;
         margin: 0;
+    }
+
+    ul.center {
+        align-items: center;
     }
 
     h3 {

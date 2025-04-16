@@ -7,7 +7,7 @@ export const folder = new Folder({
     folders: [
         number_theory,
     ],
-    slug: "/applied",
+    slug: "applied",
 });
 
 

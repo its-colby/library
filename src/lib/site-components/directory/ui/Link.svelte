@@ -3,16 +3,16 @@
 
     import { Folder, type Webpage } from "$directory";
 
-    let { webpage }: { webpage: Webpage } = $props();
+    let { webpage, icon_size = "1em" }: { webpage: Webpage, icon_size?: string } = $props();
 </script>
 
 <a href={webpage.url}>
     <span>{webpage.title}</span>
     <span class="icon">
         {#if webpage instanceof Folder}
-            <FolderOpen />
+            <FolderOpen size={icon_size} />
         {:else}
-            <ExternalLink />
+            <ExternalLink size={icon_size} />
         {/if}
     </span>
 </a>
@@ -22,7 +22,7 @@
         display: flex;
         align-items: flex-start;
         justify-content: flex-start;
-        gap: 0.5rem;
+        gap: 0.5em;
 
         text-decoration: none;
 
@@ -34,7 +34,11 @@
         text-decoration: underline;
     }
 
+    span {
+        text-align: left;
+    }
+
     .icon {
-        transform: translateY(0.1em);
+        transform: translateY(0.15em);
     }
 </style>
