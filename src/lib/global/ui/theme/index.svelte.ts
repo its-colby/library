@@ -166,18 +166,18 @@ export const theme = new Theme({
 
     css_properties: {
         header_background: new Variants({
-            light: COLORS.white,
+            light: HSL.gray({ lightness: 98 }),
             dark: HSL.gray({ lightness: 7 }),
         }),
 
         main_background: new Variants({
-            light: HSL.gray({ lightness: 98 }),
+            light: HSL.gray({ lightness: 97 }),
             dark: HSL.gray({ lightness: 8 }),
         }),
 
         card_a_background: new Variants({
             light: new Hoverable({
-                unhovered: COLORS.white,
+                unhovered: HSL.gray({ lightness: 93 }),
                 hovered: HSL.gray({ lightness: 95 }),
             }),
             dark: new Hoverable({
