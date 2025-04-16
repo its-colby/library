@@ -5,7 +5,7 @@ import { folder as integer_factorization } from "./integer-factorization";
 import { folder as transforms } from "./transforms";
 
 export const folder = new Folder({
-    title: "Computational Number Theory",
+    title: "Computational",
     folders: [
         primality_testing,
         integer_factorization,

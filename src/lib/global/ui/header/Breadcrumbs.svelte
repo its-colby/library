@@ -33,12 +33,22 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: none; /* Firefox */
+        &::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Edge */
+        }
     }
 
     .breadcrumb {
         text-decoration: none;
         color: var(--text-neutral);
         @include fonts.themed-font('100', 'normal');
+        overflow: hidden;
+        text-overflow: ellipsis;
+        min-width: 0;
 
         &:hover {
             color: var(--text-brand);
@@ -50,5 +60,6 @@
         color: var(--text-neutral);
         opacity: 0.7;
         margin: 0 0.25rem;
+        flex-shrink: 0;
     }
 </style>
