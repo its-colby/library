@@ -26,14 +26,16 @@
 			"$directory": ["src/lib/site-components/directory"],
 			"$directory-ui/*": ["src/lib/site-components/directory/ui/*"],
 			
-			"$common": ["src/lib/common"],
+			"$common": ["src/lib/global/common"],
 
-			"$theme": ["src/lib/ui/theme"],
-			"$theme/*": ["src/lib/ui/theme/*"],
+			"$theme": ["src/lib/global/ui/theme"],
+			"$theme/*": ["src/lib/global/ui/theme/*"],
 
-			"$header/*": ["src/lib/ui/header/*"],
+			"$header/*": ["src/lib/global/ui/header/*"],
 
-			"$ui-utils/*": ["src/lib/ui/utils/*"]
+			"$store/*": ["src/lib/global/store/*"],
+
+			"$ui-utils/*": ["src/lib/global/ui/utils/*"]
 		},
 		"types": ["svelte", "@sveltejs/kit"]
 	}

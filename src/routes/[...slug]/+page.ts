@@ -1,15 +1,16 @@
 import type { PageLoad } from './$types';
 import { root } from "$content";
+import { store } from '$store/breadcumb.svelte';
 
 export const load: PageLoad = async ({ params }) => {
     if (params.slug === '404') {
         return { webpage: null, error: 404 };
     }
 
-    const result = root.find(params.slug);
-    if (result.is_none()) {
+    const breadcrumbs = root.find(params.slug);
+    if (breadcrumbs.length === 0) {
         return { webpage: null, error: 404 };
     }
 
-    return { webpage: result.value, error: null };
+    return { webpage: breadcrumbs[breadcrumbs.length - 1], error: null };
 }

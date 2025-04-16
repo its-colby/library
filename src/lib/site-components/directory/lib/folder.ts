@@ -33,19 +33,30 @@ export class Folder extends Webpage {
         return this.published ? this.folders.filter(folder => folder.published) : [];
     }
 
-    public find(url: string): Optional<Webpage> {
-        if (!this.published) return Optional.none();
+    public find(url: string): Webpage[] {
+        if (!this.published) return [];
         
-        if (this.title !== ROOT && this.url === url) return Optional.set(this);
+        // If this folder matches the URL, return just this folder
+        if (this.title !== ROOT && this.url === url) {
+            return [this];
+        }
         
-        const file = this.published_files.find(file => file.url === url);
-        if (file) return Optional.set(file);
+        // Check if any file matches the URL
+        const matchingFile = this.published_files.find(file => file.url === url);
+        if (matchingFile) {
+            return this.title === ROOT ? [matchingFile] : [this, matchingFile];
+        }
         
+        // Check each subfolder
         for (const folder of this.published_folders) {
             const result = folder.find(url);
-            if (result.is_set()) return result;
+            if (result.length > 0) {
+                // If this is the root folder, don't include it in the path
+                return this.title === ROOT ? result : [this, ...result];
+            }
         }
-        return Optional.none();
+        
+        return [];
     }
 
     public published_urls(): string[] {

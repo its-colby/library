@@ -17,13 +17,15 @@ export default defineConfig({
 			"$book": path.resolve('./src/lib/site-components/book'),
 			"$book-ui": path.resolve('./src/lib/site-components/book'),
 
-			"$common": path.resolve('./src/lib/common'),
+			"$common": path.resolve('./src/lib/global/common'),
 
-			"$theme": path.resolve('./src/lib/ui/theme'),
+			"$theme": path.resolve('./src/lib/global/ui/theme'),
 
-			"$header": path.resolve('./src/lib/ui/header'),
+			"$header": path.resolve('./src/lib/global/ui/header'),
+
+			"$store": path.resolve('./src/lib/global/store'),
 			
-			"$ui-utils": path.resolve('./src/lib/ui/utils'),
+			"$ui-utils": path.resolve('./src/lib/global/ui/utils'),
 		}
 	},
 	css: {
