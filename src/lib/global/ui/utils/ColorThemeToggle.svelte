@@ -3,13 +3,17 @@
     
     import Tooltip from '$ui-utils/Tooltip.svelte';
 
-    import { theme } from '$theme';
+    import { theme } from '$lib/global/ui/theme/index.svelte';
 
-    let { size = 40 } : { size?: number } = $props();
+    let { size = 40 } : { size?: number | string } = $props();
+
+    function toggle_theme() {
+        theme.toggle_and_apply(document.documentElement);
+    }
 </script>
 
 {#snippet content()}
-    <button onclick={() => theme.toggle_and_apply(document.documentElement)} aria-label="Toggle theme">
+    <button onclick={toggle_theme} aria-label="Toggle theme">
         {#if theme.is_light}
             <Moon class="icon" size={size}/>
         {:else}
@@ -27,6 +31,10 @@
 
         cursor: pointer;
         
-        color: var(--text-contrast);
+        color: var(--text-neutral);
+    }
+
+    button:hover {
+        color: var(--text-brand);
     }
 </style>

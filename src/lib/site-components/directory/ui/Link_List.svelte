@@ -10,7 +10,7 @@
     {#each webpages as webpage}
         <li>
             <h3 class={webpage instanceof Folder ? 'folder' : 'file'}>
-                <Link webpage={webpage} />
+                <Link webpage={webpage} show_icon={true} />
             </h3>
         </li>
     {/each}
@@ -40,7 +40,7 @@
     }
 
     h3.folder {
-        color: var(--text-neutral);
+        color: var(--text-brand);
     }
 
     h3.file {

@@ -21,7 +21,7 @@ export class Webpage {
         return this._url;
     }
 
-    protected prepend_to_url(prefix: string): void {
+    public prepend_to_url(prefix: string): void {
         this._url = prefix + "/" + this._url;
     }
 

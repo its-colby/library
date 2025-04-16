@@ -62,6 +62,7 @@ interface ThemeState {
 
         text_neutral: Variants<Hoverable>;
         text_brand: Variants<Hoverable>;
+        text_brand2: Variants<Hoverable>;
         text_contrast: Variants<Hoverable>;
         text_anti_contrast: Variants<Hoverable>;
 
@@ -72,10 +73,16 @@ interface ThemeState {
 }
 
 class Theme {
-    constructor(private state: ThemeState) {}
+    private mode: Mode = $state(DEFAULT_MODE);
+    private state: ThemeState;
 
-    public get is_light() { return this.state.mode === Mode.LIGHT; }
-    public get is_dark() { return this.state.mode === Mode.DARK; }
+    constructor(state: ThemeState) {
+        this.state = state;
+        this.mode = state.mode;
+    }
+
+    public get is_light() { return this.mode === Mode.LIGHT; }
+    public get is_dark() { return this.mode === Mode.DARK; }
 
     public toggle_and_apply(root: HTMLElement) {
         this.toggle();
@@ -83,7 +90,7 @@ class Theme {
     }
 
     public toggle() {
-        this.state.mode = this.state.mode === Mode.LIGHT ? Mode.DARK : Mode.LIGHT;
+        this.mode = this.mode === Mode.LIGHT ? Mode.DARK : Mode.LIGHT;
     }
 
     public apply(root: HTMLElement) {
@@ -91,7 +98,7 @@ class Theme {
 
             const css_variable_name = key.replace(/_/g, '-');
 
-            const value = this.state.mode === Mode.LIGHT ? values.light : values.dark;
+            const value = this.mode === Mode.LIGHT ? values.light : values.dark;
             
             if (value instanceof Hoverable) {
                 root.style.setProperty(`--${css_variable_name}`, value.to_css_string({hovered: false}));
@@ -117,6 +124,7 @@ const COLORS = {
     light_brown: new HSL({ hue: 43, saturation: 98, lightness: 24 }),
 
     vibrant_magenta: new HSL({ hue: 299, saturation: 100, lightness: 72 }),
+    vibrant_blue: new HSL({ hue: 196, saturation: 67, lightness: 45 }),
     magenta: new HSL({ hue: 300, saturation: 99, lightness: 62 }),
 };
 
@@ -136,6 +144,10 @@ const SHARED_HOVERABLES = {
     brand: new Hoverable({
         unhovered: COLORS.vibrant_magenta,
         hovered: COLORS.magenta,
+    }),
+    brand2: new Hoverable({
+        unhovered: COLORS.vibrant_blue,
+        hovered: COLORS.vibrant_blue,
     }),
     light_contrast: new Hoverable({
         unhovered: COLORS.black,
@@ -199,6 +211,11 @@ export const theme = new Theme({
         text_brand: new Variants({
             light: SHARED_HOVERABLES.brand,
             dark: SHARED_HOVERABLES.brand,
+        }),
+
+        text_brand2: new Variants({
+            light: SHARED_HOVERABLES.brand2,
+            dark: SHARED_HOVERABLES.brand2,
         }),
 
         text_contrast: new Variants({

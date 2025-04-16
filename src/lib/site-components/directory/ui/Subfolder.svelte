@@ -52,6 +52,10 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
+
+        background-color: var(--card-a-background);
+        padding: 2rem;
+        border-radius: 1.5rem;
     }
 
     ul {

@@ -23,6 +23,13 @@ export class Folder extends Webpage {
         super(params);
         this.files = params.files ?? [];
         this.folders = params.folders ?? [];
+        this.prefix_url(this.url);
+    }
+
+    private prefix_url(url: string): void {
+        this.files.forEach(file => file.prepend_to_url(url));
+        this.folders.forEach(folder => folder.prepend_to_url(url));
+        this.folders.forEach(folder => folder.prefix_url(url));
     }
 
     public get published_files(): File[] {
@@ -34,6 +41,10 @@ export class Folder extends Webpage {
     }
 
     public find(url: string): Webpage[] {
+        if (!url.startsWith('/')) {
+            url = '/' + url;
+        }
+        
         if (!this.published) return [];
         
         // If this folder matches the URL, return just this folder

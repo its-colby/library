@@ -53,10 +53,10 @@
     }
 
     span.note.tex, span.text-statement.tex, span.content.tex, span.list.tex {
-        color: var(--text-brand);
+        color: var(--text-brand2);
     }
 
     span.text-statement.text {
-        color: var(--text-brand);
+        color: var(--text-brand2);
     }
 </style>

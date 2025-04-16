@@ -13,6 +13,7 @@
 
     afterNavigate(({ to }) => {
         if (to?.params?.slug) {
+            console.log(to.params.slug);
             const breadcrumbs = root.find(to.params.slug);
             if (breadcrumbs.length > 0) {
                 store.set(breadcrumbs);
@@ -40,5 +41,9 @@
     .error-container {
         padding: 2rem;
         text-align: center;
+    }
+
+    h1 {
+        color: var(--text-contrast);
     }
 </style>

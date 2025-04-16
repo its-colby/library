@@ -3,18 +3,20 @@
 
     import { Folder, type Webpage } from "$directory";
 
-    let { webpage, icon_size = "1em" }: { webpage: Webpage, icon_size?: string } = $props();
+    let { webpage, show_icon = false, icon_size = "1em" }: { webpage: Webpage, show_icon?: boolean, icon_size?: string } = $props();
 </script>
 
 <a href={webpage.url}>
     <span>{webpage.title}</span>
-    <span class="icon">
-        {#if webpage instanceof Folder}
-            <FolderOpen size={icon_size} />
-        {:else}
-            <ExternalLink size={icon_size} />
-        {/if}
-    </span>
+    {#if show_icon}
+        <span class="icon">
+            {#if webpage instanceof Folder}
+                <FolderOpen size={icon_size} />
+            {:else}
+                <ExternalLink size={icon_size} />
+            {/if}
+        </span>
+    {/if}
 </a>
 
 <style>
@@ -32,6 +34,7 @@
 
     a:hover {
         text-decoration: underline;
+        color: var(--text-brand);
     }
 
     span {

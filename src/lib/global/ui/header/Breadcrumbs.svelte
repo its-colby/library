@@ -41,7 +41,7 @@
         @include fonts.themed-font('100', 'normal');
 
         &:hover {
-            color: var(--text-contrast);
+            color: var(--text-brand);
             text-decoration: underline;
         }
     }

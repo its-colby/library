@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { theme } from '$theme';
+    import { theme } from '$lib/global/ui/theme/index.svelte';
     import { onMount } from 'svelte';
     import "$theme/global.scss";
     import Header from '$header/Header.svelte';

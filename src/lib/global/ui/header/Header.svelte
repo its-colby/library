@@ -17,7 +17,7 @@
                     <Undo2 size={25}/>
                 </a>
             {:else}
-                <span>{website_title}</span>
+                <span class="website-title">{website_title}</span>
             {/if}
         </div>
 
@@ -41,6 +41,10 @@
         top: 0;
         position: sticky;
         z-index: 100;
+    }
+
+    span.website-title {
+        color: var(--text-neutral);
     }
 
     nav {
@@ -70,7 +74,6 @@
 
     span {
         @include fonts.themed-font('130', 'normal');
-        color: var(--text-neutral);
     }
 
     a.show-undo {
@@ -78,9 +81,11 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        color: var(--text-neutral);
     }
 
     a.show-undo:hover {
-        color: var(--text-contrast);
+        color: var(--text-brand);
+        text-decoration: underline;
     }
 </style>

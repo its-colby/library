@@ -52,8 +52,11 @@
     }
 
     a:hover {
-        color: var(--text-contrast);
+        color: var(--text-brand);
         opacity: 1;
+        span.section-text {
+            text-decoration: underline;
+        }
     }
 
     a.depth-1 {
