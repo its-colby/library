@@ -9,7 +9,7 @@ const introduction = [
 import { chapter as chapter_1 } from "./1-examples";
 import { chapter as chapter_2 } from "./2-weak-nullstellensatz";
 
-export const chapter = T.BookChapter.from_subchapters({
+export const chapter = new T.BundledChapters({
     introduction: introduction,
     subchapters: [
         chapter_1,

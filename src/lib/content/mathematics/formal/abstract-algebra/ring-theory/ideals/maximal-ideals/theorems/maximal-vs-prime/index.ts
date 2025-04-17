@@ -18,7 +18,7 @@ const introduction = [
 import { chapter as c1 } from "./1-not-every-prime-is-maximal";
 import { chapter as c2 } from "./2-every-maximal-is-prime";
 
-export const chapter = T.BookChapter.from_subchapters({
+export const chapter = new T.BundledChapters({
     title: T.Prose.parse(`Maximal vs. Prime Ideals`),
     introduction: introduction,
     subchapters: [ c1, c2 ],

@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const chapter_5 = T.BookChapter.from_exposition([
+export const chapter_5 = T.Exposition.from([
     T.List.numbered([
         T.Prose.parse(`
             Elements of $$\\langle \\ 2, \\ x + 1 \\ , x^2 \\ \\rangle$$ are of the form $$2f + (x + 1)g + x^2h$$, where $$f, g, h \\in \\mathbb{Z}[x]$$.

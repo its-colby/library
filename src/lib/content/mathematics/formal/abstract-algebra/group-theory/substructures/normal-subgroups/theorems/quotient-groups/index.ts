@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const chapter = T.BookChapter.from_exposition([
+export const chapter = T.Exposition.from([
     T.Prose.parse(`
         The following proof demonstrates that for any group $$G$$ and normal subgroup $$N$$, the set of cosets $$G/N$$ forms a group under the operation $$(gN)(hN) = (gh)N$$.
     `),

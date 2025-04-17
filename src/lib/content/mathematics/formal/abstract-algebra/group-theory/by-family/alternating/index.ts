@@ -14,15 +14,16 @@ const introduction = [
     `),
 ];
 
-export const chapter = T.BookChapter.new_document({
+export const chapter = new T.BundledChapters({
     introduction: introduction,
-    chapters: [
+    subchapters: [
         basic_properties,
         three_d_symmetries,
         permutation_representations,
         simplicity,
     ],
-    title: T.Prose.parse(`Alternating Groups`)
+    title: T.Prose.parse(`Alternating Groups`),
+    is_book: true,
 });
 
 export const file = File.from_chapter(chapter);

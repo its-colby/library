@@ -2,7 +2,7 @@
 <script lang="ts">
     import type { PageData } from "./$types";
     import { Folder, File } from "$directory";
-    import { BookChapter } from "$book";
+    import { Chapter } from "$book";
     import Book_UI from "$book-ui/main-ui/Main.svelte";
     import Folder_UI from "$directory-ui/Main.svelte";
     import { afterNavigate } from "$app/navigation";
@@ -13,7 +13,6 @@
 
     afterNavigate(({ to }) => {
         if (to?.params?.slug) {
-            console.log(to.params.slug);
             const breadcrumbs = root.find(to.params.slug);
             if (breadcrumbs.length > 0) {
                 store.set(breadcrumbs);
@@ -26,7 +25,7 @@
     <title>{data.webpage?.title ?? 'Page Not Found'}</title>
 </svelte:head>
 
-{#if data.webpage instanceof File && data.webpage.content instanceof BookChapter}
+{#if data.webpage instanceof File && data.webpage.content instanceof Chapter}
     <Book_UI data={data.webpage.content} />
 {:else if data.webpage instanceof Folder}
     <Folder_UI folder={data.webpage} />

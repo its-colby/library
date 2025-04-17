@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const krull_dimension = T.BookChapter.from_exposition([
+export const krull_dimension = T.Exposition.from([
     T.Prose.parse(`
         The Krull dimension of a ring $$R$$ is the supremum of the lengths of all chains of prime ideals in $$R$$. Let's calculate this for several rings.
     `),

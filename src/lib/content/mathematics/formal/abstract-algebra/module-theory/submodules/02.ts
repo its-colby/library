@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const chapter_2 = T.BookChapter.from_exposition([
+export const chapter_2 = T.Exposition.from([
     T.List.numbered([
         T.Prose.parse(`
             Let $$R$$ be a ring considered as an $$R$$-module (where module multiplication is just ring multiplication).

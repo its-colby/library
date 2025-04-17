@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const nilradical = T.BookChapter.from_exposition([
+export const nilradical = T.Exposition.from([
     T.List.numbered([
         T.Prose.parse(`
             In $$\\mathbb{Z}$$, the nilradical is $$N(\\mathbb{Z}) = \\{0\\}$$. To prove this, suppose $$a^n = 0$$ for some $$a \\in \\mathbb{Z}$$ and $$n > 0$$. Since $$\\mathbb{Z}$$ is an integral domain, $$a = 0$$. Therefore, 0 is the only nilpotent element.

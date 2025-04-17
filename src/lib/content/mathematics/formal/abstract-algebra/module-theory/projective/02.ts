@@ -5,7 +5,7 @@
 
 import * as T from "$book";
 
-export const chapter_2 = T.BookChapter.from_exposition([
+export const chapter_2 = T.Exposition.from([
     T.List.numbered([
         T.Prose.parse(`
             First, note that $$2\\mathbb{Z}/6\\mathbb{Z} = \\{0, 2, 4\\}$$ as a subset of $$\\mathbb{Z}/6\\mathbb{Z}$$.

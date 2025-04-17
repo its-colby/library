@@ -2,7 +2,7 @@ import * as T from "$book";
 import { chapter_2 } from "./02";
 import { chapter_3 } from "./03";
 import { chapter_1 } from "./01";
-export const free_modules = T.BookChapter.from_subchapters({
+export const free_modules = new T.BundledChapters({
     subchapters: [
         chapter_1,
         chapter_2,

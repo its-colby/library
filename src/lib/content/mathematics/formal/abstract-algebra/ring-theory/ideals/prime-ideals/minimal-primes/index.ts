@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const minimal_primes = T.BookChapter.from_exposition([
+export const minimal_primes = T.Exposition.from([
     T.Prose.parse(`
         A prime ideal $$P$$ is minimal if there is no prime ideal $$Q$$ with $$\\{0\\} \\subset Q \\subset P$$. Let's identify minimal primes in various rings.
     `),

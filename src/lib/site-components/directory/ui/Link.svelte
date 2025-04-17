@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { FolderOpen, ExternalLink } from "lucide-svelte";
+    import { FolderOpen, File } from "lucide-svelte";
 
     import { Folder, type Webpage } from "$directory";
 
@@ -13,7 +13,7 @@
             {#if webpage instanceof Folder}
                 <FolderOpen size={icon_size} />
             {:else}
-                <ExternalLink size={icon_size} />
+                <File size={icon_size} />
             {/if}
         </span>
     {/if}

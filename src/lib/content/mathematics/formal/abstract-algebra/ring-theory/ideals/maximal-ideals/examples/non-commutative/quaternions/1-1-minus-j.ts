@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const chapter = T.BookChapter.from_exposition([
+export const chapter = T.Exposition.from([
     T.List.numbered([
         T.Prose.parse(`
             Elements of the left ideal $$\\langle 1-j \\rangle$$ are of the form $$q(1-j)$$, where $$q \\in \\mathbb{H}$$.

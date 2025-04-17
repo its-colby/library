@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const chapter = T.BookChapter.from_exposition([
+export const chapter = T.Exposition.from([
     T.Prose.parse(`
         The following proof demonstrates the Jordan-Hölder Theorem, which states that any two composition series of a finite group are equivalent up to permutation of their factors.
     `),

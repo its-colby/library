@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const chapter = T.BookChapter.from_exposition([
+export const chapter = T.Exposition.from([
     T.Prose.parse(`
         The following proof demonstrates Burnside's Lemma, which states that for a finite group $$G$$ acting on a finite set $$X$$, the number of orbits is equal to the average number of fixed points of the elements of $$G$$.
     `),

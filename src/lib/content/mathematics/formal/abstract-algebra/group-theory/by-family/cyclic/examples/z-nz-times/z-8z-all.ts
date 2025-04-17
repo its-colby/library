@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const chapter = T.BookChapter.from_exposition([
+export const chapter = T.Exposition.from([
     T.List.numbered([
         T.Prose.parse(`
             Consider the set $$\\{1, 2, 3, 4, 5, 6, 7\\}$$ under multiplication modulo 8.

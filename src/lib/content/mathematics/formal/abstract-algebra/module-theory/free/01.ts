@@ -4,7 +4,7 @@
 
 import * as T from "$book";
 
-export const chapter_1 = T.BookChapter.from_exposition([
+export const chapter_1 = T.Exposition.from([
     T.List.numbered([
         T.Prose.parse(`
             Consider $$\\mathbb{Z}[i] = \\{a + bi \\ | \\ a,b \\in \\mathbb{Z}\\}$$, the ring of Gaussian integers.

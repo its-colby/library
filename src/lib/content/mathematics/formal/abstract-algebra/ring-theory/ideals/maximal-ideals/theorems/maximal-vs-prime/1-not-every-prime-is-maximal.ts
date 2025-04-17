@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const chapter = T.BookChapter.from_exposition([
+export const chapter = T.Exposition.from([
     T.Prose.parse(`
         In this chapter, we demonstrate that being a prime ideal does not imply being a maximal ideal.
     `),

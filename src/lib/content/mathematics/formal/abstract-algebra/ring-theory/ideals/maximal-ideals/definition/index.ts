@@ -11,7 +11,7 @@ const introduction = [
 import { chapter as posets } from "./posets";
 import { chapter as definition } from "./definition";
 
-export const chapter = T.BookChapter.from_subchapters({
+export const chapter = new T.BundledChapters({
     introduction: introduction,
     subchapters: [posets, definition],
     title: T.Prose.parse(`Definition of a Maximal Ideal`),

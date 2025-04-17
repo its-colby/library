@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const chapter = T.BookChapter.from_exposition([
+export const chapter = T.Exposition.from([
     T.List.numbered([
         T.Prose.parse(`
             The quaternion group Q₈ is a non-abelian group of order 8 with elements:

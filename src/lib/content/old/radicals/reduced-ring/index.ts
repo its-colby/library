@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const reduced_ring = T.BookChapter.from_exposition([
+export const reduced_ring = T.Exposition.from([
     T.List.numbered([
         T.Prose.parse(`
             The ring $$\\mathbb{Z}$$ is reduced. To prove this, suppose $$a^n = 0$$ for some $$a \\in \\mathbb{Z}$$ and $$n > 0$$. Since $$\\mathbb{Z}$$ is an integral domain, if $$a^n = 0$$, then $$a = 0$$. Therefore, $$\\mathbb{Z}$$ has no nonzero nilpotent elements.

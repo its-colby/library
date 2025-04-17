@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const chapter = T.BookChapter.from_exposition([
+export const chapter = T.Exposition.from([
 
     T.Prose.parse(`
         The quotient of any unital ring by any two-sided maximal ideal is a simple ring. Recall that the difference between a simple ring and a unital ring is that a simple ring contains no nonzero proper two-sided ideals. Recall that the quotient of a unital ring by a two-sided ideal is always a unital ring. Therefore, in order to prove that the quotient of any unital ring by any two-sided maximal ideal is a simple ring, it suffices to show that the residue contains no nonzero proper two-sided ideals. In this section, we prove that this is indeed the case.

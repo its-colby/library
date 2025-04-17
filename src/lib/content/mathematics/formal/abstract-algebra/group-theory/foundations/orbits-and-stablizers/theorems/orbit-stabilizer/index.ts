@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const chapter = T.BookChapter.from_exposition([
+export const chapter = T.Exposition.from([
     T.Prose.parse(`
         The following proof demonstrates the Orbit-Stabilizer Theorem, which states that for a group $$G$$ acting on a set $$X$$ and any element $$x \\in X$$, the order of the group $$G$$ is equal to the product of the size of the orbit of $$x$$ and the size of the stabilizer of $$x$$.
     `),

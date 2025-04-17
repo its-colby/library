@@ -11,7 +11,7 @@ import { chapter as c2 } from "./2-simple-rings";
 import { chapter as c3 } from "./3-simple-modules";
 import { chapter as c4 } from "./4";
 
-export const chapter = T.BookChapter.from_subchapters({
+export const chapter = new T.BundledChapters({
     title: T.Prose.parse(`Quotienting by Maximal Ideals`),
     introduction: introduction,
     subchapters: [c1, c2, c3, c4],

@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const chapter = T.BookChapter.from_exposition([
+export const chapter = T.Exposition.from([
     T.Prose.parse(`
         We prove the weak form of Hilbert's Nullstellensatz: in the polynomial ring $$K[x_1,\\ldots,x_n]$$ over an algebraically closed field $$K$$, every maximal ideal has the form $$(x_1-a_1,\\ldots,x_n-a_n)$$ for some points $$(a_1,\\ldots,a_n) \\in K^n$$.
     `),

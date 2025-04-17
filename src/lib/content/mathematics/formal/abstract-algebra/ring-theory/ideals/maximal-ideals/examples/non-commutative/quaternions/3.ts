@@ -2,7 +2,7 @@
 
 import * as T from "$book";
 
-export const chapter = T.BookChapter.from_exposition([
+export const chapter = T.Exposition.from([
     T.List.numbered([
         T.Prose.parse(`
             Elements of the left ideal $$\\langle j+k \\rangle$$ are of the form $$q(j+k)$$, where $$q \\in \\mathbb{H}$$.

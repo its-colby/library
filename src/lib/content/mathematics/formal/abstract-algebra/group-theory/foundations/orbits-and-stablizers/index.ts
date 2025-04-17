@@ -2,14 +2,15 @@ import * as T from "$book";
 import { File } from "$directory";
 import { chapters as theorems } from "./theorems";
 
-export const chapter = T.BookChapter.new_document({
+export const chapter = new T.BundledChapters({
     title: "Orbits and Stablizers",
     introduction: [
         T.Prose.parse(`
             TBD 
         `),
     ],
-    chapters: [...theorems],
+    subchapters: [...theorems],
+    is_book: true,
 });
 
 export const file = File.from_chapter(chapter);

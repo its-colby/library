@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const chapter = T.BookChapter.from_exposition([
+export const chapter = T.Exposition.from([
     T.List.numbered([
         T.Prose.parse(`
             The generalized quaternion group Q₁₆ is a non-abelian group of order 16.

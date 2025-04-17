@@ -14,10 +14,11 @@ const introduction = [
     `),
 ];
 
-export const chapter = T.BookChapter.new_document({
+export const chapter = new T.BundledChapters({
     introduction: introduction,
-    chapters: [definition, ...examples, ...theorems],
+    subchapters: [definition, ...examples, ...theorems],
     title: "Maximal Ideals",
+    is_book: true,
 });
 
 export const file = File.from_chapter(chapter);

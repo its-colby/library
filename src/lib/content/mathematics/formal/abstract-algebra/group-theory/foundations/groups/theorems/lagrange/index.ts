@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const chapter = T.BookChapter.from_exposition([
+export const chapter = T.Exposition.from([
     T.Prose.parse(`
         The following proof demonstrates Lagrange's Theorem, which states that for any finite group $$G$$ and any subgroup $$H$$ of $$G$$, the order of $$H$$ divides the order of $$G$$.
     `),

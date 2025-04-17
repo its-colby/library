@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const chapter = T.BookChapter.from_exposition([
+export const chapter = T.Exposition.from([
     T.List.numbered([
         T.Prose.parse(`
             Consider the rotational symmetries of a regular hexagon. These are rotations by $$0^\\circ, 60^\\circ, 120^\\circ, 180^\\circ, 240^\\circ,$$ and $$300^\\circ$$.

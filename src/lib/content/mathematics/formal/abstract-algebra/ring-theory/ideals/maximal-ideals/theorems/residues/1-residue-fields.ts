@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const chapter = T.BookChapter.from_exposition([
+export const chapter = T.Exposition.from([
 
     T.Prose.parse(`
         The quotient of any unital commutative ring by any maximal ideal is always a field—called the residue field. Recall the difference between any unital commutative ring and any field: a field contains multiplicative inverses for every nonzero element. Moreover, recall that the quotient of any unital commutative ring by any ideal is always a unital commutative ring. Therefore, in order to prove that the quotient of any unital commutative ring by any maximal ideal is a field, it suffices to show that the residue contains multiplicative inverses for every nonzero element. In this section, we prove that this is indeed the case.

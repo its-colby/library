@@ -1,7 +1,7 @@
 import * as T from "$book";
 import { File } from "$directory";
 
-export const chapter = T.BookChapter.book_from_exposition([
+export const chapter = T.Exposition.as_book([
     T.Prose.parse(`
         residue of a quadratic. 2 mod 7 is quad residue, because 3^2 = 9 = 2 mod 7. 4 is because 5^2 mod 7. 
         

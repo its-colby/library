@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const chapter = T.BookChapter.from_exposition([
+export const chapter = T.Exposition.from([
     T.Prose.parse(`
         In a boolean ring, every prime ideal is also maximal. This is a special property that does not hold for rings in general, as we saw in previous sections.
     `),

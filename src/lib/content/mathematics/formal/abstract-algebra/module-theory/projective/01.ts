@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const chapter_1 = T.BookChapter.from_exposition([
+export const chapter_1 = T.Exposition.from([
     T.List.numbered([
         T.Prose.parse(`
             Let $$(a,0) \\in \\mathbb{Z} \\times \\{0\\}$$ and $$(0,b) \\in \\{0\\} \\times \\mathbb{Z}$$ be arbitrary elements.

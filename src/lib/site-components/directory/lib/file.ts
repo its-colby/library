@@ -1,4 +1,4 @@
-import { BookChapter } from "$book";
+import { Chapter } from "$book";
 
 import { Webpage, type WebpageParams } from "./webpage";
 
@@ -15,7 +15,7 @@ export class File extends Webpage {
     }
 
     public static from_chapter(
-        chapter: BookChapter, published: boolean = true
+        chapter: Chapter, published: boolean = true
     ): File {
         return new File({
             title: chapter.title.prose.to_string(),

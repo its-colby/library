@@ -4,7 +4,7 @@ import { nilradical } from "./nilradical";
 import { reduced_ring } from "./reduced-ring";
 import { radical_ideal } from "./semiprime-ideal";
 
-export const radicals = T.BookChapter.from_subchapters({
+export const radicals = new T.BundledChapters({
     subchapters: [
         reduced_ring,
         nilradical,

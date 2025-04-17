@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const chapter = T.BookChapter.from_exposition([
+export const chapter = T.Exposition.from([
     T.List.numbered([
         T.Prose.parse(`
             Consider the 6th roots of unity under multiplication. These are the complex numbers $$\\{1, \\omega, \\omega^2, \\omega^3, \\omega^4, \\omega^5\\}$$ where $$\\omega = e^{2\\pi i/6}$$.

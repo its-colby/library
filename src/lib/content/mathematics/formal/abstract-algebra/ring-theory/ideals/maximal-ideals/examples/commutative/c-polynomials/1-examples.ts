@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const chapter = T.BookChapter.from_exposition([
+export const chapter = T.Exposition.from([
 
     T.Prose.parse(`
         Recall the following ideals of the unital commutative ring $$\\mathbb{R}[x]$$.

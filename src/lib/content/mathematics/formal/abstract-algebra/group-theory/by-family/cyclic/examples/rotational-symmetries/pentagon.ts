@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const chapter = T.BookChapter.from_exposition([
+export const chapter = T.Exposition.from([
     T.List.numbered([
         T.Prose.parse(`
             Consider the rotational symmetries of a regular pentagon. These are rotations by $$0^\\circ, 72^\\circ, 144^\\circ, 216^\\circ,$$ and $$288^\\circ$$.

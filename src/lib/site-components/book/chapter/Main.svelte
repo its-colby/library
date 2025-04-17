@@ -1,26 +1,27 @@
 <script lang="ts">
-    import { BookChapter, Subchapters, Exposition, type ExpositionComponent } from "$book";
+    import { Chapter, BundledChapters, Exposition, type ExpositionComponent } from "$book";
+    import { Optional } from "$common";
 
     import Exposition_UI from "$book-ui/exposition/Main.svelte";
     import Title_UI from "$book-ui/title/Main.svelte";
     import Chapter_UI from "./Main.svelte";
 
-    let { data }: { data: BookChapter } = $props();
+    let { data }: { data: Chapter } = $props();
 </script>
 
 
 
-{#snippet introduction(components: ExpositionComponent[])}
-    {#if components.length > 0}
+{#snippet introduction(components: Optional<ExpositionComponent[]>)}
+    {#if components.is_set()}
         <section role="complementary">
-            <Exposition_UI components={components} />
+            <Exposition_UI components={components.value} />
         </section>
     {/if}
 {/snippet}
 
 
 
-{#snippet subchapters(subchapters: BookChapter[])}
+{#snippet subchapters(subchapters: Chapter[])}
     <section role="main">
         {#each subchapters as subchapter}
             <Chapter_UI data={subchapter} />
@@ -42,12 +43,12 @@
 
     <Title_UI title={data.title} section_depth={data.nesting_depth} />
 
-    {#if data.layout instanceof Subchapters}
-        {@render introduction(data.layout.introduction)}
-        {@render subchapters(data.layout.subchapters)}
+    {#if data instanceof BundledChapters}
+        {@render introduction(data.introduction)}
+        {@render subchapters(data.subchapters)}
 
-    {:else if data.layout instanceof Exposition}
-        {@render exposition(data.layout.components)}
+    {:else if data instanceof Exposition}
+        {@render exposition(data.components)}
     {/if}
 
 </article>

@@ -7,7 +7,7 @@
         data, 
         link_click = () => {} 
     }: { 
-        data: T.BookChapter, 
+        data: T.Chapter, 
         link_click?: () => void 
     } = $props();
 
@@ -64,7 +64,7 @@
 
 </script>
 
-{#if data.layout instanceof T.Subchapters && data.nesting_depth === 0 }
+{#if data instanceof T.BundledChapters && data.nesting_depth === 0 }
     <nav id="table_of_contents" bind:this={tocContainer} aria-label="Table of Contents">
         <ol>
             <TOC_Chapter_UI 

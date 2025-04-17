@@ -12,14 +12,15 @@ import { chapter as c1 } from "./1-trivial-cases";
 import { chapter as c2 } from "./2-p-adics";
 import { chapter as c3 } from "./3-localizations";
 
-export const chapter = T.BookChapter.new_document({
+export const chapter = new T.BundledChapters({
     introduction: introduction,
-    chapters: [
+    subchapters: [
         c1,
         c2,
         c3,
     ],
-    title: T.Prose.parse(`Local Rings`)
+    title: T.Prose.parse(`Local Rings`),
+    is_book: true,
 });
 
 export const file = File.from_chapter(chapter);

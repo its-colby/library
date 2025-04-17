@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const chapter = T.BookChapter.from_exposition([
+export const chapter = T.Exposition.from([
     T.Prose.parse(`
         Recall the definition of a partially ordered set (poset). A poset is a set of mathematical objects equipped with a homogenous binary relation that is reflexive, antisymmetric, and transitive.
     `),

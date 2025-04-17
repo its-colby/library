@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const chapter = T.BookChapter.from_exposition([
+export const chapter = T.Exposition.from([
     T.Prose.parse(`
         We prove that the ring of p-adic integers $$\\mathbb{Z}_p$$ is a local ring by showing it has a unique maximal ideal. Recall that elements of $$\\mathbb{Z}_p$$ are formal power series $$\\sum_{i=0}^{\\infty} a_ip^i$$ where $$a_i \\in \\{0,1,\\ldots,p-1\\}$$.
     `),

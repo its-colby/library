@@ -3,16 +3,17 @@ import { File } from "$directory";
 
 import { chapters as examples } from "./examples";
 
-export const chapter = T.BookChapter.new_document({
+export const chapter = new T.BundledChapters({
     introduction: [
         T.Prose.parse(`
             Cyclic groups.
         `),
     ],
-    chapters: [
+    subchapters: [
         ...examples,
     ],
     title: T.Prose.parse(`Cyclic Groups`),
+    is_book: true,
 });
 
 export const file = File.from_chapter(chapter);

@@ -12,13 +12,14 @@ const introduction = [
     `),
 ];
 
-export const chapter = T.BookChapter.new_document({
+export const chapter = new T.BundledChapters({
     introduction: introduction,
-    chapters: [
+    subchapters: [
         ...examples,
         ...theorems,
     ],
-    title: T.Prose.parse(`Normal Subgroups`)
+    title: T.Prose.parse(`Normal Subgroups`),
+    is_book: true,
 });
 
 export const file = File.from_chapter(chapter);

@@ -12,7 +12,7 @@
     <nav>
         <div class="left-section">
             {#if store.is_file}
-                <a href="/" class="show-undo">
+                <a href="/" on:click|preventDefault={() => history.back()} class="show-undo">
                     <span>{website_title}</span>
                     <Undo2 size={25}/>
                 </a>

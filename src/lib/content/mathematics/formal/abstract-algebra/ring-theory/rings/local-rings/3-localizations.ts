@@ -2,7 +2,7 @@
 
 import * as T from "$book";
 
-export const chapter = T.BookChapter.from_exposition([
+export const chapter = T.Exposition.from([
     T.Prose.parse(`
         Let $$R$$ be a commutative ring and $$\\mathfrak{p}$$ a prime ideal. We prove that the localization $$R_\\mathfrak{p}$$ (elements of the form $$\\frac{r}{s}$$ where $$r \\in R$$ and $$s \\in R \\setminus \\mathfrak{p}$$) is a local ring.
     `),

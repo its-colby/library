@@ -11,7 +11,7 @@
 
 import * as T from "$book";
 
-export const chapter_1 = T.BookChapter.from_exposition([
+export const chapter_1 = T.Exposition.from([
     T.List.numbered([
         T.Prose.parse(`
             Let $$n$$ be a composite number and consider $$\\mathbb{Z}/n\\mathbb{Z}$$ as a $$\\mathbb{Z}$$-module.

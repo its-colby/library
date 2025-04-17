@@ -1,10 +1,10 @@
 <script lang="ts">
-    import { BookChapter, Subchapters } from "$book";
+    import { Chapter, BundledChapters } from "$book";
     import TOC_UI from "$book-ui/table-of-contents/Main.svelte";
     import Chapter_UI from "$book-ui/chapter/Main.svelte";
     import { Menu } from "lucide-svelte";
 
-    let { data }: { data: BookChapter } = $props();
+    let { data }: { data: Chapter } = $props();
     let show_mobile_toc = $state(false);
 </script>
 
@@ -14,7 +14,7 @@
         <span>TOC</span>
     </button>
 
-    {#if data.layout instanceof Subchapters}
+    {#if data instanceof BundledChapters}
         <div 
             class="toc-overlay" 
             class:show={show_mobile_toc} 
@@ -69,10 +69,6 @@
 
     span {
         @extend %base-font;
-    }
-
-    :global(body, html) {
-        overflow: hidden;
     }
 
     main {

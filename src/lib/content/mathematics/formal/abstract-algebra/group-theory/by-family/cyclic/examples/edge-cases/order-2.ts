@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const chapter = T.BookChapter.from_exposition([
+export const chapter = T.Exposition.from([
     T.List.numbered([
         T.Prose.parse(`
             Consider any group of order 2, which must be of the form $$\\{e, a\\}$$ where $$e$$ is the identity and $$a$$ is the non-identity element.

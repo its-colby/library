@@ -1,6 +1,5 @@
 import type { PageLoad } from './$types';
 import { root } from "$content";
-import { store } from '$store/breadcumb.svelte';
 
 export const load: PageLoad = async ({ params }) => {
     if (params.slug === '404') {

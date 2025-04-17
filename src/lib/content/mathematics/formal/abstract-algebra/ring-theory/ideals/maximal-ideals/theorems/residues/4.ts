@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const chapter = T.BookChapter.from_exposition([
+export const chapter = T.Exposition.from([
     T.List.numbered([
         T.Prose.parse(`
             Consider the two-sided maximal ideal $$\\mathcal{M} = (1 + i)$$ in the non-commutative division ring $$\\mathbb{H}$$. The quotient $$\\mathbb{H}/\\mathcal{M}$$ is a field.

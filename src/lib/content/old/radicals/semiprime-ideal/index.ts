@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const radical_ideal = T.BookChapter.from_exposition([
+export const radical_ideal = T.Exposition.from([
     T.List.numbered([
         T.Prose.parse(`
             In $$\\mathbb{Z}$$, consider the ideal $$\\langle 12 \\rangle = \\{12k : k \\in \\mathbb{Z}\\}$$. Since $$12 = 2^2 \\cdot 3$$, the radical $$\\sqrt{\\langle 12 \\rangle} = \\langle 6 \\rangle = \\langle 2 \\cdot 3 \\rangle$$. This ideal is not radical since $$\\sqrt{\\langle 12 \\rangle} \\neq \\langle 12 \\rangle$$. However, $$\\langle 6 \\rangle$$ is a radical ideal since $$\\sqrt{\\langle 6 \\rangle} = \\langle 6 \\rangle$$ (as 6 is square-free).

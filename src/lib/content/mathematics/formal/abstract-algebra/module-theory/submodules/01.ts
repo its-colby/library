@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const chapter_1 = T.BookChapter.from_exposition([
+export const chapter_1 = T.Exposition.from([
     T.List.numbered([
         T.Prose.parse(`
             Let $$G$$ be an abelian group. We can view $$G$$ as a $$\\mathbb{Z}$$-module where scalar multiplication is defined by:

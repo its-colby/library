@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const prime_avoidance_lemma = T.BookChapter.from_exposition([
+export const prime_avoidance_lemma = T.Exposition.from([
     T.Prose.parse(`
         The Prime Avoidance Lemma states: Let $$P_1, P_2, ..., P_n$$ be prime ideals in a ring $$R$$, and let $$I$$ be an ideal of $$R$$. If $$I \\subseteq \\bigcup_{i=1}^n P_i$$, then $$I \\subseteq P_j$$ for some $$j$$.
     `),

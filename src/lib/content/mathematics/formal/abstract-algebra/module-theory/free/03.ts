@@ -5,7 +5,7 @@
 
 import * as T from "$book";
 
-export const chapter_3 = T.BookChapter.from_exposition([
+export const chapter_3 = T.Exposition.from([
     T.List.numbered([
         T.Prose.parse(`
             Consider $$\\mathbb{C}[x]$$, the ring of polynomials with complex coefficients, as a $$\\mathbb{Z}$$-module.

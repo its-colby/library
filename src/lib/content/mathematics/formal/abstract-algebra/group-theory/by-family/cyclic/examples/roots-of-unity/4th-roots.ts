@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const chapter = T.BookChapter.from_exposition([
+export const chapter = T.Exposition.from([
     T.List.numbered([
         T.Prose.parse(`
             Consider the 4th roots of unity under multiplication. These are the complex numbers $$\\{1, i, -1, -i\\}$$ where $$i = \\sqrt{-1}$$.

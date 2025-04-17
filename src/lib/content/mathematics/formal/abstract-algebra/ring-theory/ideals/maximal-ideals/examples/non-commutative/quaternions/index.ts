@@ -10,7 +10,7 @@ import { chapter as chapter_1 } from "./1-1-minus-j";
 import { chapter as chapter_2 } from "./2";
 import { chapter as chapter_3 } from "./3";
 
-export const chapter = T.BookChapter.from_subchapters({
+export const chapter = new T.BundledChapters({
     introduction: introduction,
     subchapters: [
         chapter_1,

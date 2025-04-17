@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const jacobson_radical = T.BookChapter.from_exposition([
+export const jacobson_radical = T.Exposition.from([
     T.List.numbered([
         T.Prose.parse(`
             In any field $$F$$, the Jacobson radical $$J(F) = \\{0\\}$$. This is because in a field, every non-zero element is a unit, so the only element that can be in every maximal ideal is 0. For example, in $$\\mathbb{Q}$$, $$J(\\mathbb{Q}) = \\{0\\}$$.

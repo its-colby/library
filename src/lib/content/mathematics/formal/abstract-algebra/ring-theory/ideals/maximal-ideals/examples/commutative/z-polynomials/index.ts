@@ -13,7 +13,7 @@ const introduction = [
 ];
 
 
-export const chapter = T.BookChapter.from_subchapters({
+export const chapter = new T.BundledChapters({
     introduction: introduction,
     subchapters: [
         chapter_1,

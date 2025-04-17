@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { BookChapter, Subchapters } from "$book/chapter";
+    import { Chapter, BundledChapters } from "$book/chapter";
     import { ChapterTitle } from "$book/title";
     import TOC_Chapter_UI from "$book-ui/table-of-contents/Chapter.svelte";
     import Link_UI from "$book-ui/table-of-contents/Link.svelte";
@@ -10,7 +10,7 @@
         current_section,
         link_click = () => {} 
     }: { 
-        chapter: BookChapter, 
+        chapter: Chapter, 
         section_depth: number,
         current_section: string | null,
         link_click?: () => void 
@@ -27,14 +27,14 @@
         />
     {/if}
 
-    {#if (chapter.layout instanceof Subchapters) &&
+    {#if (chapter instanceof BundledChapters) &&
         (
             section_depth < 2 || 
             current_section?.startsWith(chapter.title?.unique_identifier ?? '')
         )
     }
         <ol class={`toc-subsections depth-${section_depth}`}>
-            {#each chapter.layout.subchapters as subchapter}
+            {#each chapter.subchapters as subchapter}
                 <TOC_Chapter_UI 
                     chapter={subchapter} 
                     section_depth={section_depth + 1} 

@@ -11,13 +11,14 @@ const introduction = [
     `),
 ];
 
-export const chapter = T.BookChapter.new_document({
+export const chapter = new T.BundledChapters({
     introduction: introduction,
-    chapters: [
+    subchapters: [
         ...examples,
         ...theorems,
     ],
-    title: T.Prose.parse(`Conjugacy Classes`)
+    title: T.Prose.parse(`Conjugacy Classes`),
+    is_book: true,
 });
 
 export const file = File.from_chapter(chapter);

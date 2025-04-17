@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const chapter = T.BookChapter.from_exposition([
+export const chapter = T.Exposition.from([
 
     T.Prose.parse(`
         The quotient a unital ring by a maximal left ideal, we obtain a simple left module (over the original ring). The conclusion can be reached with a maximal right ideal, and a simple right module, respectively. Recall that the quotient of a unital ring by any one-sided ideal is always a module. Recall that the difference between a module and a simple module is that a simple module has no proper submodules except for the zero module. Therefore, in order to prove that the quotient of a unital ring by a maximal left ideal is a simple left module, it suffices to show that the residue contains no nonzero proper submodules. In this section, we prove that this is indeed the case.

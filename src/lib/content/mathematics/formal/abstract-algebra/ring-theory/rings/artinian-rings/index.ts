@@ -1,7 +1,7 @@
 import * as T from "$book";
 import { File } from "$directory";
 
-export const chapter = T.BookChapter.book_from_exposition([
+export const chapter = T.Exposition.from([
     T.Prose.parse(`
         An Artinian ring is a ring that satisfies the descending chain condition on (one-sided) ideals; 
         every non-empty set of ideals has a minimal element.

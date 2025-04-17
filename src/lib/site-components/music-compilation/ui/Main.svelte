@@ -213,6 +213,11 @@
             padding-left: 1.5rem;
             padding-right: 1rem;
         }
+
+        height: 100%;
+        overflow-y: auto;
+        box-sizing: border-box;
+        padding-bottom: 10rem;
     }
 
     div#primary-sections-container {

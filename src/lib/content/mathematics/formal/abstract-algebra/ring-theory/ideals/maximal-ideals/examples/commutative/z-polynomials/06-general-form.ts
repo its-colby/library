@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const chapter_6 = T.BookChapter.from_exposition([
+export const chapter_6 = T.Exposition.from([
     T.Prose.parse(`
         We characterize the maximal ideals in $$\\mathbb{Z}[x]$$. We will prove that every maximal ideal has the form $$(p, f)$$ where $$p$$ is a prime number and $$f$$ is a polynomial that is irreducible modulo $$p$$.
     `),

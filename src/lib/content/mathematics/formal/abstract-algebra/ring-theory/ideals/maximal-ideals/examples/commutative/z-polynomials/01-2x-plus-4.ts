@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const chapter_1 = T.BookChapter.from_exposition([
+export const chapter_1 = T.Exposition.from([
     T.List.numbered([
         T.Prose.parse(`
             Elements of $$\\langle 2 \\rangle$$ are of the form $$2 \\cdot f$$, where $$f \\in \\mathbb{Z}[x]$$.
