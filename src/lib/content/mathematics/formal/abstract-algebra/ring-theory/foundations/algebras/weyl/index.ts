@@ -1,6 +1,6 @@
 import * as T from "$book";
 
-export const chapter = T.Exposition.from([
+export const chapter = T.Exposition.as_book([
     T.Prose.parse(`
         TBD
     `),
